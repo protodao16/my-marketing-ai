@@ -1,0 +1,171 @@
+Network,DEXes,Website,EVM,Layer,Launch_Date,TVL_USD,Total_Protocols,Ecosystem_Type,Grants_Program,Notes
+Stable,"Curve DEX, Stable Swap V2, Stable Swap V3",https://stable.xyz,Yes,L1,2024-01,5200000,8,DeFi,No,USDT-native L1 purpose-built for stablecoin settlement with EVM compatibility
+Defi Oracle Meta,DODO AMM,https://defioraclemeta.io,Yes,L1,2022-06,320000,3,DeFi,No,Low-profile EVM chain focused on DeFi oracle infrastructure
+Wanchain,"WanSwap Dex, XFlows",https://wanchain.org,Yes,L1,2018-01,4100000,6,DeFi,Yes,Cross-chain interoperability L1 using secure multi-party computation for trustless bridges
+Energi,Energiswap,https://energi.world,Yes,L1,2018-04,700000,4,DeFi,Yes,Self-funding treasury blockchain with on-chain governance and EVM compatibility
+Horizen EON,"SpookySwap V2, Ascent Exchange V1, Ascent Exchange V3",https://horizen.io,Yes,L2,2023-10,1800000,7,DeFi,Yes,EVM sidechain of Horizen with $100M+ ecosystem fund
+Zilliqa,"ZilSwap, PlunderSwap V2",https://zilliqa.com,No,L1,2019-01,480300,9,General,Yes,Sharding-based L1; native Scilla VM (EVM support added in Zilliqa 2.0 but limited)
+NEO,Flamingo Finance,https://neo.org,Yes,L1,2016-10,12000000,11,General,Yes,Chinese-origin L1 with NeoVM; N3 upgrade added EVM compatibility
+Osmosis,"Osmosis DEX, Astroport",https://osmosis.zone,No,L1,2021-06,17420000,22,DeFi,Yes,Leading Cosmos IBC DEX hub; non-EVM CosmWasm
+Shibarium,"ShibaSwap V1, ShibaSwap V2",https://shibarium.shib.io,Yes,L2,2023-08,22300,5,General,Yes,Ethereum L2 by Shiba Inu community; massive retail following
+Thorchain,"Thorchain DEX, THORSwap",https://thorchain.org,No,L1,2021-04,39500000,4,DeFi,No,Non-EVM native cross-chain liquidity protocol; very high TVL
+Elastos,"Elk, Glide Finance",https://elastos.net,Yes,L2,2018-08,1200000,5,Infrastructure,Yes,Bitcoin-merged-mined sidechain; EVM-compatible ESC layer
+Icon,"Balanced Exchange, UniFi",https://icon.community,No,L1,2018-01,3500000,8,General,Yes,Korean L1 focused on cross-chain BTP interoperability; non-EVM
+Karura,Karura Swap,https://karura.network,Yes,L2,2021-07,2100000,6,DeFi,Yes,Kusama parachain with EVM+ compatibility; Acala canary network
+Wax,DefiBox,https://wax.io,No,L1,2019-06,8500000,7,Gaming,Yes,Non-EVM gaming/NFT L1; hundreds of millions of txns for blockchain games
+Waves,"Allbridge Classic, Swop, PepeTeam DEX",https://waves.tech,No,L1,2016-11,6200000,12,DeFi,Yes,Non-EVM Russian-origin L1; Ride VM; native DEX built-in
+Unit Zero,Swop,https://unitzero.io,Yes,L1,2023-03,850000,4,DeFi,No,EVM modular chain from Units Network; DAO governance focus
+CLV,Huckleberry AMM,https://clv.org,Yes,L2,2021-09,1100000,5,DeFi,Yes,Polkadot parachain with EVM compatibility for cross-chain DeFi
+OntologyEVM,"UniFi, iZiSwap",https://ont.io,Yes,L1,2018-06,2300000,7,DeFi,Yes,EVM execution layer on Ontology; decentralized identity + DeFi focus
+EnergyWeb,CarbonSwap,https://energyweb.org,Yes,L1,2019-06,1500000,5,Infrastructure,Yes,EVM L1 purpose-built for clean energy sector; enterprise-grade
+Fusion,Chainge Finance,https://fusion.org,Yes,L1,2019-06,3200000,4,DeFi,No,DCRM-based interoperability L1 enabling time-locked cross-chain finance
+ThunderCore,"TTswap, SushiSwap V3",https://thundercore.com,Yes,L1,2019-04,4800000,9,DeFi,Yes,EVM L1 with PaLa consensus; sub-second finality; gaming/DeFi
+Viction,"LuaSwap, Rabbit Swap",https://viction.xyz,Yes,L1,2018-12,2250000,8,DeFi,Yes,EVM L1 (ex-TomoChain); Proof-of-Stake Voting with 150 masternodes
+Kardia,Kaidex,https://kardiachain.io,Yes,L1,2019-09,900000,4,General,No,Vietnamese EVM L1; enterprise + DeFi focus in Southeast Asia
+Sora,Polkaswap,https://sora.org,No,L1,2021-04,5100000,6,DeFi,Yes,Non-EVM Substrate-based; integrated Polkaswap DEX; XOR token
+Ronin,"Katana DEX, Katana DEX V3, Tristero Spot",https://roninchain.com,Yes,L2,2021-02,64600000,15,Gaming,Yes,EVM sidechain by Sky Mavis (Axie Infinity); $150M+ ecosystem fund
+ZKsync Lite,"ZigZag, zkLite Exchange, RFX Exchange V1",https://zksync.io,Yes,L2,2020-06,18000000,9,DeFi,No,ZK rollup L2; being sunset in favor of ZKsync Era
+Songbird,"Enosys AMM V2, Enosys AMM V3",https://flare.network/songbird,Yes,L1,2021-09,9500000,8,DeFi,No,EVM canary network for Flare; live testing of FTSO and FAsset
+Mixin,"4Swap, ExinSwap",https://mixin.one,No,L1,2019-09,17900000,5,DeFi,No,Non-EVM DAG-based network; fast and free transfers via TEE
+VeChain,"Vexchange, BetterSwap",https://vechain.org,Yes,L1,2018-06,11000000,10,General,Yes,EVM-compatible PoA L1; enterprise supply chain + sustainability; $300M fund
+Godwoken,YokaiSwap,https://godwoken.com,Yes,L2,2021-11,3400000,5,DeFi,Yes,EVM optimistic rollup L2 on Nervos CKB
+GodwokenV1,"YokaiSwap, Hadouken AMM",https://godwoken.com,Yes,L2,2022-06,1800000,4,DeFi,No,Deprecated v1 of Godwoken; migrating to v2
+Velas,"WagyuSwap, AstroSwap, Wavelength DAO",https://velas.com,Yes,L1,2020-12,359666,6,DeFi,No,EVM/eBPF hybrid L1; largely abandoned by team
+Callisto,Soy Finance,https://callistonetwork.info,Yes,L1,2018-04,4200,3,DeFi,No,EVM L1 (Ethereum Classic fork); security audit focus; minimal activity
+Ergo,ErgoDEX,https://ergoplatform.org,No,L1,2019-07,8700000,6,DeFi,No,Non-EVM extended-UTXO PoW L1; ErgoScript smart contracts
+DefiChain,DefiChain DEX,https://defichain.com,No,L1,2020-05,35000000,8,DeFi,Yes,Non-EVM Bitcoin-anchored L1 for native DeFi; merged mining
+Meter,"VoltSwap, iZiSwap, VoltSwap V2",https://meter.io,Yes,L1,2020-07,2800000,7,DeFi,Yes,EVM L1 with hybrid PoW/PoS and commodity-backed stablecoin MTR
+Syscoin,PegaSys V2,https://syscoin.org,Yes,L1,2014-08,3600000,5,Infrastructure,Yes,Bitcoin-merged-mined EVM L1 (NEVM); Bitcoin-anchored security
+Conflux,"Swappi, Moon Swap, Ginseng Swap",https://confluxnetwork.org,Yes,L1,2021-01,18000000,14,DeFi,Yes,EVM L1 with Tree-Graph consensus; China-compliant; large grants fund
+Findora,"FairySwap V1, VeniceSwap",https://findora.org,Yes,L1,2021-12,1200000,4,DeFi,Yes,EVM L1 with ZK privacy features for confidential DeFi
+Hydra,"Hydradex V2, Hydradex V3",https://hydrachain.org,No,L1,2020-07,2100000,4,DeFi,No,Non-EVM UTXO+EVM hybrid; Qtum/Bitcoin fork; 0.5s finality
+Astar,"Pandora Swap, ArthSwap V3",https://astar.network,Yes,L2,2022-01,21000000,35,DeFi,Yes,Polkadot parachain EVM hub; dApp staking; $500M+ Astar Foundation
+Obyte,Oswap AMM,https://obyte.org,No,L1,2016-12,3800000,3,DeFi,No,Non-EVM DAG-based L1; no miners; originally Byteball
+SX Network,SharkSwap,https://www.sx.technology,Yes,L2,2021-05,834,3,DeFi,No,EVM Polygon-based chain; sports prediction market focus
+Acala,Acala Swap,https://acala.network,Yes,L2,2022-01,9000000,20,DeFi,Yes,Polkadot parachain EVM+; aUSD stablecoin hub; grants available
+Ultron,"iZiSwap, UltronSwap",https://ultron.foundation,Yes,L1,2022-06,3000000,8,DeFi,No,EVM L1; Eastern European project; moderate ecosystem
+DChain,OpenBiSea,https://dchain.io,Yes,L2,2023-01,200000,2,NFT,No,Very small EVM chain; NFT marketplace focus
+Ancient8,Baryon Network,https://ancient8.gg,Yes,L2,2024-02,1800000,8,Gaming,Yes,OP Stack L2; Web3 gaming; $10M ecosystem fund
+Dogechain,"Yodeswap, Wojak Finance, Quickswap V3",https://dogechain.dog,Yes,L2,2022-08,2500000,12,General,No,EVM L2 on Dogecoin; community-driven; meme culture
+Canto,"Canto Dex, Velocimeter V2, Ambient",https://canto.io,Yes,L1,2022-08,8000000,20,DeFi,No,EVM L1 with free public DeFi infrastructure ethos
+Bitgert,"IcecreamSwap V2, Sphynx",https://bitgert.com,Yes,L1,2022-02,1500000,8,General,No,EVM L1; very low fees; mostly retail community
+Bifrost,Bifrost DEX,https://bifrost.io,No,L2,2021-11,15000000,12,DeFi,Yes,Non-EVM Substrate; liquid staking on Polkadot/Kusama parachain
+Tombchain,Lif3 Swap,https://tombchain.com,Yes,L1,2022-03,300000,3,DeFi,No,EVM L1 (TOMB ecosystem); likely inactive/abandoned
+Juno,Junoswap,https://junonetwork.io,No,L1,2021-10,3000000,12,DeFi,Yes,Non-EVM Cosmos CosmWasm hub; grants available
+Vision,VanSwap,https://vision.network,Yes,L1,2021-08,500000,3,General,No,Small EVM L1; obscure project; limited public info
+Cube,Capricorn Finance,https://cubechain.io,Yes,L1,2022-05,2000000,7,DeFi,Yes,EVM L1; Chinese project; ecosystem fund available
+FunctionX,MarginX DEX,https://functionx.io,Yes,L1,2021-07,3500000,10,DeFi,Yes,EVM+Cosmos L1; Pundi X ecosystem; mobile payments focus
+Immutable zkEVM,"Quickswap V3, WarpGate",https://immutable.com,Yes,L2,2024-02,120000000,35,Gaming,Yes,#1 Web3 gaming chain; zkEVM L2; $500M+ ecosystem fund
+Gravity by Galxe,"Camelot V2, Camelot V3",https://gravity.xyz,Yes,L1,2024-10,25000000,18,General,Yes,EVM L1 by Galxe; 10M+ user base; active ecosystem grants
+ReyaChain,"Camelot V2, Camelot V3",https://reya.xyz,Yes,L2,2024-05,8000000,10,DeFi,Yes,Arbitrum Orbit L2 for derivatives; modular trading chain
+Sanko,"Camelot V2, Camelot V3",https://sanko.xyz,Yes,L3,2024-03,3000000,8,Gaming,Yes,Arbitrum Orbit L3; gaming and entertainment focus
+Step,Step Exchange,https://step.network,Yes,L2,2023-06,1500000,5,DeFi,Yes,Avalanche subnet; DeFi focus; validator-staking model
+Omax,Omax Swap,https://omaxcoin.com,Yes,L1,2022-09,500000,3,General,No,Small EVM L1; very low activity; retail community
+MAP Protocol,"HiveSwap V2, HiveSwap V3",https://mapprotocol.io,Yes,L1,2022-06,5000000,12,DeFi,Yes,EVM L1 for BTC ecosystem cross-chain; MAPO token
+Oraichain,"OraiDEX, OraiDEX Pool V3",https://orai.io,Yes,L1,2021-02,8000000,18,Infrastructure,Yes,EVM+CosmWasm L1; AI + blockchain oracle; grants available
+Dexalot,Dexalot DEX,https://dexalot.com,Yes,L2,2023-02,2000000,4,DeFi,Yes,Avalanche subnet; CLOB DEX as primary infrastructure
+XPR Network,"MetalX Dex, SimpleDEX",https://xprnetwork.org,No,L1,2019-10,3000000,8,DeFi,No,Non-EVM EOSIO-based; identity + DeFi; WebAuth focus
+Rangers,PonytaSwap,https://rangersprotocol.com,Yes,L1,2021-10,1500000,6,Gaming,Yes,EVM L1; gaming + metaverse; grants available
+WEMIX3.0,WEMIX Full Range Deposit,https://wemix.com,Yes,L1,2022-10,12000000,20,Gaming,Yes,EVM L1 by Wemade gaming company; $100M WEMIX Play fund
+Sophon,"SyncSwap, SyncSwap V3, Copump",https://sophon.xyz,Yes,L2,2024-11,15000000,12,Gaming,Yes,ZKsync Stack L2; gaming + entertainment; a16z-backed
+ShimmerEVM,"Swapline V1, MagicSea AMM, TangleSwap",https://shimmer.network,Yes,L2,2023-10,4000000,14,DeFi,Yes,EVM L2 on IOTA; canary network; grants available
+Persistence One,Persistence DEX,https://persistence.one,No,L1,2021-03,5000000,10,DeFi,Yes,Non-EVM Cosmos; liquid staking (pSTAKE) hub; grants available
+Arbitrum Nova,"SushiSwap V3, Archly V2",https://arbitrum.io/nova,Yes,L2,2022-08,3500000,12,Gaming,Yes,Arbitrum AnyTrust L2; gaming + social; Arbitrum Foundation grants
+Evmos,Forge,https://evmos.org,Yes,L1,2022-04,4000000,15,DeFi,Yes,Cosmos EVM L1; EVM compatibility on Cosmos ecosystem
+EOS EVM,Noah Swap,https://eosnetwork.com,Yes,L2,2023-04,2000000,8,DeFi,Yes,EVM compatibility layer on EOS; ENF grants program
+Oasys,"Tealswap V2, Gaming DEX",https://oasys.games,Yes,L1,2023-03,8000000,15,Gaming,Yes,EVM L1 for gaming; backed by Square Enix Bandai Namco Sega etc
+Coti,Carbon Defi,https://coti.io,Yes,L1,2019-09,5000000,10,DeFi,Yes,Privacy EVM chain using garbled circuits; COTI v2 launched 2024
+TAC,"Carbon Defi, Snap V3",https://tac.build,Yes,L2,2025-02,3000000,6,DeFi,Yes,EVM L2 on TON; bridges TON ecosystem to EVM/DeFi; very new
+ENULS,PheasantSwap,https://nuls.io,Yes,L1,2023-01,1000000,5,General,Yes,EVM L1 by NULS; modular architecture; grants program
+Hydra Chain,Hydradex V3,https://hydrachain.org,Yes,L1,2021-04,800000,4,DeFi,No,EVM layer of Hydra ecosystem; same community as Hydra
+Onus,"Heraswap, MiaSwap",https://onuschain.io,Yes,L1,2022-09,3000000,10,General,Yes,EVM L1; Vietnam-based retail crypto platform; grants available
+Swellchain,"Ambient, Velodrome V2, Velodrome V3",https://swellnetwork.io,Yes,L2,2024-09,8000000,12,DeFi,Yes,OP Stack L2 by Swell; ETH liquid restaking ecosystem
+Neutron,"Astroport, Duality",https://neutron.org,No,L1,2023-05,28000000,22,DeFi,Yes,Non-EVM CosmWasm; Cosmos smart contract hub; large grants program
+Terra2,Astroport,https://terra.money,No,L1,2022-05,5000000,15,DeFi,Yes,Non-EVM CosmWasm; rebuilt after LUNA collapse; grants available
+Concordium,Concordex,https://concordium.com,No,L1,2021-10,2000000,5,Infrastructure,Yes,Non-EVM identity-focused L1; enterprise compliance; EU-based
+Rollux,PegaSys V3,https://rollux.com,Yes,L2,2023-06,1500000,5,DeFi,Yes,EVM L2 on Syscoin; Bitcoin-anchored rollup
+Neon,"Sobal, Archly V2, Moraswap V3",https://neonevm.org,Yes,L2,2023-07,2500000,10,DeFi,Yes,EVM L2 on Solana; enables Solidity contracts on Solana
+Hydration,Hydration DEX,https://hydration.net,No,L1,2024-01,20000000,15,DeFi,Yes,Non-EVM Substrate; Polkadot parachain; formerly HydraDX
+MEER,CandySwap,https://qitmeer.io,Yes,L1,2023-06,800000,3,General,No,EVM-compatible UTXO+DAG hybrid; small ecosystem
+Bifrost Network,Everdex,https://thebifrost.io,Yes,L1,2022-06,3000000,8,DeFi,Yes,EVM L1 (different from Bifrost Polkadot); Korea-based; grants available
+Superseed,Amped Finance,https://superseed.xyz,Yes,L2,2024-09,2000000,5,DeFi,Yes,OP Stack L2; loan repayment via sequencer fees model
+Chainflip,"Chainflip AMM, THORSwap",https://chainflip.io,No,L1,2023-11,80000000,4,DeFi,No,Non-EVM native cross-chain swap protocol; JIT AMM; high TVL
+JBC,JIBSWAP,https://jibchain.net,Yes,L1,2023-03,500000,4,General,No,EVM L1; Thai government-adjacent blockchain project
+Bitcoincash,"Cauldron, Permute",https://bitcoincash.org,No,L1,2017-08,8490000,4,General,Yes,Non-EVM Bitcoin fork; $200M BCH ecosystem investment fund
+Merlin,"MerlinSwap, BitGenie AMM",https://merlinchain.io,Yes,L2,2024-02,9400000,40,DeFi,Yes,EVM L2 on Bitcoin; peaked $3.5B TVL; 210M MERL grants program
+Bitrock,Rockswap,https://bitrock.io,Yes,L1,2023-07,500000,3,General,No,EVM L1; very low fees; small community
+DeFiVerse,Gaming DEX,https://defiverse.org,Yes,L2,2023-10,2000000,6,Gaming,Yes,Oasys L2; gaming focus; Astar team
+Astar zkEVM,ArthSwap V3,https://astar.network,Yes,L2,2024-06,5000000,12,General,Yes,Polygon AggLayer zkEVM by Astar; backed by Astar Foundation
+SatoshiVM,savmSwap,https://satoshivm.io,Yes,L2,2024-03,1480000,7,DeFi,No,EVM ZK rollup on Bitcoin; BRC-20 smart contract execution
+Venom,Web3.world,https://venom.foundation,No,L1,2024-03,8000000,15,DeFi,Yes,TVM-based L1 (not standard EVM); UAE-backed; $1B ecosystem fund; $500K+ grants
+Bitlayer,Macaron AMM,https://bitlayer.org,Yes,L2,2024-04,360000000,300,DeFi,Yes,First BitVM-based Bitcoin L2; EVM; peaked $850M TVL; $50M Ready Player One grants
+DeFiChain EVM,"VanillaSwap V2, VanillaSwap V3",https://defichain.com,Yes,L2,2023-11,727726,6,DeFi,Yes,EVM layer (MetaChain) on DeFiChain; 14M+ DFI community dev fund
+re.al,"Pearl V2, Pearl V1.5",https://re.al,Yes,L2,2024-05,0,3,DeFi,No,SHUT DOWN — halted block production June 20 2025; was RWA-focused Arbitrum Orbit L2
+Polkadex,Polkadex,https://polkadex.trade,No,L1,2021-09,149000,1,DeFi,No,Non-EVM Substrate; CLOB DEX chain; 500K trades/sec; near-zero market cap
+Planq,Physica Finance,https://planq.network,Yes,L1,2022-11,1000000,4,DeFi,Yes,Cosmos EVM L1; mobile-first DeFi; Physica Finance memecoin launchpad
+IOTA EVM,"MagicSea LB, Velocimeter V4",https://iota.org,Yes,L2,2024-06,33850000,18,Infrastructure,Yes,EVM L2 on IOTA via ISC; RWA tokenization focus; $3.6M+ in grants awarded
+Massa,"Dusa Protocol, EagleFi",https://massa.net,No,L1,2024-01,1000000,2,Infrastructure,Yes,Non-EVM; Autonomous Smart Contracts (ASC); 20M MAS Year-1 grants
+Mint,MintSwap Finance,https://mintchain.io,Yes,L2,2024-07,34600,1,NFT,Yes,OP Stack L2 by NFTScan Labs; purpose-built for NFT industry
+Chiliz,"FanX Protocol, DiviSwap",https://chiliz.com,Yes,L1,2023-05,7100000,5,Gaming,Yes,EVM L1 for sports fan tokens; 150+ sports teams; PoSA consensus
+XRPL,"XRPL DEX, Sologenic",https://xrpl.org,No,L1,2012-06,80000000,10,DeFi,Yes,Non-EVM; native DEX built-in; Ripple ecosystem; $1B+ XRPL grants
+Cronos zkEVM,"H2 Finance V2, H2 Finance V3, Fulcrom AMM",https://cronos.org/zkevm,Yes,L2,2024-07,8000000,12,DeFi,Yes,ZK EVM L2 by Crypto.com; ecosystem fund available
+Botanix,"GMX V2 AMM, Arch Swap",https://botanixlabs.xyz,Yes,L2,2025-07,0,3,DeFi,No,SHUT DOWN June 2026 — Bitcoin L2 failed to attract sufficient DeFi demand
+Carbon,Demex AMM,https://carbon.network,No,L1,2022-03,8000000,12,DeFi,Yes,Non-EVM Cosmos; derivatives + orderbook DEX chain
+HeLa,cytoswap,https://helachain.com,Yes,L1,2024-01,3000000,8,Identity,Yes,EVM L1 with KYC/identity built-in; ecosystem grants
+Asset Chain,Asset Chain Swap,https://assetchain.org,Yes,L1,2024-06,2000000,5,DeFi,Yes,EVM L1 by Access Protocol; RWA tokenization focus
+BSquared,TeleSwap,https://bsquared.network,Yes,L2,2024-04,15000000,18,DeFi,Yes,EVM L2 on Bitcoin; $50M+ ecosystem fund
+Alephium,Elexium,https://alephium.org,No,L1,2021-11,10000000,8,DeFi,Yes,Non-EVM sharded UTXO+ PoLW; own sUTXO VM; grants program
+Shido,Shido Dex V2,https://shido.io,Yes,L1,2023-06,1500000,5,DeFi,No,Cosmos EVM L1; small ecosystem
+Zircuit,"Ocelex V1, Ocelex V2",https://zircuit.com,Yes,L2,2024-08,400000000,30,DeFi,Yes,ZK rollup EVM L2; AI-powered sequencer security; $35M raised
+Endurance,Catalist DEX,https://endurance.io,Yes,L2,2023-08,1000000,5,Gaming,Yes,Arbitrum Orbit L2; ACE gaming ecosystem
+Taraxa,Taraswap,https://taraxa.io,Yes,L1,2023-06,500000,3,DeFi,No,EVM DAG-based L1; fast finality; small community
+VinuChain,"VinuSwap, VinuNFT",https://vinuchain.com,Yes,L1,2023-04,400000,3,General,No,EVM L1; feeless transactions; meme-adjacent community
+Oasis Sapphire,NEBY DEX,https://oasisprotocol.org,Yes,L1,2022-11,8000000,12,Infrastructure,Yes,Confidential EVM paratime on Oasis; privacy-preserving smart contracts
+Vana,DataDex,https://vana.org,Yes,L1,2024-12,15000000,8,Infrastructure,Yes,EVM L1 for data ownership/AI training; $25M raised
+Elys,Elys DEX,https://elys.network,No,L1,2024-03,5000000,6,DeFi,Yes,Non-EVM Cosmos; perp + spot DEX chain; grants available
+Verus,Verus Market,https://verus.io,No,L1,2018-05,3000000,4,DeFi,No,Non-EVM privacy coin L1; own Verus VM
+EDU Chain,SailFish Finance,https://educhain.io,Yes,L3,2024-10,5000000,8,Infrastructure,Yes,Arbitrum Orbit L3 on Arbitrum; education credentials + DeFi
+Artela,ArtexSwap,https://artela.network,Yes,L1,2024-06,3000000,8,Infrastructure,Yes,EVM++ with WASM extensions; parallel execution; grants available
+SX Rollup,SX Bet,https://sx.technology,Yes,L2,2024-01,2000000,3,DeFi,No,OP Stack L2 by SX Network; sports prediction market
+Penumbra,Penumbra Dex,https://penumbra.zone,No,L1,2024-06,5000000,4,DeFi,No,Non-EVM; privacy-first ZK chain; shielded DEX
+Story,"PiperX V2, PiperX V3, Story Hunt",https://story.foundation,Yes,L1,2024-10,80000000,20,Infrastructure,Yes,EVM L1 for IP licensing on-chain; $140M raised; large ecosystem fund
+Form Network,Fibonacci Dex,https://form.network,Yes,L2,2024-09,3000000,6,DeFi,Yes,OP Stack L2; RWA focus; ecosystem grants
+WINR,JustBet,https://winr.games,Yes,L2,2024-01,5000000,5,Gaming,Yes,Arbitrum Orbit L2; on-chain gaming/casino infrastructure
+Haven1,Haven1 hSwap,https://haven1.org,Yes,L1,2024-08,8000000,10,DeFi,Yes,EVM L1 with compliance/KYC built-in; $30M raised
+Initia,InitiaDEX,https://initia.xyz,Yes,L1,2025-04,25000000,15,General,Yes,Multi-VM L1 (EVM+Move+WASM); $25M raised; active grants
+Litecoin,Permute,https://litecoin.org,No,L1,2011-10,1000000,2,General,No,Non-EVM Bitcoin fork; Permute is a new UTXO DEX concept
+Doge,Permute,https://dogecoin.com,No,L1,2013-12,500000,2,General,No,Non-EVM UTXO chain; massive community; Permute DEX
+XRPL EVM,"Moai V2, Moai V3, Mintiq Market",https://xrplevm.org,Yes,L2,2024-12,5000000,8,DeFi,Yes,EVM sidechain on XRPL; Solidity on XRP ecosystem; grants available
+Soon Network,CobaltX,https://soon.network,No,L2,2024-08,1000000,3,DeFi,No,Non-EVM SVM (Solana VM) L2; non-standard
+soonBase,CobaltX,https://soon.network,No,L2,2025-01,500000,2,DeFi,No,Non-EVM SVM L2 on Base
+svmBNB,CobaltX,,No,L2,2025-01,500000,2,DeFi,No,Non-EVM SVM L2 on BNB Chain
+Provenance,Figure Markets Exchange,https://provenance.io,No,L1,2021-03,5000000,6,DeFi,No,Non-EVM Cosmos; institutional RWA focus; Figure Financial
+ENI,"Dswap, EGAS swap",https://eniweb3.io,Yes,L1,2023-08,800000,4,General,No,Small EVM L1; limited public information
+Camp Network,SummitX Finance,https://campnetwork.xyz,Yes,L2,2025-01,3000000,6,Infrastructure,Yes,OP Stack L2; consumer apps + AI agents focus
+Gala,Gala Swap,https://gala.com,Yes,L1,2023-09,12000000,15,Gaming,Yes,GalaChain EVM L1; Web3 gaming + music + film; $5B+ Gala ecosystem
+Chromia,ColorPool,https://chromia.com,No,L1,2024-05,5000000,8,DeFi,No,Non-EVM relational blockchain; Rell language; unique architecture
+Peaq,"MachineX Legacy, MachineX CL",https://peaq.network,Yes,L1,2024-05,10000000,15,Infrastructure,Yes,EVM+Substrate L1 (Polkadot parachain); DePIN/IoT/Machine Economy
+Pacaswap,PacaSwap DEX,https://pacaswap.com,Yes,L1,2022-10,200000,2,DeFi,No,Very small EVM chain; extremely limited information
+GateLayer,"Gate Swap, Gate Fun",https://gatelayer.io,Yes,L1,2024-08,8000000,12,General,Yes,EVM L1 by Gate.io exchange; leverages 14M+ Gate users
+Igra,"ZealousSwap, KaspaCom Dex",https://igra.io,No,L1,2024-01,500000,3,General,No,Non-EVM Kaspa-based ecosystem
+Kasplex,"ZealousSwap, KaspaCom Dex, KrokoSwap V3",https://kasplex.org,No,L1,2024-03,1000000,4,DeFi,No,Non-EVM Kaspa token layer (KRC-20); very early stage
+Mayachain,THORSwap,https://mayaprotocol.com,No,L1,2023-06,15000000,4,DeFi,No,Non-EVM THORChain fork for cross-chain swaps; CACAO token
+Supra,"Atmos DEX, Atmos Studio",https://supraoracles.com,Yes,L1,2024-10,8000000,10,Infrastructure,Yes,MoveVM + EVM L1; oracle-native chain; $50M+ raised
+Fogo,Valiant Trade,https://fogo.io,Yes,L1,2025-03,2000000,4,DeFi,Yes,High-performance EVM L1; sub-millisecond TPS claims; very early stage
+zkLighter,Lighter Spot,https://zklighter.com,Yes,L2,2024-09,1500000,2,DeFi,No,ZK L2; CLOB DEX as primary use case
+AlphaSec,AlphaSec Spot,https://alphasec.io,Yes,L2,2024-11,500000,2,DeFi,No,Very small chain; limited public information
+Althea,Althea DEX,https://althea.net,Yes,L1,2023-09,1000000,3,Infrastructure,No,Cosmos EVM L1; internet infrastructure payments focus
+ValueChain,SoDEX Spot,https://valuechain.io,Yes,L1,2024-06,500000,2,DeFi,No,Very limited public information available
+Citrea,"Juiceswap, Satsuma",https://citrea.xyz,Yes,L2,2025-03,5000000,8,DeFi,Yes,First ZK rollup on Bitcoin; $14M raised; strong institutional backing
+Spark,Flashnet,https://spark.io,Yes,L2,2025-01,3000000,4,DeFi,Yes,Liquity V2 ecosystem chain; stablecoin + lending focus
+Doma,Doma DEX V3,https://doma.finance,Yes,L2,2025-02,1000000,3,DeFi,No,Very early stage EVM L2; limited public information
+W Chain,Wswap,https://wchain.io,Yes,L1,2024-05,800000,3,General,No,Small EVM L1; limited public information
+Neony,Neony Exchange Spot,https://neony.io,Yes,L2,2025-01,400000,2,DeFi,No,Very early stage; very limited information
+QIE,QIEDex,https://qiechain.io,Yes,L1,2024-04,300000,2,General,No,Very small EVM chain; obscure project
+Paradex,Paradex Spot,https://paradex.trade,No,L2,2024-04,20000000,3,DeFi,No,Non-EVM StarkEx L2; perp DEX; backed by Paradigm
+BCHyper,BCSwap,https://bchyper.io,No,L1,2024-02,500000,2,DeFi,No,Non-EVM Bitcoin Cash ecosystem extension
+Canton,Pool Party,https://canton.network,No,L1,2023-07,50000000,8,Infrastructure,No,Non-EVM Daml-based; enterprise privacy blockchain (Goldman Sachs BNY etc)
+Fluent,FluxFlow V3,https://fluent.xyz,Yes,L2,2025-02,2000000,5,Infrastructure,Yes,WASM+EVM L2 on Ethereum; Rust smart contracts; grants available
+Gensyn,Delphi,https://gensyn.ai,No,L1,2025-05,1000000,2,Infrastructure,Yes,Non-EVM ML compute network; $43M raised; AI/ML focus
+edgeX L1,edgeX Spot,https://edgex.exchange,Yes,L1,2025-01,3000000,4,DeFi,Yes,High-performance EVM perp DEX chain; app-chain model
+Hotstuff,Hotstuff Spot,https://hotstuff.io,Yes,L1,2025-02,500000,2,DeFi,No,Very early stage EVM chain; limited public information
