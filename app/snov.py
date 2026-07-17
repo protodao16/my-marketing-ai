@@ -26,6 +26,8 @@ class Endpoints:
     GET_LIST_PROSPECTS = "/v1/prospect-list/{list_id}"
 
     # Drip-кампании (проверь доступность на своём тарифе):
+    CREATE_CAMPAIGN = "/v2/campaigns"
+    ADD_CAMPAIGN_STEP = "/v2/campaigns/{campaign_id}/steps"
     ADD_PROSPECT_TO_CAMPAIGN = "/v1/campaigns/{campaign_id}/prospects"
     CAMPAIGN_ANALYTICS = "/v1/get-campaign-analytics"
 
@@ -124,6 +126,22 @@ class SnovClient:
         return await self.request(
             "GET", Endpoints.CAMPAIGN_ANALYTICS, params={"campaignId": campaign_id}
         )
+
+    async def create_campaign(self, name: str, description: str = "") -> Any:
+        data = {"campaignName": name, "campaignDescription": description}
+        return await self.request("POST", Endpoints.CREATE_CAMPAIGN, data=data)
+
+    async def add_campaign_step(
+        self, campaign_id: int, step: int, subject: str, body: str, delay_days: int = 0
+    ) -> Any:
+        path = Endpoints.ADD_CAMPAIGN_STEP.format(campaign_id=campaign_id)
+        data = {
+            "stepNumber": step,
+            "emailSubject": subject,
+            "emailBody": body,
+            "delayDays": delay_days,
+        }
+        return await self.request("POST", path, data=data)
 
 
 snov_client = SnovClient()

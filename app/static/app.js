@@ -46,6 +46,7 @@ $("btnGen").onclick = async () => {
     });
     renderDraft(currentCopy);
     $("draftCard").classList.remove("hidden");
+    $("campaignCard").classList.remove("hidden");
     $("prospectsCard").classList.remove("hidden");
     $("launchCard").classList.remove("hidden");
   } catch (e) {
@@ -84,6 +85,26 @@ function renderDraft(copy) {
     };
   });
 }
+
+// ---- 2. создание кампании ----
+$("btnCampaign").onclick = async () => {
+  const btn = $("btnCampaign");
+  btn.disabled = true;
+  try {
+    const body = {
+      campaign_name: $("campaign_name").value,
+      campaign_description: $("campaign_description").value,
+      steps: currentCopy.steps,
+    };
+    const out = await api("/api/campaigns", { method: "POST", body: JSON.stringify(body) });
+    show("campaignOut", out);
+    if (out.campaign_id) $("campaign_id").value = out.campaign_id;
+  } catch (e) {
+    alert("Ошибка: " + e.message);
+  } finally {
+    btn.disabled = false;
+  }
+};
 
 // ---- 3. проспекты ----
 $("btnProspects").onclick = async () => {

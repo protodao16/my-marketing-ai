@@ -74,6 +74,17 @@
     <p class="hint">Плейсхолдеры Snov.io: <code>{{first_name}}</code>, <code>{{company_name}}</code>, <code>{{position}}</code></p>
   </div>
 
+  <!-- 2b. Создание кампании -->
+  <div class="card hidden" id="campaignCard">
+    <h2>2b · Создать drip-кампанию в Snov.io</h2>
+    <label>Имя кампании</label>
+    <input id="campaign_name" placeholder="Кампания Q3 · генерация CLoud" />
+    <label>Описание (опционально)</label>
+    <input id="campaign_description" placeholder="Описание кампании..." />
+    <button id="btnCampaign" class="sec">🚀 Создать кампанию с шагами</button>
+    <pre id="campaignOut" class="hidden"></pre>
+  </div>
+
   <!-- 3. Проспекты -->
   <div class="card hidden" id="prospectsCard">
     <h2>3 · Получатели → список Snov.io</h2>

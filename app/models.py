@@ -44,6 +44,13 @@ class ProspectsRequest(BaseModel):
     prospects: list[Prospect]
 
 
+# ---------- Создание кампании ----------
+class CreateCampaignRequest(BaseModel):
+    campaign_name: str = Field(..., description="Имя drip-кампании")
+    campaign_description: str = Field("", description="Описание кампании")
+    steps: list[EmailStep] = Field(..., description="Шаги с темами и телами писем")
+
+
 # ---------- Запуск кампании ----------
 class LaunchRequest(BaseModel):
     campaign_id: int = Field(..., description="ID существующей drip-кампании в Snov.io")

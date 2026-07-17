@@ -17,7 +17,7 @@ from fastapi.staticfiles import StaticFiles
 
 from .config import settings
 from .copywriter import generate_copy
-from .models import CopyBrief, GeneratedCopy, LaunchRequest, ProspectsRequest
+from .models import CopyBrief, CreateCampaignRequest, GeneratedCopy, LaunchRequest, ProspectsRequest
 from .snov import SnovError, snov_client
 
 app = FastAPI(title="Marketing AI — Claude × Snov.io")
@@ -41,6 +41,25 @@ async def api_generate_copy(brief: CopyBrief) -> GeneratedCopy:
         return await generate_copy(brief)
     except Exception as e:  # noqa: BLE001
         raise HTTPException(status_code=500, detail=f"Ошибка генерации: {e}") from e
+
+
+@app.post("/api/campaigns")
+async def api_create_campaign(req: CreateCampaignRequest) -> dict:
+    """Создаёт drip-кампанию в Snov.io с email-шагами."""
+    try:
+        campaign = await snov_client.create_campaign(req.campaign_name, req.campaign_description)
+        campaign_id = campaign.get("id") or campaign.get("campaignId")
+        if not campaign_id:
+            raise HTTPException(status_code=502, detail=f"Не получен id кампании: {campaign}")
+        results = []
+        for step in req.steps:
+            res = await snov_client.add_campaign_step(
+                int(campaign_id), step.step, step.subject, step.body, step.delay_days
+            )
+            results.append({"step": step.step, "result": res})
+        return {"campaign_id": campaign_id, "steps_added": len(results), "details": results}
+    except SnovError as e:
+        raise HTTPException(status_code=502, detail=str(e)) from e
 
 
 @app.get("/api/snov/lists")
