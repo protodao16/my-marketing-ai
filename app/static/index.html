@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Marketing AI — Claude × Snov.io</title>
+<style>
+  :root { --bg:#0f1220; --card:#191d2e; --line:#2a3048; --fg:#e8ebf5; --muted:#9aa3c0; --acc:#6c8cff; --ok:#3ecf8e; }
+  * { box-sizing:border-box; }
+  body { margin:0; font:15px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif; background:var(--bg); color:var(--fg); }
+  header { padding:20px 24px; border-bottom:1px solid var(--line); display:flex; align-items:center; gap:12px; }
+  header h1 { font-size:18px; margin:0; }
+  #status { margin-left:auto; font-size:13px; color:var(--muted); }
+  main { max-width:900px; margin:0 auto; padding:24px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin-bottom:20px; }
+  .card h2 { margin:0 0 14px; font-size:15px; color:var(--acc); }
+  label { display:block; font-size:13px; color:var(--muted); margin:10px 0 4px; }
+  input, textarea, select { width:100%; background:#11142370; color:var(--fg); border:1px solid var(--line); border-radius:8px; padding:9px 11px; font:inherit; }
+  textarea { min-height:70px; resize:vertical; }
+  .row { display:flex; gap:14px; } .row > div { flex:1; }
+  button { background:var(--acc); color:#fff; border:0; border-radius:8px; padding:10px 18px; font:inherit; font-weight:600; cursor:pointer; margin-top:14px; }
+  button.sec { background:transparent; border:1px solid var(--line); color:var(--fg); }
+  button:disabled { opacity:.5; cursor:default; }
+  .step { border:1px solid var(--line); border-radius:8px; padding:12px; margin-top:12px; }
+  .step .meta { font-size:12px; color:var(--muted); margin-bottom:6px; }
+  .pill { display:inline-block; background:#2a3048; border-radius:20px; padding:3px 10px; margin:3px 5px 3px 0; font-size:12px; }
+  pre { white-space:pre-wrap; background:#0d1020; border:1px solid var(--line); border-radius:8px; padding:12px; font-size:13px; overflow:auto; }
+  .hint { font-size:12px; color:var(--muted); margin-top:6px; }
+  .hidden { display:none; }
+</style>
+</head>
+<body>
+<header>
+  <h1>📣 Marketing AI · Claude × Snov.io</h1>
+  <span id="status">проверка…</span>
+</header>
+<main>
+
+  <!-- 1. Бриф -->
+  <div class="card">
+    <h2>1 · Бриф кампании</h2>
+    <label>Продукт / услуга</label>
+    <input id="product" placeholder="Напр.: SaaS для автоматизации отчётности" />
+    <div class="row">
+      <div><label>Аудитория (ICP)</label><input id="audience" placeholder="CFO в SMB, 50-500 чел." /></div>
+      <div><label>Цель</label>
+        <select id="goal">
+          <option value="book_meeting">Назначить встречу</option>
+          <option value="demo">Демо</option>
+          <option value="reply">Получить ответ</option>
+          <option value="signup">Регистрация</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div><label>Тон</label><input id="tone" value="профессиональный, дружелюбный" /></div>
+      <div><label>Язык</label><input id="language" value="ru" /></div>
+    </div>
+    <div class="row">
+      <div><label>Имя отправителя</label><input id="sender_name" placeholder="Виктор" /></div>
+      <div><label>Follow-up писем</label><input id="num_followups" type="number" value="2" min="0" max="5" /></div>
+    </div>
+    <label>Доп. заметки (факты, УТП)</label>
+    <textarea id="extra_notes" placeholder="Экономит 10 ч/нед, интеграция с 1С..."></textarea>
+    <button id="btnGen">✨ Сгенерировать черновик</button>
+  </div>
+
+  <!-- 2. Черновик -->
+  <div class="card hidden" id="draftCard">
+    <h2>2 · Черновик (проверь и отредактируй)</h2>
+    <label>Варианты тем (A/B)</label>
+    <div id="subjects"></div>
+    <div id="steps"></div>
+    <p class="hint">Плейсхолдеры Snov.io: <code>{{first_name}}</code>, <code>{{company_name}}</code>, <code>{{position}}</code></p>
+  </div>
+
+  <!-- 3. Проспекты -->
+  <div class="card hidden" id="prospectsCard">
+    <h2>3 · Получатели → список Snov.io</h2>
+    <label>Имя списка</label>
+    <input id="list_name" placeholder="Кампания Q3 · CFO" />
+    <label>Получатели (CSV: email,first_name,last_name,company,position — по строке на человека)</label>
+    <textarea id="prospects_csv" placeholder="ivan@acme.com,Иван,Петров,Acme,CFO"></textarea>
+    <button id="btnProspects" class="sec">📥 Создать список и добавить</button>
+    <pre id="prospectsOut" class="hidden"></pre>
+  </div>
+
+  <!-- 4. Запуск -->
+  <div class="card hidden" id="launchCard">
+    <h2>4 · Запуск drip-кампании</h2>
+    <p class="hint">Создай drip-кампанию в интерфейсе Snov.io (вставив утверждённые тексты выше) и укажи её ID. Запуск = добавление получателей в кампанию.</p>
+    <div class="row">
+      <div><label>ID кампании Snov.io</label><input id="campaign_id" type="number" placeholder="12345" /></div>
+      <div><label>ID списка (необязательно)</label><input id="launch_list_id" type="number" placeholder="из шага 3" /></div>
+    </div>
+    <button id="btnLaunch">🚀 Запустить</button>
+    <button id="btnAnalytics" class="sec">📊 Аналитика</button>
+    <pre id="launchOut" class="hidden"></pre>
+  </div>
+
+</main>
+<script src="/static/app.js"></script>
+</body>
+</html>
