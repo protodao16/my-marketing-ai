@@ -1,0 +1,556 @@
+"Network","Status","Offer","Chain_ID","DEXs","DEXs_count","Protocols","Launch_Date","TVL","safe_protofire","safe_exists","Message_Draft","Notes"
+"AILayer","Active","Safe+UniV3","2649","AINN Swap","1 vol≠tvl","7","6/24/2024","$89,652","NO","NO","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+looked at AILayer's DeFi setup, AINN Swap is the only DEX and no Safe multisig yet
+
+thought both could be useful here, Safe for protocol and team multisigs, Uniswap V3 for real LP depth, both are what Tier-1 protocols check before building on a new AI chain
+
+we've done Safe on 140+ networks and Uniswap V3 for BOB, Abstract, Mode, open to connecting teams on a group chat here?",""
+"Rari","DEAD - Shut down 2024","Safe+UniV3","1380012617","Camelot V3, Camelot V2","2","4","6/18/2024","$8,387","NO","NO","N/A - DEAD - Shut down 2024",""
+"Ham","Active","Safe+UniV3","5112","BBQSwap","1 vol≠tvl","1","6/11/2024","$2,929","NO","NO","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+looked at Ham's DeFi setup, BBQSwap is the only DEX and no Safe multisig yet
+
+thought both could be useful here, Safe for team and protocol multisigs, Uniswap V3 for concentrated liquidity, both are standard infrastructure for Base ecosystem chains
+
+we've done Safe on 140+ networks and Uniswap V3 for BOB, Abstract, Mode, open to connecting teams on a group chat here?",""
+"LUKSO","Active","UniV3","42","Phlox, Universal Swaps","2 vol≠tvl","7","6/5/2024","$36,859","NO","YES","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+looked at LUKSO's DEX setup, Phlox, Universal Swaps are running but no Uniswap V3 yet
+
+with your NFT and creator economy focus a canonical Uniswap V3 would give LSP token pairs proper liquidity depth
+
+we've deployed canonical v3 for BOB, Abstract, Mode, thought we could do the same for LUKSO, open to connecting teams on a group chat here?",""
+"Genesys","Uncertain - verify","Safe+UniV3","16507","BlueLotusDao DEX","1 vol≠tvl","2","5/29/2024","—","NO","NO","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+looked at Genesys's DeFi setup, BlueLotusDao DEX is the only DEX and no Safe multisig yet
+
+thought both could be a good fit, Safe for team multisigs and protocol treasuries, Uniswap V3 as the standard AMM layer
+
+we've done Safe on 140+ networks and Uniswap V3 for BOB, Abstract, Mode, open to connecting teams on a group chat here?",""
+"re.al","DEAD - Shut down June 2025","UniV3","111188","Pearl V2, Pearl V1.5","2","10","5/23/2024","—","YES","YES","N/A - DEAD - Shut down June 2025",""
+"BounceBit","Active","Canonical UniV3","6001","BounceBit Swap V3, BounceBit Swap V2","2 vol≠tvl","13","5/16/2024","$688,730","NO","YES","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+noticed BounceBit's BounceBit Swap V3 is live but not a canonical Uniswap deployment, means your pools won't show up in the official Uniswap interface and aggregators like 1inch tend to deprioritize non-canonical pools when routing BTC restaking liquidity
+
+we've deployed canonical v3 on BOB, Abstract, Mode, thought we could handle the migration for BounceBit cleanly, open to connecting teams on a group chat here?",""
+"Endurance","Active","UniV3","648","Catalist DEX, Tesseract World","2 vol≠tvl","4","5/9/2024","$26","NO","YES","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+looked at Endurance's DEX setup, Catalist DEX, Tesseract World are running but no Uniswap V3 yet
+
+with your gaming ecosystem focus a canonical Uniswap V3 would give game tokens proper liquidity and attract market makers
+
+we've deployed canonical v3 for BOB, Abstract, Mode, thought we could do the same for Endurance, open to connecting teams on a group chat here?",""
+"Planq","Active","UniV3","7070","Ciento Exchange, Physica Finance","2 vol≠tvl","2","4/19/2024","$5,259","NO","YES","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+looked at Planq's DEX setup, Ciento Exchange, Physica Finance are running but no Uniswap V3 yet
+
+a canonical Uniswap V3 would give the ecosystem a proper concentrated liquidity layer
+
+we've deployed canonical v3 for BOB, Abstract, Mode, thought we could do the same for Planq, open to connecting teams on a group chat here?",""
+"Ancient8","Active","UniV3","888888888","Baryon Network, Ancient8 Swap","2 vol≠tvl","3","4/16/2024","$38,010","NO","YES","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+looked at Ancient8's DEX setup, Baryon Network, Ancient8 Swap are running but no Uniswap V3 yet
+
+with your gaming L2 focus a canonical Uniswap V3 would give in-game tokens real liquidity depth
+
+we've deployed canonical v3 for BOB, Abstract, Mode, thought we could do the same for Ancient8, open to connecting teams on a group chat here?",""
+"HAQQ","Active","UniV3","11235","SushiSwap","1 vol≠tvl","5","4/4/2024","$11","NO","YES","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+looked at HAQQ's DEX setup, SushiSwap is running but no Uniswap V3 yet
+
+with your Islamic finance positioning a canonical Uniswap V3 would add a transparent and widely trusted liquidity layer
+
+we've deployed canonical v3 for BOB, Abstract, Mode, thought we could do the same for HAQQ, open to connecting teams on a group chat here?",""
+"RSS3","Uncertain - verify","Safe+UniV3","—","Openswap VSL","1 vol≠tvl","1","3/26/2024","—","NO","UNCLEAR","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+looked at RSS3's DeFi setup, Openswap VSL is the only DEX and no Safe multisig yet
+
+thought both could be useful here, Safe for protocol and DAO treasuries, Uniswap V3 for token liquidity, standard infra for a social protocol expanding into DeFi
+
+we've done Safe on 140+ networks and Uniswap V3 for BOB, Abstract, Mode, open to connecting teams on a group chat here?",""
+"DeFiChain EVM","Active","Safe+UniV3","1130","VanillaSwap V2, VanillaSwap V3","2","3","3/25/2024","$97,150","NO","NO","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+looked at DeFiChain EVM's DeFi setup, VanillaSwap V2, VanillaSwap V3 are the DEXes there and no Safe multisig yet
+
+thought both could be a great fit here, Safe for protocol multisigs, Uniswap V3 as a concentrated liquidity layer on top of Bitcoin-backed assets
+
+we've done Safe on 140+ networks and Uniswap V3 for BOB, Abstract, Mode, open to connecting teams on a group chat here?",""
+"Bahamut","Uncertain - verify","Safe+UniV3","—","SilkSwap, Kujata","2 vol≠tvl","8","3/22/2024","—","NO","UNCLEAR","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+looked at Bahamut's DeFi setup, SilkSwap, Kujata are the DEXes there and no Safe multisig yet
+
+thought both could be a good fit, Safe for team and protocol treasuries, Uniswap V3 as the standard concentrated liquidity layer
+
+we've done Safe on 140+ networks and Uniswap V3 for BOB, Abstract, Mode, open to connecting teams on a group chat here?",""
+"Immutable zkEVM","Active","Canonical UniV3","13371","Quickswap V3, WarpGate","2","5","3/22/2024","$11,241,448","YES","YES","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+noticed Immutable zkEVM's Quickswap V3 is live but not a canonical Uniswap deployment, means your pools won't show up in the official Uniswap interface and aggregators tend to deprioritize non-canonical pools when routing
+
+we've deployed canonical v3 on BOB, Abstract, Mode, thought we could handle the migration for Immutable zkEVM cleanly, open to connecting teams on a group chat here?",""
+"Q Protocol","Active","UniV3","35441","Elk","1 vol≠tvl","4","3/14/2024","$9,376","NO","YES","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+looked at Q Protocol's DEX setup, Elk is running but no Uniswap V3 yet
+
+a canonical Uniswap V3 would give the Q ecosystem a trusted liquidity layer that governance protocols can build around
+
+we've deployed canonical v3 for BOB, Abstract, Mode, thought we could do the same for Q Protocol, open to connecting teams on a group chat here?",""
+"inEVM","Active","Safe+UniV3","2525","Poolshark, DackieSwap V3, DackieSwap V2","3 vol≠tvl","7","3/12/2024","—","NO","NO","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+looked at inEVM's DeFi setup, Poolshark, DackieSwap V3, DackieSwap V2 are the DEXes there and no Safe multisig yet
+
+thought both could be a good fit here, Safe for team and protocol multisigs, Uniswap V3 for real LP depth, both are what Tier-1 protocols usually check before building on a new chain
+
+we've done Safe on 140+ networks and Uniswap V3 for BOB, Abstract, Mode, open to connecting teams on a group chat here?",""
+"DeFiVerse","Active","Safe+UniV3","16116","Gaming DEX","1","1","3/8/2024","—","NO","NO","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+looked at DeFiVerse's DeFi setup, Gaming DEX is the only DEX and no Safe multisig yet
+
+thought both could fit well here, Safe for game studio multisigs, Uniswap V3 as the liquidity layer gaming tokens need
+
+we've done Safe on 140+ networks and Uniswap V3 for BOB, Abstract, Mode, open to connecting teams on a group chat here?",""
+"Bitrock","Uncertain - verify","UniV3","7171","Rockswap","1","4","3/1/2024","—","NO","YES","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+looked at Bitrock's DEX setup, Rockswap is running but no Uniswap V3 yet
+
+a canonical Uniswap V3 would be the standard AMM layer protocols expect
+
+we've deployed canonical v3 for BOB, Abstract, Mode, thought we could do the same for Bitrock, open to connecting teams on a group chat here?",""
+"Bitnet","Uncertain - verify","Safe+UniV3","—","Xenwave","1 vol≠tvl","1","1/27/2024","—","NO","UNCLEAR","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+looked at Bitnet's DeFi setup, Xenwave is the only DEX and no Safe multisig yet
+
+thought both could be a good fit here, Safe for team and protocol multisigs, Uniswap V3 for real LP depth, both are what Tier-1 protocols usually check before building on a new chain
+
+we've done Safe on 140+ networks and Uniswap V3 for BOB, Abstract, Mode, open to connecting teams on a group chat here?",""
+"AirDAO","Active","Safe+UniV3","16718","FirepotSwap, Astra","2 vol≠tvl","6","1/16/2024","—","NO","NO","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+looked at AirDAO's DeFi setup, FirepotSwap, Astra are the DEXes there and no Safe multisig yet
+
+thought both could be a good fit, Safe for team and DAO treasuries, Uniswap V3 for real LP depth, both are standard infra for a growing community chain
+
+we've done Safe on 140+ networks and Uniswap V3 for BOB, Abstract, Mode, open to connecting teams on a group chat here?",""
+"JBC","Uncertain - verify","Safe+UniV3","—","Junoswap.trade, JIBSWAP, CommuDAO GameSwap","3 vol≠tvl","4","12/25/2023","$5,850","NO","UNCLEAR","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+looked at JBC's DeFi setup, Junoswap.trade, JIBSWAP, CommuDAO GameSwap are the DEXes there and no Safe multisig yet
+
+thought both could be a good fit here, Safe for team and protocol multisigs, Uniswap V3 for real LP depth, both are what Tier-1 protocols usually check before building on a new chain
+
+we've done Safe on 140+ networks and Uniswap V3 for BOB, Abstract, Mode, open to connecting teams on a group chat here?",""
+"Horizen EON","Active","Canonical UniV3","7332","SpookySwap V2, Ascent Exchange V1, Ascent Exchange V3","3","7","11/8/2023","—","YES","YES","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+noticed Horizen EON's Ascent Exchange V3 is live but not a canonical Uniswap deployment, means your pools won't show up in the official Uniswap interface and aggregators tend to deprioritize non-canonical pools when routing
+
+we've deployed canonical v3 on BOB, Abstract, Mode, thought we could handle the migration for Horizen EON cleanly, open to connecting teams on a group chat here?",""
+"Omax","Uncertain - verify","Safe+UniV3","—","Omax Swap","1","2","10/31/2023","$12,494","NO","UNCLEAR","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+looked at Omax's DeFi setup, Omax Swap is the only DEX and no Safe multisig yet
+
+thought both could be a good fit here, Safe for team and protocol multisigs, Uniswap V3 for real LP depth, both are what Tier-1 protocols usually check before building on a new chain
+
+we've done Safe on 140+ networks and Uniswap V3 for BOB, Abstract, Mode, open to connecting teams on a group chat here?",""
+"ETHF","Uncertain - verify","Safe+UniV3","—","Sdex","1 vol≠tvl","1","10/23/2023","—","NO","UNCLEAR","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+looked at ETHF's DeFi setup, Sdex is the only DEX and no Safe multisig yet
+
+thought both could be a good fit here, Safe for team and protocol multisigs, Uniswap V3 for real LP depth, both are what Tier-1 protocols usually check before building on a new chain
+
+we've done Safe on 140+ networks and Uniswap V3 for BOB, Abstract, Mode, open to connecting teams on a group chat here?",""
+"MEER","Uncertain - verify","Safe+UniV3","—","CandySwap","1","1","10/23/2023","—","NO","UNCLEAR","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+looked at MEER's DeFi setup, CandySwap is the only DEX and no Safe multisig yet
+
+thought both could be a good fit here, Safe for team and protocol multisigs, Uniswap V3 for real LP depth, both are what Tier-1 protocols usually check before building on a new chain
+
+we've done Safe on 140+ networks and Uniswap V3 for BOB, Abstract, Mode, open to connecting teams on a group chat here?",""
+"Elysium","Uncertain - verify","Safe+UniV3","—","ElysiumSwap","1 vol≠tvl","1","10/23/2023","$18,415","NO","UNCLEAR","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+looked at Elysium's DeFi setup, ElysiumSwap is the only DEX and no Safe multisig yet
+
+thought both could be a good fit here, Safe for team and protocol multisigs, Uniswap V3 for real LP depth, both are what Tier-1 protocols usually check before building on a new chain
+
+we've done Safe on 140+ networks and Uniswap V3 for BOB, Abstract, Mode, open to connecting teams on a group chat here?",""
+"Bifrost Network","Active","Safe+UniV3","—","Everdex","1","5","10/18/2023","$13,258,192","NO","UNCLEAR","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+looked at Bifrost Network's DeFi setup, Everdex is the only DEX and no Safe multisig yet
+
+thought both could be a strong fit here, Safe for protocol and validator multisigs, Uniswap V3 for staking derivative liquidity
+
+we've done Safe on 140+ networks and Uniswap V3 for BOB, Abstract, Mode, open to connecting teams on a group chat here?",""
+"Dexalot","Active","Safe+UniV3","432204","Dexalot DEX","1","1","10/13/2023","$1,786,555","NO","NO","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+looked at Dexalot's DeFi setup, Dexalot DEX is the only DEX and no Safe multisig yet
+
+thought both could be a good fit, Safe for team and protocol multisigs, Uniswap V3 as a complementary AMM layer alongside your orderbook
+
+we've done Safe on 140+ networks and Uniswap V3 for BOB, Abstract, Mode, open to connecting teams on a group chat here?",""
+"Beam","Active","UniV3","4337","Beam Swap, Inferno Swap","2 vol≠tvl","2","10/10/2023","$1,013,418","YES","YES","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+looked at Beam's DEX setup, Beam Swap, Inferno Swap are running but no Uniswap V3 yet
+
+a canonical Uniswap V3 would give the ecosystem proper concentrated liquidity and attract market makers
+
+we've deployed canonical v3 for BOB, Abstract, Mode, thought we could do the same for Beam, open to connecting teams on a group chat here?",""
+"Kroma","Active","UniV3","255","iZiSwap, Prixmswap","2 vol≠tvl","8","9/16/2023","—","YES","YES","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+looked at Kroma's DEX setup, iZiSwap, Prixmswap are running but no Uniswap V3 yet
+
+a canonical Uniswap V3 would give the ecosystem proper concentrated liquidity and attract market makers
+
+we've deployed canonical v3 for BOB, Abstract, Mode, thought we could do the same for Kroma, open to connecting teams on a group chat here?",""
+"Pego","Uncertain - verify","Safe+UniV3","—","W3swap","1 vol≠tvl","2","9/13/2023","$47,690","NO","UNCLEAR","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+looked at Pego's DeFi setup, W3swap is the only DEX and no Safe multisig yet
+
+thought both could be a good fit, Safe for team and protocol multisigs, Uniswap V3 as the standard concentrated liquidity layer
+
+we've done Safe on 140+ networks and Uniswap V3 for BOB, Abstract, Mode, open to connecting teams on a group chat here?",""
+"Darwinia","Uncertain - verify","Safe+UniV3","—","SnowSwap AMM","1 vol≠tvl","1","9/9/2023","$4,236","NO","UNCLEAR","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+looked at Darwinia's DeFi setup, SnowSwap AMM is the only DEX and no Safe multisig yet
+
+thought both could be a good fit here, Safe for team and protocol multisigs, Uniswap V3 for real LP depth, both are what Tier-1 protocols usually check before building on a new chain
+
+we've done Safe on 140+ networks and Uniswap V3 for BOB, Abstract, Mode, open to connecting teams on a group chat here?",""
+"DSC","Uncertain - verify","Safe+UniV3","—","AmpleSwap","1 vol≠tvl","1","9/2/2023","—","NO","UNCLEAR","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+looked at DSC's DeFi setup, AmpleSwap is the only DEX and no Safe multisig yet
+
+thought both could be a good fit here, Safe for team and protocol multisigs, Uniswap V3 for real LP depth, both are what Tier-1 protocols usually check before building on a new chain
+
+we've done Safe on 140+ networks and Uniswap V3 for BOB, Abstract, Mode, open to connecting teams on a group chat here?",""
+"ALV","Uncertain - verify","Safe+UniV3","—","AmpleSwap, Alvey Dex","2 vol≠tvl","2","8/26/2023","—","NO","UNCLEAR","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+looked at ALV's DeFi setup, AmpleSwap, Alvey Dex are the DEXes there and no Safe multisig yet
+
+thought both could be a good fit here, Safe for team and protocol multisigs, Uniswap V3 for real LP depth, both are what Tier-1 protocols usually check before building on a new chain
+
+we've done Safe on 140+ networks and Uniswap V3 for BOB, Abstract, Mode, open to connecting teams on a group chat here?",""
+"Aura Network","Active","Safe+UniV3","—","HaloTrade Cosmos, HaloTrade EVM","2 vol≠tvl","3","8/9/2023","$19,776","NO","UNCLEAR","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+looked at Aura Network's DeFi setup, HaloTrade Cosmos, HaloTrade EVM are the DEXes there and no Safe multisig yet
+
+thought both could be a good fit, Safe for DAO and protocol multisigs, Uniswap V3 for token liquidity on the EVM side
+
+we've done Safe on 140+ networks and Uniswap V3 for BOB, Abstract, Mode, open to connecting teams on a group chat here?",""
+"Tenet","DEAD - Defunct 2024","UniV3","—","Tenx, Tendie Swap","2 vol≠tvl","3","7/11/2023","—","YES","UNCLEAR","N/A - DEAD - Defunct 2024",""
+"Rollux","Active","Safe+UniV3","—","Chainge Finance, PegaSys V3","2 vol≠tvl","5","6/30/2023","$12,169,897","NO","UNCLEAR","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+looked at Rollux's DeFi setup, Chainge Finance, PegaSys V3 are the DEXes there and no Safe multisig yet
+
+thought both could be a good fit here, Safe for team and protocol multisigs, Uniswap V3 for real LP depth, both are what Tier-1 protocols usually check before building on a new chain
+
+we've done Safe on 140+ networks and Uniswap V3 for BOB, Abstract, Mode, open to connecting teams on a group chat here?",""
+"ENULS","Uncertain - verify","Safe+UniV3","—","PheasantSwap","1","3","4/26/2023","—","NO","UNCLEAR","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+looked at ENULS's DeFi setup, PheasantSwap is the only DEX and no Safe multisig yet
+
+thought both could be a good fit here, Safe for team and protocol multisigs, Uniswap V3 for real LP depth, both are what Tier-1 protocols usually check before building on a new chain
+
+we've done Safe on 140+ networks and Uniswap V3 for BOB, Abstract, Mode, open to connecting teams on a group chat here?",""
+"Oasys","Active","Safe+UniV3","—","Gaming DEX, Tealswap V3, Tealswap V2","3 vol≠tvl","7","4/23/2023","$497,372","NO","UNCLEAR","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+looked at Oasys's DeFi setup, Gaming DEX, Tealswap V3, Tealswap V2 are the DEXes there and no Safe multisig yet
+
+thought both could fit well here, Safe for game studio and protocol multisigs, Uniswap V3 as the liquidity layer gaming tokens need
+
+we've done Safe on 140+ networks and Uniswap V3 for BOB, Abstract, Mode, open to connecting teams on a group chat here?",""
+"Loop","Uncertain - verify","Safe+UniV3","—","Sphynx, ZukeSwap","2 vol≠tvl","2","3/21/2023","$21,640","NO","UNCLEAR","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+looked at Loop's DeFi setup, Sphynx, ZukeSwap are the DEXes there and no Safe multisig yet
+
+thought both could be a good fit here, Safe for team and protocol multisigs, Uniswap V3 for real LP depth, both are what Tier-1 protocols usually check before building on a new chain
+
+we've done Safe on 140+ networks and Uniswap V3 for BOB, Abstract, Mode, open to connecting teams on a group chat here?",""
+"Lung","Uncertain - verify","Safe+UniV3","78887","Lunagens","1 vol≠tvl","1","3/11/2023","—","NO","NO","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+looked at Lung's DeFi setup, Lunagens is the only DEX and no Safe multisig yet
+
+thought both could be a good fit here, Safe for team and protocol multisigs, Uniswap V3 for real LP depth, both are what Tier-1 protocols usually check before building on a new chain
+
+we've done Safe on 140+ networks and Uniswap V3 for BOB, Abstract, Mode, open to connecting teams on a group chat here?",""
+"Crab","Active","UniV3","44","SnowSwap AMM","1 vol≠tvl","1","3/9/2023","$2,301","NO","YES","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+looked at Crab's DEX setup, SnowSwap AMM is running but no Uniswap V3 yet
+
+a canonical Uniswap V3 would give the Crab ecosystem a proper AMM layer
+
+we've deployed canonical v3 for BOB, Abstract, Mode, thought we could do the same for Crab, open to connecting teams on a group chat here?",""
+"Bitindi","Uncertain - verify","Safe+UniV3","—","Bitindi Dex","1 vol≠tvl","2","1/26/2023","—","NO","UNCLEAR","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+looked at Bitindi's DeFi setup, Bitindi Dex is the only DEX and no Safe multisig yet
+
+thought both could be a good fit here, Safe for team and protocol multisigs, Uniswap V3 for real LP depth, both are what Tier-1 protocols usually check before building on a new chain
+
+we've done Safe on 140+ networks and Uniswap V3 for BOB, Abstract, Mode, open to connecting teams on a group chat here?",""
+"Zeniq","Uncertain - verify","Safe+UniV3","—","Zeniq Swap","1 vol≠tvl","1","1/15/2023","—","NO","UNCLEAR","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+looked at Zeniq's DeFi setup, Zeniq Swap is the only DEX and no Safe multisig yet
+
+thought both could be a good fit here, Safe for team and protocol multisigs, Uniswap V3 for real LP depth, both are what Tier-1 protocols usually check before building on a new chain
+
+we've done Safe on 140+ networks and Uniswap V3 for BOB, Abstract, Mode, open to connecting teams on a group chat here?",""
+"Boba_Bnb","DEAD - Boba BNB sunset","UniV3","—","SushiSwap","1 vol≠tvl","1","12/24/2022","—","YES","UNCLEAR","N/A - DEAD - Boba BNB sunset",""
+"Empire","DEAD - Abandoned","Safe+UniV3","—","EmpireDEX","1 vol≠tvl","1","12/23/2022","—","NO","UNCLEAR","N/A - DEAD - Abandoned",""
+"Dexit","Uncertain - verify","Safe+UniV3","—","Dexit Finance Swap","1 vol≠tvl","3","12/14/2022","—","NO","UNCLEAR","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+looked at Dexit's DeFi setup, Dexit Finance Swap is the only DEX and no Safe multisig yet
+
+thought both could be a good fit here, Safe for team and protocol multisigs, Uniswap V3 for real LP depth, both are what Tier-1 protocols usually check before building on a new chain
+
+we've done Safe on 140+ networks and Uniswap V3 for BOB, Abstract, Mode, open to connecting teams on a group chat here?",""
+"Step","Uncertain - verify","Safe+UniV3","—","Step Exchange","1","2","11/25/2022","$24,560","NO","UNCLEAR","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+looked at Step's DeFi setup, Step Exchange is the only DEX and no Safe multisig yet
+
+thought both could be a good fit here, Safe for team and protocol multisigs, Uniswap V3 for real LP depth, both are what Tier-1 protocols usually check before building on a new chain
+
+we've done Safe on 140+ networks and Uniswap V3 for BOB, Abstract, Mode, open to connecting teams on a group chat here?",""
+"Onus","Active","Safe+UniV3","—","Defily Dex, Heraswap, MiaSwap","3 vol≠tvl","5","11/12/2022","$284,925","NO","UNCLEAR","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+looked at Onus's DeFi setup, Defily Dex, Heraswap, MiaSwap are the DEXes there and no Safe multisig yet
+
+thought both could be a great fit, Safe for local protocol and team multisigs, Uniswap V3 as the standard AMM layer for a growing Southeast Asian chain
+
+we've done Safe on 140+ networks and Uniswap V3 for BOB, Abstract, Mode, open to connecting teams on a group chat here?",""
+"MUUCHAIN","Uncertain - verify","Safe+UniV3","20402","BarnSwap","1 vol≠tvl","1","11/8/2022","—","NO","NO","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+looked at MUUCHAIN's DeFi setup, BarnSwap is the only DEX and no Safe multisig yet
+
+thought both could be a good fit here, Safe for team and protocol multisigs, Uniswap V3 for real LP depth, both are what Tier-1 protocols usually check before building on a new chain
+
+we've done Safe on 140+ networks and Uniswap V3 for BOB, Abstract, Mode, open to connecting teams on a group chat here?",""
+"Milkomeda A1","DEAD - Milkomeda wound down 2024","UniV3","2002","Blueshift, BrightSide","2 vol≠tvl","3","10/27/2022","$1,146","NO","YES","N/A - DEAD - Milkomeda wound down 2024",""
+"Kekchain","DEAD - Abandoned meme chain","Safe+UniV3","420420","Frog Swap, KekSwap","2 vol≠tvl","3","10/23/2022","—","NO","NO","N/A - DEAD - Abandoned meme chain",""
+"Cube","Active","Safe+UniV3","1818","Capricorn Finance","1","3","9/26/2022","—","NO","NO","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+looked at Cube's DeFi setup, Capricorn Finance is the only DEX and no Safe multisig yet
+
+thought both could work well here, Safe for game studio multisigs, Uniswap V3 for in-game token liquidity
+
+we've done Safe on 140+ networks and Uniswap V3 for BOB, Abstract, Mode, open to connecting teams on a group chat here?",""
+"Vision","Uncertain - verify","Safe+UniV3","—","VanSwap","1","2","9/6/2022","—","NO","UNCLEAR","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+looked at Vision's DeFi setup, VanSwap is the only DEX and no Safe multisig yet
+
+thought both could be a good fit here, Safe for team and protocol multisigs, Uniswap V3 for real LP depth, both are what Tier-1 protocols usually check before building on a new chain
+
+we've done Safe on 140+ networks and Uniswap V3 for BOB, Abstract, Mode, open to connecting teams on a group chat here?",""
+"Tombchain","DEAD - Defunct","Safe+UniV3","—","Lif3 Swap","1","1","8/30/2022","$18,219","NO","UNCLEAR","N/A - DEAD - Defunct",""
+"Ultron","Active","UniV3","1231","iZiSwap, UltronSwap","2","3","8/29/2022","$99,172","NO","YES","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+looked at Ultron's DEX setup, iZiSwap, UltronSwap are running but no Uniswap V3 yet
+
+with your DeFi focus a canonical Uniswap V3 would give the ecosystem proper concentrated liquidity on top of what iZiSwap provides
+
+we've deployed canonical v3 for BOB, Abstract, Mode, thought we could do the same for Ultron, open to connecting teams on a group chat here?",""
+"Bifrost","Active","Safe+UniV3","—","Bifrost DEX","1","4","8/27/2022","$5,110,814","NO","UNCLEAR","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+looked at Bifrost's DeFi setup, Bifrost DEX is the only DEX and no Safe multisig yet
+
+thought both could be a strong fit, Safe for protocol and DAO multisigs, Uniswap V3 for liquid staking derivative liquidity
+
+we've done Safe on 140+ networks and Uniswap V3 for BOB, Abstract, Mode, open to connecting teams on a group chat here?",""
+"CLV","Active","Safe+UniV3","1024","Huckleberry AMM","1","6","8/14/2022","—","NO","NO","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+looked at CLV's DeFi setup, Huckleberry AMM is the only DEX and no Safe multisig yet
+
+thought both could work well here, Safe for protocol and team multisigs, Uniswap V3 as the standard concentrated liquidity layer
+
+we've done Safe on 140+ networks and Uniswap V3 for BOB, Abstract, Mode, open to connecting teams on a group chat here?",""
+"REI","Active","UniV3","47805","OortSwap","1 vol≠tvl","7","7/20/2022","$1,307","NO","YES","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+looked at REI's DEX setup, OortSwap is running but no Uniswap V3 yet
+
+a canonical Uniswap V3 would give REI Network a trusted liquidity layer protocols expect
+
+we've deployed canonical v3 for BOB, Abstract, Mode, thought we could do the same for REI, open to connecting teams on a group chat here?",""
+"Nova Network","Uncertain - verify","Safe+UniV3","87","Fusion Dex, QuasarSwap","2 vol≠tvl","2","7/4/2022","—","NO","NO","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+looked at Nova Network's DeFi setup, Fusion Dex, QuasarSwap are the DEXes there and no Safe multisig yet
+
+thought both could be a good fit here, Safe for team and protocol multisigs, Uniswap V3 for real LP depth, both are what Tier-1 protocols usually check before building on a new chain
+
+we've done Safe on 140+ networks and Uniswap V3 for BOB, Abstract, Mode, open to connecting teams on a group chat here?",""
+"Acala","Active","Safe+UniV3","—","Acala Swap","1","10","6/22/2022","$116,194","NO","UNCLEAR","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+looked at Acala's DeFi setup, Acala Swap is the only DEX and no Safe multisig yet
+
+thought both could be a strong fit, Safe for DAO and protocol multisigs, Uniswap V3 for deep EVM-side liquidity
+
+we've done Safe on 140+ networks and Uniswap V3 for BOB, Abstract, Mode, open to connecting teams on a group chat here?",""
+"MultiVAC","Uncertain - verify","Safe+UniV3","—","VAX, ABcDeFX","2 vol≠tvl","3","6/18/2022","$6,654","NO","UNCLEAR","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+looked at MultiVAC's DeFi setup, VAX, ABcDeFX are the DEXes there and no Safe multisig yet
+
+thought both could be a good fit here, Safe for team and protocol multisigs, Uniswap V3 for real LP depth, both are what Tier-1 protocols usually check before building on a new chain
+
+we've done Safe on 140+ networks and Uniswap V3 for BOB, Abstract, Mode, open to connecting teams on a group chat here?",""
+"OntologyEVM","Active","Safe+UniV3","58","iZiSwap, UniFi","2","4","5/31/2022","$2,337","NO","NO","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+looked at OntologyEVM's DeFi setup, iZiSwap, UniFi are the DEXes there and no Safe multisig yet
+
+thought both could be a good fit here, Safe for team and protocol multisigs, Uniswap V3 for real LP depth, both are what Tier-1 protocols usually check before building on a new chain
+
+we've done Safe on 140+ networks and Uniswap V3 for BOB, Abstract, Mode, open to connecting teams on a group chat here?",""
+"REIchain","Uncertain - verify","Safe+UniV3","55555","Foodcourt","1 vol≠tvl","1","5/30/2022","$1,564","NO","NO","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+looked at REIchain's DeFi setup, Foodcourt is the only DEX and no Safe multisig yet
+
+thought both could be a good fit here, Safe for team and protocol multisigs, Uniswap V3 for real LP depth, both are what Tier-1 protocols usually check before building on a new chain
+
+we've done Safe on 140+ networks and Uniswap V3 for BOB, Abstract, Mode, open to connecting teams on a group chat here?",""
+"Lachain","Active","Safe+UniV3","225","Ladex Exchange","1 vol≠tvl","3","5/25/2022","$16,595","NO","NO","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+looked at Lachain's DeFi setup, Ladex Exchange is the only DEX and no Safe multisig yet
+
+thought both could be a great fit, Safe for local protocol and team multisigs, Uniswap V3 as the liquidity layer LatAm DeFi projects expect
+
+we've done Safe on 140+ networks and Uniswap V3 for BOB, Abstract, Mode, open to connecting teams on a group chat here?",""
+"Hydra","Active","Safe+UniV3","—","Hydradex V2, Hydradex V3","2","3","4/21/2022","$19,248","NO","UNCLEAR","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+looked at Hydra's DeFi setup, Hydradex V2, Hydradex V3 are the DEXes there and no Safe multisig yet
+
+thought both could be a good fit here, Safe for team and protocol multisigs, Uniswap V3 for real LP depth, both are what Tier-1 protocols usually check before building on a new chain
+
+we've done Safe on 140+ networks and Uniswap V3 for BOB, Abstract, Mode, open to connecting teams on a group chat here?",""
+"DFK","Active","UniV3","53935","Crystalvale","1 vol≠tvl","2","4/1/2022","$775,017","YES","NO","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+looked at DFK's DEX setup, Crystalvale is running but no Uniswap V3 yet
+
+with your gaming and DeFi focus a canonical Uniswap V3 would give JEWEL and other tokens proper liquidity depth
+
+we've deployed canonical v3 for BOB, Abstract, Mode, thought we could do the same for DFK, open to connecting teams on a group chat here?",""
+"Syscoin","Active","UniV3","57","PegaSys V2","1","4","2/19/2022","—","NO","YES","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+looked at Syscoin's DEX setup, PegaSys V2 is running but no Uniswap V3 yet
+
+with your Bitcoin + EVM hybrid positioning a canonical Uniswap V3 would give the EVM side a trusted liquidity layer
+
+we've deployed canonical v3 for BOB, Abstract, Mode, thought we could do the same for Syscoin, open to connecting teams on a group chat here?",""
+"Curio","Active","Safe+UniV3","8.37E+14","CapitalDEX","1 vol≠tvl","1","2/4/2022","—","NO","NO","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+looked at Curio's DeFi setup, CapitalDEX is the only DEX and no Safe multisig yet
+
+thought both could be a good fit here, Safe for team and protocol multisigs, Uniswap V3 for real LP depth, both are what Tier-1 protocols usually check before building on a new chain
+
+we've done Safe on 140+ networks and Uniswap V3 for BOB, Abstract, Mode, open to connecting teams on a group chat here?",""
+"Theta","Active","Safe+UniV3","361","ThetaSwap, VoltSwap","2 vol≠tvl","6","1/11/2022","$368,579","NO","NO","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+looked at Theta's DeFi setup, ThetaSwap, VoltSwap are the DEXes there and no Safe multisig yet
+
+thought both could be useful here, Safe for content protocol and team multisigs, Uniswap V3 for token liquidity
+
+we've done Safe on 140+ networks and Uniswap V3 for BOB, Abstract, Mode, open to connecting teams on a group chat here?",""
+"Nahmii","DEAD - Inactive since 2023","Safe+UniV3","5551","NiiFi","1 vol≠tvl","1","12/30/2021","$54,496","NO","NO","N/A - DEAD - Inactive since 2023",""
+"CSC","Active","Safe+UniV3","52","OneSwap, IFSwap","2 vol≠tvl","5","12/18/2021","$274,915","NO","NO","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+looked at CSC's DeFi setup, OneSwap, IFSwap are the DEXes there and no Safe multisig yet
+
+thought both could work well, Safe for exchange and protocol multisigs, Uniswap V3 for concentrated liquidity
+
+we've done Safe on 140+ networks and Uniswap V3 for BOB, Abstract, Mode, open to connecting teams on a group chat here?",""
+"Callisto","Active","Safe+UniV3","820","Soy Finance","1","1","12/12/2021","$4,117","NO","NO","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+looked at Callisto's DeFi setup, Soy Finance is the only DEX and no Safe multisig yet
+
+thought both could be a good fit, Safe for protocol and team multisigs, Uniswap V3 as the standard AMM layer
+
+we've done Safe on 140+ networks and Uniswap V3 for BOB, Abstract, Mode, open to connecting teams on a group chat here?",""
+"Godwoken","Active","Safe+UniV3","71394","YokaiSwap, StableKoi","2 vol≠tvl","3","12/10/2021","$54,665","NO","NO","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+looked at Godwoken's DeFi setup, YokaiSwap, StableKoi are the DEXes there and no Safe multisig yet
+
+thought both could work well here, Safe for protocol and team multisigs, Uniswap V3 for concentrated liquidity
+
+we've done Safe on 140+ networks and Uniswap V3 for BOB, Abstract, Mode, open to connecting teams on a group chat here?",""
+"Ubiq","Uncertain - verify","Safe+UniV3","8","Shinobi","1 vol≠tvl","1","11/30/2021","—","NO","NO","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+looked at Ubiq's DeFi setup, Shinobi is the only DEX and no Safe multisig yet
+
+thought both could be a good fit here, Safe for team and protocol multisigs, Uniswap V3 for real LP depth, both are what Tier-1 protocols usually check before building on a new chain
+
+we've done Safe on 140+ networks and Uniswap V3 for BOB, Abstract, Mode, open to connecting teams on a group chat here?",""
+"ZYX","Uncertain - verify","Safe+UniV3","55","ZYXSwap","1 vol≠tvl","1","11/16/2021","—","NO","NO","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+looked at ZYX's DeFi setup, ZYXSwap is the only DEX and no Safe multisig yet
+
+thought both could be a good fit here, Safe for team and protocol multisigs, Uniswap V3 for real LP depth, both are what Tier-1 protocols usually check before building on a new chain
+
+we've done Safe on 140+ networks and Uniswap V3 for BOB, Abstract, Mode, open to connecting teams on a group chat here?",""
+"Polis","Uncertain - verify","UniV3","333999","Hades Swap","1 vol≠tvl","1","11/14/2021","—","NO","YES","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+looked at Polis's DEX setup, Hades Swap is running but no Uniswap V3 yet
+
+a canonical Uniswap V3 would give Polis a proper AMM layer
+
+we've deployed canonical v3 for BOB, Abstract, Mode, thought we could do the same for Polis, open to connecting teams on a group chat here?",""
+"Elastos","Active","Safe+UniV3","20","Elk, Glide Finance","2","3","11/8/2021","$245,162","NO","NO","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+looked at Elastos's DeFi setup, Elk, Glide Finance are the DEXes there and no Safe multisig yet
+
+thought both could be a good fit, Safe for DAO and protocol multisigs, Uniswap V3 for real LP depth
+
+we've done Safe on 140+ networks and Uniswap V3 for BOB, Abstract, Mode, open to connecting teams on a group chat here?",""
+"Hoo","Uncertain - verify","Safe+UniV3","70","Elk, PuddingSwap","2 vol≠tvl","4","11/4/2021","—","NO","NO","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+looked at Hoo's DeFi setup, Elk, PuddingSwap are the DEXes there and no Safe multisig yet
+
+thought both could be a good fit here, Safe for team and protocol multisigs, Uniswap V3 for real LP depth, both are what Tier-1 protocols usually check before building on a new chain
+
+we've done Safe on 140+ networks and Uniswap V3 for BOB, Abstract, Mode, open to connecting teams on a group chat here?",""
+"Ronin","Active","Canonical UniV3","2020","Katana DEX, Katana DEX V3","2 vol≠tvl","12","11/3/2021","$14,108,113","NO","YES","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+noticed Ronin's Katana DEX V3 is live but not a canonical Uniswap deployment, means your pools won't show up in the official Uniswap interface and aggregators like 1inch tend to deprioritize non-canonical pools when routing gaming liquidity
+
+we've deployed canonical v3 on BOB, Abstract, Mode, thought we could handle the migration for Ronin cleanly, open to connecting teams on a group chat here?",""
+"GoChain","Uncertain - verify","Safe+UniV3","60","GoSwap","1 vol≠tvl","1","10/20/2021","$13,165","NO","NO","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+looked at GoChain's DeFi setup, GoSwap is the only DEX and no Safe multisig yet
+
+thought both could be a good fit here, Safe for team and protocol multisigs, Uniswap V3 for real LP depth, both are what Tier-1 protocols usually check before building on a new chain
+
+we've done Safe on 140+ networks and Uniswap V3 for BOB, Abstract, Mode, open to connecting teams on a group chat here?",""
+"EnergyWeb","Active","UniV3","246","CarbonSwap","1","2","10/15/2021","$64,058","NO","YES","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+looked at EnergyWeb's DEX setup, CarbonSwap is running but no Uniswap V3 yet
+
+with your energy sector focus a canonical Uniswap V3 would give EWT and clean energy tokens proper liquidity
+
+we've deployed canonical v3 for BOB, Abstract, Mode, thought we could do the same for EnergyWeb, open to connecting teams on a group chat here?",""
+"Palm","Active","UniV3","11297108109","SushiSwap, DONASWAP V2","2 vol≠tvl","2","9/14/2021","$529","NO","YES","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+looked at Palm's DEX setup, SushiSwap, DONASWAP V2 are running but no Uniswap V3 yet
+
+with your NFT focus a canonical Uniswap V3 would give PALM token pairs proper liquidity routing
+
+we've deployed canonical v3 for BOB, Abstract, Mode, thought we could do the same for Palm, open to connecting teams on a group chat here?",""
+"Fusion","Active","Safe+UniV3","32659","Chainge Finance, DONASWAP V2","2 vol≠tvl","3","9/13/2021","—","NO","NO","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+looked at Fusion's DeFi setup, Chainge Finance, DONASWAP V2 are the DEXes there and no Safe multisig yet
+
+thought both could be a good fit, Safe for team and DAO multisigs, Uniswap V3 as a standard AMM layer
+
+we've done Safe on 140+ networks and Uniswap V3 for BOB, Abstract, Mode, open to connecting teams on a group chat here?",""
+"HPB","Uncertain - verify","Safe+UniV3","269","Hpdex","1 vol≠tvl","1","9/7/2021","—","NO","NO","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+looked at HPB's DeFi setup, Hpdex is the only DEX and no Safe multisig yet
+
+thought both could be a good fit here, Safe for team and protocol multisigs, Uniswap V3 for real LP depth, both are what Tier-1 protocols usually check before building on a new chain
+
+we've done Safe on 140+ networks and Uniswap V3 for BOB, Abstract, Mode, open to connecting teams on a group chat here?",""
+"Karura","Active","Safe+UniV3","—","Karura Swap","1","5","8/11/2021","$69,855","NO","UNCLEAR","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+looked at Karura's DeFi setup, Karura Swap is the only DEX and no Safe multisig yet
+
+thought both could work well here, Safe for DAO and protocol multisigs, Uniswap V3 for real EVM-side liquidity depth
+
+we've done Safe on 140+ networks and Uniswap V3 for BOB, Abstract, Mode, open to connecting teams on a group chat here?",""
+"Energi","Active","Safe+UniV3","39797","Energiswap","1","3","3/27/2021","$152,543","NO","NO","hey Name, Vic from Protofire, trusted Safe & Uniswap partner
+
+looked at Energi's DeFi setup, Energiswap is the only DEX and no Safe multisig yet
+
+thought both could be a good fit, Safe for treasury and DAO multisigs, Uniswap V3 as the standard AMM layer
+
+we've done Safe on 140+ networks and Uniswap V3 for BOB, Abstract, Mode, open to connecting teams on a group chat here?",""
+"Bitcoin","Active","Safe+UniV3","—","Thorchain DEX","1 vol≠tvl","157","3/20/2021","$5,065,609,593","NO","UNCLEAR","N/A - Active",""
