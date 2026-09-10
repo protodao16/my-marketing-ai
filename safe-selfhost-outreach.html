@@ -1,887 +1,417 @@
-<title>Safe Self-Host Outreach — Protofire</title>
+<title>Safe Outreach — Protofire</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
   :root {
-    --bg: #f4f6f8; --surface: #ffffff; --surface-2: #eef1f4;
-    --ink: #16202b; --ink-soft: #4a5a6a; --ink-faint: #7a8a99;
-    --line: #dce3ea; --line-strong: #c3cdd7;
-    --accent: #e05127; --accent-soft: #fbe6de;
-    --crit: #c62f2f; --crit-bg: #fbe4e2;
-    --warn: #a8710a; --warn-bg: #f8ecd6;
-    --low: #4d6a86; --low-bg: #e6edf4;
-    --good: #1f7a52; --good-bg: #dff0e6;
-    --mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
-    --sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-    --shadow: 0 1px 2px rgba(22,32,43,.06), 0 4px 16px rgba(22,32,43,.05);
+    --bg:#f4f6f8; --surface:#fff; --surface-2:#eef1f4;
+    --ink:#16202b; --ink-soft:#4a5a6a; --ink-faint:#7a8a99;
+    --line:#dce3ea; --line-strong:#c3cdd7;
+    --accent:#e05127; --accent-soft:#fbe6de;
+    --warm:#1f7a52; --warm-bg:#dff0e6;
+    --cold:#4d6a86; --cold-bg:#e6edf4;
+    --flag:#a8710a; --flag-bg:#f8ecd6;
+    --mono:ui-monospace,"SF Mono","JetBrains Mono",Menlo,Consolas,monospace;
+    --sans:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    --shadow:0 1px 2px rgba(22,32,43,.06),0 4px 16px rgba(22,32,43,.05);
   }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #0e1319; --surface: #161d26; --surface-2: #1d2731;
-      --ink: #e7edf3; --ink-soft: #a6b4c2; --ink-faint: #6f8090;
-      --line: #263340; --line-strong: #35485a;
-      --accent: #ff7043; --accent-soft: #3a1f16;
-      --crit: #ff6a5e; --crit-bg: #3a1c1a;
-      --warn: #e0a53a; --warn-bg: #372a12;
-      --low: #7fa6cc; --low-bg: #1a2735;
-      --good: #4fbe8a; --good-bg: #143026;
-      --shadow: 0 1px 2px rgba(0,0,0,.3), 0 6px 22px rgba(0,0,0,.35);
-    }
+  @media (prefers-color-scheme:dark){:root{
+    --bg:#0e1319; --surface:#161d26; --surface-2:#1d2731;
+    --ink:#e7edf3; --ink-soft:#a6b4c2; --ink-faint:#6f8090;
+    --line:#263340; --line-strong:#35485a;
+    --accent:#ff7043; --accent-soft:#3a1f16;
+    --warm:#4fbe8a; --warm-bg:#143026;
+    --cold:#7fa6cc; --cold-bg:#1a2735;
+    --flag:#e0a53a; --flag-bg:#372a12;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 6px 22px rgba(0,0,0,.35);
+  }}
+  :root[data-theme="dark"]{
+    --bg:#0e1319; --surface:#161d26; --surface-2:#1d2731;
+    --ink:#e7edf3; --ink-soft:#a6b4c2; --ink-faint:#6f8090;
+    --line:#263340; --line-strong:#35485a;
+    --accent:#ff7043; --accent-soft:#3a1f16;
+    --warm:#4fbe8a; --warm-bg:#143026;
+    --cold:#7fa6cc; --cold-bg:#1a2735;
+    --flag:#e0a53a; --flag-bg:#372a12;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 6px 22px rgba(0,0,0,.35);
   }
-  :root[data-theme="dark"] {
-    --bg: #0e1319; --surface: #161d26; --surface-2: #1d2731;
-    --ink: #e7edf3; --ink-soft: #a6b4c2; --ink-faint: #6f8090;
-    --line: #263340; --line-strong: #35485a;
-    --accent: #ff7043; --accent-soft: #3a1f16;
-    --crit: #ff6a5e; --crit-bg: #3a1c1a;
-    --warn: #e0a53a; --warn-bg: #372a12;
-    --low: #7fa6cc; --low-bg: #1a2735;
-    --good: #4fbe8a; --good-bg: #143026;
-    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 6px 22px rgba(0,0,0,.35);
+  :root[data-theme="light"]{
+    --bg:#f4f6f8; --surface:#fff; --surface-2:#eef1f4;
+    --ink:#16202b; --ink-soft:#4a5a6a; --ink-faint:#7a8a99;
+    --line:#dce3ea; --line-strong:#c3cdd7;
+    --accent:#e05127; --accent-soft:#fbe6de;
+    --warm:#1f7a52; --warm-bg:#dff0e6;
+    --cold:#4d6a86; --cold-bg:#e6edf4;
+    --flag:#a8710a; --flag-bg:#f8ecd6;
+    --shadow:0 1px 2px rgba(22,32,43,.06),0 4px 16px rgba(22,32,43,.05);
   }
-  :root[data-theme="light"] {
-    --bg: #f4f6f8; --surface: #ffffff; --surface-2: #eef1f4;
-    --ink: #16202b; --ink-soft: #4a5a6a; --ink-faint: #7a8a99;
-    --line: #dce3ea; --line-strong: #c3cdd7;
-    --accent: #e05127; --accent-soft: #fbe6de;
-    --crit: #c62f2f; --crit-bg: #fbe4e2;
-    --warn: #a8710a; --warn-bg: #f8ecd6;
-    --low: #4d6a86; --low-bg: #e6edf4;
-    --good: #1f7a52; --good-bg: #dff0e6;
-    --shadow: 0 1px 2px rgba(22,32,43,.06), 0 4px 16px rgba(22,32,43,.05);
-  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.5;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:960px;margin:0 auto;padding:32px 20px 96px;}
+  .kicker{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600;}
+  h1{font-size:clamp(24px,4vw,36px);line-height:1.1;margin:8px 0 10px;letter-spacing:-.02em;}
+  .sub{color:var(--ink-soft);font-size:15.5px;max-width:64ch;}
+  section{margin-top:24px;}
+  h2{font-size:13px;font-family:var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);margin:0 0 12px;font-weight:600;}
+  .panel{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 20px;box-shadow:var(--shadow);}
+  .mono{font-family:var(--mono);font-size:12.5px;}
+  .struct{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:4px;}
+  @media(max-width:720px){.struct{grid-template-columns:1fr;}}
+  .struct div{background:var(--surface-2);border-radius:10px;padding:12px 14px;font-size:13.5px;color:var(--ink-soft);}
+  .struct b{color:var(--ink);display:block;margin-bottom:3px;font-size:12px;font-family:var(--mono);letter-spacing:.03em;text-transform:uppercase;}
 
-  * { box-sizing: border-box; }
-  body { margin: 0; background: var(--bg); color: var(--ink);
-    font-family: var(--sans); line-height: 1.5; -webkit-font-smoothing: antialiased; }
-  .wrap { max-width: 1080px; margin: 0 auto; padding: 32px 20px 96px; }
+  .net{scroll-margin-top:18px;margin-top:16px;}
+  .net-head{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;padding-bottom:10px;border-bottom:1px solid var(--line);margin-bottom:12px;}
+  .net-head h3{margin:0;font-size:19px;letter-spacing:-.01em;}
+  .badge{font-family:var(--mono);font-size:10.5px;font-weight:700;padding:2px 7px;border-radius:6px;letter-spacing:.04em;text-transform:uppercase;}
+  .badge.warm{color:var(--warm);background:var(--warm-bg);}
+  .badge.cold{color:var(--cold);background:var(--cold-bg);}
+  .badge.flag{color:var(--flag);background:var(--flag-bg);}
+  .stats{display:flex;gap:14px;flex-wrap:wrap;margin-left:auto;font-family:var(--mono);font-size:11.5px;color:var(--ink-faint);}
+  .stats b{color:var(--ink-soft);font-weight:600;}
 
-  header.top { margin-bottom: 28px; }
-  .kicker { font-family: var(--mono); font-size: 12px; letter-spacing: .12em;
-    text-transform: uppercase; color: var(--accent); font-weight: 600; }
-  h1 { font-size: clamp(26px, 4vw, 40px); line-height: 1.08; margin: 8px 0 10px;
-    letter-spacing: -.02em; text-wrap: balance; }
-  .sub { color: var(--ink-soft); font-size: 16px; max-width: 62ch; }
+  .intel{background:var(--surface-2);border-radius:10px;padding:10px 13px;margin-bottom:12px;font-size:12.5px;color:var(--ink-soft);display:flex;flex-direction:column;gap:5px;}
+  .intel .row{display:flex;gap:8px;}
+  .intel .k{font-family:var(--mono);font-size:10.5px;letter-spacing:.03em;text-transform:uppercase;color:var(--ink-faint);flex:none;width:78px;padding-top:1px;}
+  .intel .ver{font-family:var(--mono);color:var(--ink);}
 
-  .panel { background: var(--surface); border: 1px solid var(--line);
-    border-radius: 14px; padding: 20px 22px; box-shadow: var(--shadow); }
-  section { margin-top: 26px; }
-  h2 { font-size: 13px; font-family: var(--mono); letter-spacing: .1em;
-    text-transform: uppercase; color: var(--ink-faint); margin: 0 0 14px; font-weight: 600; }
-  h3 { margin: 0; font-size: 20px; letter-spacing: -.01em; }
-
-  .logic-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-  @media (max-width: 720px){ .logic-grid { grid-template-columns: 1fr; } }
-  .logic-grid h4 { margin: 0 0 8px; font-size: 15px; }
-  .logic-grid p { margin: 0 0 8px; color: var(--ink-soft); font-size: 14.5px; }
-  .rule { margin-top: 14px; padding: 14px 16px; border-left: 3px solid var(--accent);
-    background: var(--accent-soft); border-radius: 0 10px 10px 0; font-size: 14.5px; }
-  table.map { width: 100%; border-collapse: collapse; margin-top: 6px; font-size: 14px; }
-  table.map td { padding: 7px 10px; border-bottom: 1px solid var(--line); }
-  table.map td:first-child { font-family: var(--mono); color: var(--ink); }
-  table.map td:last-child { font-family: var(--mono); color: var(--ink-soft); }
-  .mono { font-family: var(--mono); font-size: 12.5px; }
-  .x { color: var(--crit); }
-
-  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
-  .chip { font-family: var(--mono); font-size: 11.5px; font-weight: 600;
-    padding: 3px 9px; border-radius: 999px; letter-spacing: .02em;
-    border: 1px solid transparent; white-space: nowrap; }
-  .chip.crit { color: var(--crit); background: var(--crit-bg); }
-  .chip.warn { color: var(--warn); background: var(--warn-bg); }
-  .chip.low  { color: var(--low);  background: var(--low-bg); }
-  .chip.good { color: var(--good); background: var(--good-bg); }
-
-  .nav { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
-  @media (max-width: 720px){ .nav { grid-template-columns: 1fr; } }
-  .nav-col h4 { margin: 0 0 8px; font-size: 13px; font-family: var(--mono);
-    letter-spacing: .05em; text-transform: uppercase; }
-  .nav-col.a h4 { color: var(--crit); }
-  .nav-col.b h4 { color: var(--warn); }
-  .nav-col.c h4 { color: var(--good); }
-  .nav-col ul { list-style: none; margin: 0; padding: 0; display: flex;
-    flex-direction: column; gap: 4px; }
-  .nav-col a { color: var(--ink-soft); text-decoration: none; font-size: 14px;
-    display: flex; justify-content: space-between; gap: 8px; padding: 3px 0;
-    border-bottom: 1px dashed transparent; }
-  .nav-col a:hover { color: var(--accent); border-bottom-color: var(--line-strong); }
-  .nav-col a .v { font-family: var(--mono); font-size: 12px; color: var(--ink-faint); }
-
-  .net { scroll-margin-top: 18px; margin-top: 18px; }
-  .net-head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap;
-    padding-bottom: 12px; border-bottom: 1px solid var(--line); margin-bottom: 14px; }
-  .net-head .tier { font-family: var(--mono); font-size: 11px; font-weight: 700;
-    padding: 2px 7px; border-radius: 6px; letter-spacing: .05em; }
-  .tier.A { color: #fff; background: var(--crit); }
-  .tier.B { color: #fff; background: var(--warn); }
-  .tier.C { color: #fff; background: var(--good); }
-  @media (prefers-color-scheme: dark){ .tier.A,.tier.B,.tier.C { color: #0e1319; } }
-  :root[data-theme="dark"] .tier.A,
-  :root[data-theme="dark"] .tier.B,
-  :root[data-theme="dark"] .tier.C { color: #0e1319; }
-  :root[data-theme="light"] .tier.A,
-  :root[data-theme="light"] .tier.B,
-  :root[data-theme="light"] .tier.C { color: #fff; }
-  .net-head .note { color: var(--ink-faint); font-size: 13px; }
-
-  .versions { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
-  .vpill { font-family: var(--mono); font-size: 12px; border: 1px solid var(--line-strong);
-    border-radius: 8px; padding: 4px 10px; display: flex; gap: 7px; align-items: center;
-    background: var(--surface-2); }
-  .vpill .lbl { color: var(--ink-faint); text-transform: uppercase; font-size: 10.5px;
-    letter-spacing: .06em; }
-  .vpill .num { color: var(--ink); font-weight: 600; }
-  .vpill.old .num { color: var(--crit); }
-  .vpill.mid .num { color: var(--warn); }
-  .vpill.cur .num { color: var(--good); }
-  .vpill.na  { opacity: .55; }
-
-  .gaps { margin: 0 0 16px; padding: 0; list-style: none; display: flex;
-    flex-direction: column; gap: 7px; }
-  .gaps li { display: flex; gap: 10px; align-items: flex-start; font-size: 14px;
-    color: var(--ink-soft); }
-  .gaps li .chip { flex: none; margin-top: 1px; }
-  .reflabel { font-size: 11.5px; font-family: var(--mono); color: var(--ink-faint);
-    letter-spacing: .04em; text-transform: uppercase; margin: 2px 0 8px; }
-
-  .msgs { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-  @media (max-width: 780px){ .msgs { grid-template-columns: 1fr; } }
-  .msg { border: 1px solid var(--line); border-radius: 11px; overflow: hidden;
-    background: var(--surface); display: flex; flex-direction: column; }
-  .msg.span2 { grid-column: 1 / -1; }
-  .msg-head { display: flex; justify-content: space-between; align-items: center;
-    padding: 9px 12px; background: var(--surface-2); border-bottom: 1px solid var(--line); }
-  .msg-head .t { font-family: var(--mono); font-size: 11.5px; font-weight: 600;
-    letter-spacing: .04em; text-transform: uppercase; color: var(--ink-soft); }
-  .msg-head.tg .t { color: var(--accent); }
-  .msg-head .r { display: flex; align-items: center; gap: 10px; }
-  .cc { font-family: var(--mono); font-size: 11px; color: var(--ink-faint); }
-  .cc.over { color: var(--crit); font-weight: 700; }
-  .copy { font-family: var(--mono); font-size: 11px; cursor: pointer;
-    border: 1px solid var(--line-strong); background: var(--surface); color: var(--ink-soft);
-    border-radius: 6px; padding: 3px 9px; }
-  .copy:hover { color: var(--accent); border-color: var(--accent); }
-  .copy:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-  .msg .body { padding: 12px 14px; font-size: 13.5px; white-space: pre-wrap;
-    line-height: 1.55; color: var(--ink); margin: 0; font-family: var(--sans); }
-
-  .dead { font-size: 14px; color: var(--ink-soft); }
-  .dead code { font-family: var(--mono); font-size: 12.5px; color: var(--ink); }
-  footer { margin-top: 40px; color: var(--ink-faint); font-size: 12.5px;
-    border-top: 1px solid var(--line); padding-top: 16px; }
-  .ph { background: var(--accent-soft); color: var(--accent); border-radius: 4px;
-    padding: 0 3px; font-weight: 600; }
+  .msg{border:1px solid var(--line);border-radius:11px;overflow:hidden;background:var(--surface);}
+  .msg-head{display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:var(--surface-2);border-bottom:1px solid var(--line);}
+  .msg-head .t{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--accent);}
+  .msg-head .r{display:flex;align-items:center;gap:10px;}
+  .cc{font-family:var(--mono);font-size:11px;color:var(--ink-faint);}
+  .copy{font-family:var(--mono);font-size:11px;cursor:pointer;border:1px solid var(--line-strong);background:var(--surface);color:var(--ink-soft);border-radius:6px;padding:3px 9px;}
+  .copy:hover{color:var(--accent);border-color:var(--accent);}
+  .copy:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+  .body{padding:12px 14px;font-size:13.5px;white-space:pre-wrap;line-height:1.55;margin:0;font-family:var(--sans);}
+  .ph{background:var(--accent-soft);color:var(--accent);border-radius:4px;padding:0 3px;font-weight:600;}
+  footer{margin-top:36px;color:var(--ink-faint);font-size:12.5px;border-top:1px solid var(--line);padding-top:16px;}
 </style>
 
 <div class="wrap">
-  <header class="top">
-    <div class="kicker">Protofire · Safe deployment team</div>
-    <h1>Self-host outreach playbook</h1>
-    <p class="sub">Сети, которые селф-хостят Safe: приоритет, суть проблемы простым языком и готовые сообщения под каждую — Telegram, follow-up, LinkedIn connect note и сообщение после коннекта.</p>
-  </header>
+  <div class="kicker">Protofire · Safe outreach</div>
+  <h1>Self-host outreach — per-network messages</h1>
+  <p class="sub">Дружеский FYI-подход: заметили вашу версию → мягко подсветили момент → предложили захостить + мультичейн-плюшки. Один инсайт на сообщение, тон под тёплые/холодные контакты.</p>
 
-  <!-- LOGIC -->
   <section>
-    <h2>Как читать связку таблиц (для себя)</h2>
+    <h2>Структура сообщения</h2>
     <div class="panel">
-      <div class="logic-grid">
-        <div>
-          <h4>Таблица 2 — «кто что задеплоил»</h4>
-          <p>Строка = сеть и её <b>текущие</b> версии по 4 сервисам: <span class="mono">ui_web</span>, <span class="mono">cgw</span>, <span class="mono">config</span>, <span class="mono">tx</span>.</p>
-        </div>
-        <div>
-          <h4>Таблица 1 — «что чинили и когда»</h4>
-          <p>Строка = дырка или фича. Ключ — <span class="mono">github_version_fixed</span>: версия, где закрыли. Плюс severity и угол питча.</p>
-        </div>
+      <div class="struct">
+        <div><b>1 · Заход</b>Кто я + мы делаем крутое: строим hosted multichain Safe UI (20+ сетей, Tron скоро — будем первыми).</div>
+        <div><b>2 · Инсайт</b>Конкретно про их Safe — из ресёрча. Мягко, «potentially». Для каждой сети свой (не Fantom-строчка везде).</div>
+        <div><b>3 · Оффер + CTA</b>Захостим и засупортим на мультичейн-UI + плюшка под размер сети. Холодным: «who's best to chat?»; тёплым: «worth picking back up?».</div>
       </div>
-      <div class="rule"><b>Правило (одно):</b> версия сервиса сети → в Таблице 1 строки того же сервиса, где <span class="mono">fixed &gt; текущая</span> → это ровно те дыры, которых у сети нет. Старее версия = длиннее список.</div>
-      <div style="margin-top:16px">
-        <h4 style="margin:0 0 4px;font-size:14px">По каким колонкам джойнить</h4>
-        <table class="map">
-          <tr><td>web</td><td>→ ui_web_version</td></tr>
-          <tr><td>safe-config-service</td><td>→ config_service_version</td></tr>
-          <tr><td>safe-transaction-service</td><td>→ tx_service_version</td></tr>
-          <tr><td>safe-events-service</td><td><span class="x">→ нет пары — не проверить</span></td></tr>
-          <tr><td><span class="x">нет пары в Таблице 1</span></td><td>← cgw_version</td></tr>
-        </table>
-        <p style="color:var(--ink-faint);font-size:13px;margin:10px 0 0">Питч строится на трёх сервисах — <b>ui / config / tx</b>. Блоки «версии/дыры» в каждой карточке — это твоя шпаргалка; сами сообщения намеренно без цифр и терминов.</p>
-      </div>
+      <p style="margin:12px 0 0;font-size:12.5px;color:var(--ink-faint)">Плейсхолдеры: <span class="ph">[name]</span> · <span class="ph">[company]</span>. Строка <span class="mono">intel</span> в каждой карточке — твоя шпаргалка (версия + статус отношений), в текст не идёт. <span class="badge warm" style="font-size:10px">warm</span> = есть чат/история → тон «hey guys, long time». <span class="badge cold" style="font-size:10px">cold</span> = холодный. <span class="badge flag" style="font-size:10px">flag</span> = требует проверки перед отправкой.</p>
     </div>
   </section>
 
-  <!-- STRATEGY -->
   <section>
-    <h2>Общий угол — на чём продаём</h2>
-    <div class="panel">
-      <p style="margin:0 0 10px;font-size:14.5px;color:var(--ink-soft)">Единый нерв для <b>всех</b> сетей, независимо от версии: Safe сменил лицензию → самостоятельные деплои больше не получают официальные обновления и патчи → версия «замерзает», а дыры со временем копятся. <b>Мы — лицензированный провайдер, который это чинит и держит официальным.</b></p>
-      <div class="chips">
-        <span class="chip crit">Старые версии → давим на конкретный риск простым языком</span>
-        <span class="chip good">Свежие версии → не хвалим, давим на «неофициальная = тупик без апдейтов»</span>
-      </div>
-      <p style="margin:12px 0 0;font-size:13.5px;color:var(--ink-faint)">Плейсхолдеры: <span class="ph">[name]</span> — имя, <span class="ph">[Network]</span> — сеть, <span class="ph">[link]</span> — их Safe-домен (колонка <span class="mono">notes</span> в Таблице 2).</p>
-    </div>
-  </section>
-
-  <!-- NAV -->
-  <section>
-    <h2>Навигация по сетям</h2>
-    <div class="panel">
-      <div class="nav">
-        <div class="nav-col a">
-          <h4>Tier A — устарели, есть чем пугать</h4>
-          <ul>
-            <li><a href="#ethereumclassic">Ethereum Classic <span class="v">very old</span></a></li>
-            <li><a href="#manta">Manta <span class="v">very old</span></a></li>
-            <li><a href="#zklink">zkLink <span class="v">very old</span></a></li>
-            <li><a href="#viction">Viction <span class="v">old</span></a></li>
-            <li><a href="#stratis">Stratis <span class="v">old + tx падает</span></a></li>
-            <li><a href="#kaia">Kaia <span class="v">уходит на офиц.</span></a></li>
-          </ul>
-        </div>
-        <div class="nav-col b">
-          <h4>Tier B — фронт ок, движок старый</h4>
-          <ul>
-            <li><a href="#plume">Plume <span class="v">backend</span></a></li>
-            <li><a href="#apechain">ApeChain <span class="v">backend</span></a></li>
-            <li><a href="#bouncebit">BounceBit <span class="v">backend</span></a></li>
-            <li><a href="#qprotocol">Q Protocol <span class="v">backend</span></a></li>
-          </ul>
-        </div>
-        <div class="nav-col c">
-          <h4>Tier C — свежие → угол «неофициально»</h4>
-          <ul>
-            <li><a href="#eni">ENI</a></li>
-            <li><a href="#fraxtal">Fraxtal</a></li>
-            <li><a href="#beam">Beam</a></li>
-            <li><a href="#telos">Telos</a></li>
-            <li><a href="#fantom">Fantom <span class="v">нет backend</span></a></li>
-            <li><a href="#bitlayer">Bitlayer <span class="v">backend скрыт</span></a></li>
-            <li><a href="#hydra">Hydra <span class="v">backend скрыт</span></a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ TIER A ============ -->
-  <section>
-    <h2>Tier A — устаревшие, приоритетные</h2>
-
-    <!-- Ethereum Classic -->
-    <article class="net panel" id="ethereumclassic">
-      <div class="net-head"><span class="tier A">TIER A</span><h3>Ethereum Classic</h3>
-        <span class="note">Rebrand «Catacomb ETC Wallet» · verify перед отправкой</span></div>
-      <div class="versions">
-        <span class="vpill old"><span class="lbl">ui</span><span class="num">v1.18.0</span></span>
-        <span class="vpill old"><span class="lbl">config</span><span class="num">v2.52.0</span></span>
-        <span class="vpill old"><span class="lbl">tx</span><span class="num">v4.20.0</span></span>
-        <span class="vpill na"><span class="lbl">cgw</span><span class="num">3.53*</span></span>
-      </div>
-      <div class="reflabel">Шпаргалка · чем давить</div>
-      <ul class="gaps">
-        <li><span class="chip crit">High</span> Одобрение «вслепую» (blind-signing/eth_sign) — главный вектор drainer-краж.</li>
-        <li><span class="chip crit">High</span> Нет блока delegate-call — класс атаки Bybit 2025.</li>
-        <li><span class="chip crit">High</span> config открыт для request-smuggling + image-CVE.</li>
-      </ul>
-      <div class="msgs">
-        <div class="msg span2"><div class="msg-head tg"><span class="t">Telegram · первое сообщение</span><div class="r"><span class="cc" data-cc></span><button class="copy">Copy</button></div></div>
-          <p class="body">Hey [name], I'm Vic from the Safe deployment team at Protofire.
-
-I noticed [Network] runs its own self-hosted Safe ([link]), and wanted to give you a heads-up before it turns into a real problem. Safe recently changed its licensing, and the practical effect is that DIY setups like yours no longer receive official updates or security patches — so the version you're on today is basically frozen in place.
-
-The build you're running is a pretty old one, and a couple of the gaps are the kind that actually cost people money: a user can be tricked into approving a transaction they can't really read (that's the trick behind most wallet-drainer thefts), and the exact loophole used in last year's $1.5B Bybit hack was never closed on your version.
-
-We partnered with Safe as a licensed provider and have done this for 130+ networks, so we can quietly move [Network] onto the official, up-to-date version and keep it patched from there. Would it be worth a quick call between our teams?</p></div>
-        <div class="msg span2"><div class="msg-head"><span class="t">Follow-up · если молчат</span><div class="r"><span class="cc" data-cc></span><button class="copy">Copy</button></div></div>
-          <p class="body">Hey [name], just floating this back up — no rush at all. If it's easier, I can send a short before/after of what moving [Network] onto the official Safe would actually change on your end. Happy to keep it simple.</p></div>
-        <div class="msg"><div class="msg-head"><span class="t">LinkedIn · connect note (≤300)</span><div class="r"><span class="cc" data-cc data-limit="300"></span><button class="copy">Copy</button></div></div>
-          <p class="body">Hi [name] — Vic, Protofire Safe deployment team. Noticed [Network] self-hosts Safe. Since Safe's licensing change, DIY setups no longer get official updates, opening real security gaps over time. We're a licensed provider (130+ networks) and can fix it. Open to connecting?</p></div>
-        <div class="msg"><div class="msg-head"><span class="t">LinkedIn · после коннекта</span><div class="r"><span class="cc" data-cc></span><button class="copy">Copy</button></div></div>
-          <p class="body">Thanks for connecting, [name]! Straight to it: because [Network]'s Safe is self-hosted, Safe's licensing change means it's no longer getting official updates — so it's stuck on an old build with a few genuinely risky gaps (people approving transactions they can't read, plus the loophole behind the Bybit hack). We're licensed by Safe to fix exactly this, on 130+ networks so far. Could we grab 15 minutes with your team to walk through it?</p></div>
-      </div>
-    </article>
-
-    <!-- Manta -->
-    <article class="net panel" id="manta">
-      <div class="net-head"><span class="tier A">TIER A</span><h3>Manta</h3>
-        <span class="note">gateway/config/transaction.safe.manta.network — все live</span></div>
-      <div class="versions">
-        <span class="vpill old"><span class="lbl">ui</span><span class="num">v1.21.0</span></span>
-        <span class="vpill old"><span class="lbl">config</span><span class="num">v2.64.0</span></span>
-        <span class="vpill old"><span class="lbl">tx</span><span class="num">v4.27.4</span></span>
-        <span class="vpill na"><span class="lbl">cgw</span><span class="num">n/a</span></span>
-      </div>
-      <div class="reflabel">Шпаргалка · чем давить</div>
-      <ul class="gaps">
-        <li><span class="chip crit">High</span> Blind-signing/eth_sign + MITM — нет защиты подписи.</li>
-        <li><span class="chip crit">High</span> Нет delegate-call блока (Bybit-класс).</li>
-        <li><span class="chip crit">High</span> config: request-smuggling + image memory-safety.</li>
-      </ul>
-      <div class="msgs">
-        <div class="msg span2"><div class="msg-head tg"><span class="t">Telegram · первое сообщение</span><div class="r"><span class="cc" data-cc></span><button class="copy">Copy</button></div></div>
-          <p class="body">Hey [name], I'm Vic from the Safe deployment team at Protofire.
-
-I saw that [Network] runs its own self-hosted Safe ([link]) and wanted to flag something early. Safe recently changed its licensing, so self-hosted setups like yours don't really get official updates or security patches anymore — whatever version you're on is now where it stays.
-
-Yours is a few years behind, and a couple of the gaps are the scary kind: users can be tricked into approving a transaction they can't actually read (the move behind most wallet-drainer thefts), and the loophole from last year's $1.5B Bybit hack was never patched on your build.
-
-We're a licensed Safe provider and have done this for 130+ networks — we can move [Network] onto the official, current version and keep it maintained, without you having to babysit it. Worth a quick call between our teams?</p></div>
-        <div class="msg span2"><div class="msg-head"><span class="t">Follow-up · если молчат</span><div class="r"><span class="cc" data-cc></span><button class="copy">Copy</button></div></div>
-          <p class="body">Hey [name], bumping this once in case it slipped by — no pressure. If useful, I can lay out in a couple of lines exactly what changes for [Network] when it's on the official Safe. Happy to keep it light.</p></div>
-        <div class="msg"><div class="msg-head"><span class="t">LinkedIn · connect note (≤300)</span><div class="r"><span class="cc" data-cc data-limit="300"></span><button class="copy">Copy</button></div></div>
-          <p class="body">Hi [name] — Vic, Protofire Safe deployment team. Noticed Manta self-hosts Safe on an older build. Since Safe's licensing change, DIY setups no longer get official updates, leaving real security gaps over time. We're a licensed provider (130+ networks) and can fix it. Open to connecting?</p></div>
-        <div class="msg"><div class="msg-head"><span class="t">LinkedIn · после коннекта</span><div class="r"><span class="cc" data-cc></span><button class="copy">Copy</button></div></div>
-          <p class="body">Thanks for connecting, [name]! Quick version: [Network]'s Safe is self-hosted and a few years behind, and with Safe's licensing change it won't get official updates going forward. In plain terms that leaves a couple of real risks — users approving transactions they can't read, and the loophole behind the Bybit hack still open. We're licensed by Safe to fix exactly that (130+ networks so far). Could we grab 15 minutes with your team?</p></div>
-      </div>
-    </article>
-
-    <!-- zkLink -->
-    <article class="net panel" id="zklink">
-      <div class="net-head"><span class="tier A">TIER A</span><h3>zkLink</h3>
-        <span class="note">zkLink Nova · gateway/config/transaction.safe.zklink.io</span></div>
-      <div class="versions">
-        <span class="vpill old"><span class="lbl">ui</span><span class="num">v1.31.0</span></span>
-        <span class="vpill old"><span class="lbl">config</span><span class="num">v2.74.0</span></span>
-        <span class="vpill old"><span class="lbl">tx</span><span class="num">v4.37.0</span></span>
-        <span class="vpill na"><span class="lbl">cgw</span><span class="num">1.30.0</span></span>
-      </div>
-      <div class="reflabel">Шпаргалка · чем давить</div>
-      <ul class="gaps">
-        <li><span class="chip crit">High</span> Blind-signing/eth_sign — drainer-вектор.</li>
-        <li><span class="chip crit">High</span> Нет delegate-call блока (Bybit-класс).</li>
-        <li><span class="chip crit">High</span> config: image-CVE + request-smuggling.</li>
-      </ul>
-      <div class="msgs">
-        <div class="msg span2"><div class="msg-head tg"><span class="t">Telegram · первое сообщение</span><div class="r"><span class="cc" data-cc></span><button class="copy">Copy</button></div></div>
-          <p class="body">Hey [name], I'm Vic from the Safe deployment team at Protofire.
-
-Noticed zkLink Nova runs its own self-hosted Safe ([link]), and wanted to give you an early heads-up. Safe changed its licensing recently, which means self-hosted setups no longer get official updates or security patches — so your version is essentially locked where it is now.
-
-It's an older build, and a couple of the gaps really matter: someone can be tricked into approving a transaction they can't actually read (the trick behind most wallet-drainer thefts), and the loophole used in last year's $1.5B Bybit hack was never closed on your version.
-
-We're a licensed Safe provider (130+ networks) and can move zkLink onto the official, up-to-date version and keep it patched from there. Worth a quick chat between our teams?</p></div>
-        <div class="msg span2"><div class="msg-head"><span class="t">Follow-up · если молчат</span><div class="r"><span class="cc" data-cc></span><button class="copy">Copy</button></div></div>
-          <p class="body">Hey [name], floating this back up once — no rush. If it helps, I can send a quick rundown of what actually changes for zkLink once it's on the official Safe. Keeping it simple.</p></div>
-        <div class="msg"><div class="msg-head"><span class="t">LinkedIn · connect note (≤300)</span><div class="r"><span class="cc" data-cc data-limit="300"></span><button class="copy">Copy</button></div></div>
-          <p class="body">Hi [name] — Vic, Protofire Safe deployment team. Saw zkLink Nova self-hosts Safe on an older build. Since Safe's licensing change, DIY setups stop getting official updates, opening security gaps over time. We're a licensed provider (130+ networks) and can fix it. Open to connecting?</p></div>
-        <div class="msg"><div class="msg-head"><span class="t">LinkedIn · после коннекта</span><div class="r"><span class="cc" data-cc></span><button class="copy">Copy</button></div></div>
-          <p class="body">Thanks for connecting, [name]! In short: zkLink's Safe is self-hosted and on an older build, and Safe's licensing change means it won't get official updates anymore. Practically that leaves a couple of real risks — users approving transactions they can't read, and the loophole behind the Bybit hack still open. We're licensed by Safe to fix exactly that (130+ networks). Could we grab 15 minutes with your team?</p></div>
-      </div>
-    </article>
-
-    <!-- Viction -->
-    <article class="net panel" id="viction">
-      <div class="net-head"><span class="tier A">TIER A</span><h3>Viction</h3>
-        <span class="note">«Viction Safe» by RabbitSwap · safeapi.rabbitswap.xyz</span></div>
-      <div class="versions">
-        <span class="vpill mid"><span class="lbl">ui</span><span class="num">v1.45.2</span></span>
-        <span class="vpill mid"><span class="lbl">config</span><span class="num">v2.87.0</span></span>
-        <span class="vpill old"><span class="lbl">tx</span><span class="num">v5.11.20</span></span>
-        <span class="vpill na"><span class="lbl">cgw</span><span class="num">v1.61.0</span></span>
-      </div>
-      <div class="reflabel">Шпаргалка · чем давить</div>
-      <ul class="gaps">
-        <li><span class="chip crit">High</span> Blind-signing/eth_sign — drainer-вектор.</li>
-        <li><span class="chip crit">High</span> Нет delegate-call блока (Bybit-класс).</li>
-        <li><span class="chip warn">Med</span> Движок принимает поддельные подтверждения (EIP-1271).</li>
-      </ul>
-      <div class="msgs">
-        <div class="msg span2"><div class="msg-head tg"><span class="t">Telegram · первое сообщение</span><div class="r"><span class="cc" data-cc></span><button class="copy">Copy</button></div></div>
-          <p class="body">Hey [name], I'm Vic from the Safe deployment team at Protofire.
-
-I saw the Viction Safe (the RabbitSwap one) is self-hosted ([link]) and wanted to give you a heads-up. Safe recently changed its licensing, so self-hosted setups like yours stop getting official updates and security patches — your version is basically frozen from here.
-
-The part I'd flag: on your build, a user can be tricked into approving a transaction they can't actually read (the trick behind most wallet-drainer thefts), and the loophole used in last year's $1.5B Bybit hack isn't closed either.
-
-We're a licensed Safe provider (130+ networks) and can move Viction onto the official, current version and keep it maintained. Would a quick call between our teams make sense?</p></div>
-        <div class="msg span2"><div class="msg-head"><span class="t">Follow-up · если молчат</span><div class="r"><span class="cc" data-cc></span><button class="copy">Copy</button></div></div>
-          <p class="body">Hey [name], bumping this once — no pressure. If it's useful I can send a short before/after of what moving Viction onto the official Safe changes for you and your users. Happy to keep it brief.</p></div>
-        <div class="msg"><div class="msg-head"><span class="t">LinkedIn · connect note (≤300)</span><div class="r"><span class="cc" data-cc data-limit="300"></span><button class="copy">Copy</button></div></div>
-          <p class="body">Hi [name] — Vic, Protofire Safe deployment team. Saw the Viction Safe self-hosts on an older build. Since Safe's licensing change, DIY setups stop getting official updates, opening security gaps over time. We're a licensed provider (130+ networks) and can fix it. Open to connecting?</p></div>
-        <div class="msg"><div class="msg-head"><span class="t">LinkedIn · после коннекта</span><div class="r"><span class="cc" data-cc></span><button class="copy">Copy</button></div></div>
-          <p class="body">Thanks for connecting, [name]! Quick version: the Viction Safe is self-hosted and a bit behind, and Safe's licensing change means it won't get official updates going forward. That leaves a couple of real risks — users approving transactions they can't read, and the loophole behind the Bybit hack still open. We're licensed by Safe to fix exactly that (130+ networks). Could we grab 15 minutes with your team?</p></div>
-      </div>
-    </article>
-
-    <!-- Stratis -->
-    <article class="net panel" id="stratis">
-      <div class="net-head"><span class="tier A">TIER A</span><h3>Stratis</h3>
-        <span class="note">UI safe.stratisevm.com → safe.xertra.com · tx-service отдаёт Cloudflare 526</span></div>
-      <div class="versions">
-        <span class="vpill old"><span class="lbl">ui</span><span class="num">v1.30.0</span></span>
-        <span class="vpill na"><span class="lbl">config</span><span class="num">n/a</span></span>
-        <span class="vpill old"><span class="lbl">tx</span><span class="num">down</span></span>
-        <span class="vpill na"><span class="lbl">cgw</span><span class="num">n/a</span></span>
-      </div>
-      <div class="reflabel">Шпаргалка · чем давить</div>
-      <ul class="gaps">
-        <li><span class="chip crit">reliability</span> tx-service возвращает 526 — часть стека уже падает.</li>
-        <li><span class="chip crit">High</span> UI без blind-signing/eth_sign и address-poisoning.</li>
-      </ul>
-      <div class="msgs">
-        <div class="msg span2"><div class="msg-head tg"><span class="t">Telegram · первое сообщение</span><div class="r"><span class="cc" data-cc></span><button class="copy">Copy</button></div></div>
-          <p class="body">Hey [name], I'm Vic from the Safe deployment team at Protofire.
-
-I was looking at the Stratis Safe ([link]) and noticed two things worth flagging. First, part of it is actually broken right now — the transaction service is erroring out, so it's not fully working for your users. Second, the wallet itself is on an old build that's missing basic scam protections, like warning someone before they approve a transaction they can't actually read.
-
-On top of that, Safe recently changed its licensing, so self-hosted setups don't get official updates anymore — which is why this drifts and breaks in the first place.
-
-We're a licensed Safe provider (130+ networks) and can both get it back to fully working and move it onto the official, maintained version. Want to grab a quick call?</p></div>
-        <div class="msg span2"><div class="msg-head"><span class="t">Follow-up · если молчат</span><div class="r"><span class="cc" data-cc></span><button class="copy">Copy</button></div></div>
-          <p class="body">Hey [name], circling back — the broken transaction service is the part I'd fix first, it's a quick win for your users. Happy to show you what that would take in a couple of lines whenever you've got a minute.</p></div>
-        <div class="msg"><div class="msg-head"><span class="t">LinkedIn · connect note (≤300)</span><div class="r"><span class="cc" data-cc data-limit="300"></span><button class="copy">Copy</button></div></div>
-          <p class="body">Hi [name] — Vic, Protofire Safe deployment team. Noticed the Stratis Safe is partly down — its transaction service is erroring — and on an old build. Safe's licensing change also ends updates for DIY setups. We're a licensed provider (130+ networks) and can fix + maintain it. Open to connecting?</p></div>
-        <div class="msg"><div class="msg-head"><span class="t">LinkedIn · после коннекта</span><div class="r"><span class="cc" data-cc></span><button class="copy">Copy</button></div></div>
-          <p class="body">Thanks for connecting, [name]! Quick version: the Stratis Safe is self-hosted, part of it (the transaction service) is currently erroring out, and the wallet is on an old build missing basic scam protections. Safe's licensing change means a DIY setup won't get official fixes going forward either. We're licensed by Safe and can get it working again and keep it maintained (130+ networks). Could we grab 15 minutes?</p></div>
-      </div>
-    </article>
-
-    <!-- Kaia -->
-    <article class="net panel" id="kaia">
-      <div class="net-head"><span class="tier A">TIER A</span><h3>Kaia</h3>
-        <span class="note">⚠ safe.kaia.io закрывается 9 авг 2026 → уходят на app.safe.global. Угол = удержать брендинг.</span></div>
-      <div class="versions">
-        <span class="vpill old"><span class="lbl">ui</span><span class="num">v1.32.4</span></span>
-        <span class="vpill na"><span class="lbl">config</span><span class="num">n/a</span></span>
-        <span class="vpill old"><span class="lbl">tx</span><span class="num">v4.37.1</span></span>
-        <span class="vpill na"><span class="lbl">cgw</span><span class="num">n/a</span></span>
-      </div>
-      <div class="reflabel">Шпаргалка · контекст</div>
-      <ul class="gaps">
-        <li><span class="chip warn">context</span> Сами объявили sunset и уход на официальный — но на дженерик, не на партнёра.</li>
-        <li><span class="chip low">angle</span> Продаём альтернативу: свой домен + брендинг + наша поддержка вместо редиректа на generic.</li>
-      </ul>
-      <div class="msgs">
-        <div class="msg span2"><div class="msg-head tg"><span class="t">Telegram · первое сообщение</span><div class="r"><span class="cc" data-cc></span><button class="copy">Copy</button></div></div>
-          <p class="body">Hey [name], I'm Vic from the Safe deployment team at Protofire.
-
-I saw the notice that your Safe (safe.kaia.io) is winding down and users are being pointed to the generic app.safe.global. Totally understandable — keeping a self-hosted Safe updated is a real chore, especially now that Safe's licensing change means DIY setups don't get official updates.
-
-There's a middle option, though. Instead of sending your users off to a generic wallet, we can keep a fully-updated, official Safe running on your own kaia.io domain and branding — and we handle all the upkeep and the licensing side. Your users keep the native Kaia experience, and you drop the maintenance entirely.
-
-We're licensed by Safe and have done this for 130+ networks. Worth a quick chat before the cutover?</p></div>
-        <div class="msg span2"><div class="msg-head"><span class="t">Follow-up · если молчат</span><div class="r"><span class="cc" data-cc></span><button class="copy">Copy</button></div></div>
-          <p class="body">Hey [name], circling back before your Safe sunsets — if keeping a maintained, branded Safe on your own domain is at all interesting, I can lay out how it'd work in a couple of lines. No pressure either way.</p></div>
-        <div class="msg"><div class="msg-head"><span class="t">LinkedIn · connect note (≤300)</span><div class="r"><span class="cc" data-cc data-limit="300"></span><button class="copy">Copy</button></div></div>
-          <p class="body">Hi [name] — Vic, Protofire Safe deployment team. Saw safe.kaia.io is sunsetting toward the generic Safe app. Before that, we can keep a fully-updated, official Safe on your own domain and branding, fully managed. Licensed by Safe, 130+ networks. Open to connecting?</p></div>
-        <div class="msg"><div class="msg-head"><span class="t">LinkedIn · после коннекта</span><div class="r"><span class="cc" data-cc></span><button class="copy">Copy</button></div></div>
-          <p class="body">Thanks for connecting, [name]! Quick version: instead of moving Kaia users onto the generic app.safe.global, we can run an official, always-updated Safe on your own kaia.io domain and branding — with us handling every update and the licensing. We're a licensed Safe provider (130+ networks). Could we grab 15 minutes before the sunset to see if it's worth doing?</p></div>
-      </div>
-    </article>
-  </section>
-
-  <!-- ============ TIER B ============ -->
-  <section>
-    <h2>Tier B — фронт ок, движок старый</h2>
-    <p style="color:var(--ink-soft);font-size:14px;margin:-4px 0 4px">Кошелёк у них свежий — не давим на UI. Ведём с движка простым языком: «система может принять поддельное одобрение за настоящее». У Plume/ApeChain учитывай общий бэкенд OnchainDen.</p>
-
-    <!-- Plume -->
-    <article class="net panel" id="plume">
-      <div class="net-head"><span class="tier B">TIER B</span><h3>Plume Mainnet</h3>
-        <span class="note">Общая инфра OnchainDen</span></div>
-      <div class="versions">
-        <span class="vpill cur"><span class="lbl">ui</span><span class="num">v1.55.1</span></span>
-        <span class="vpill na"><span class="lbl">config</span><span class="num">n/a</span></span>
-        <span class="vpill mid"><span class="lbl">tx</span><span class="num">v5.18.4</span></span>
-        <span class="vpill na"><span class="lbl">cgw</span><span class="num">v1.72.0</span></span>
-      </div>
-      <div class="reflabel">Шпаргалка · чем давить</div>
-      <ul class="gaps">
-        <li><span class="chip crit">High</span> Движок может принять поддельную подпись за одобрение владельца (EIP-1271).</li>
-        <li><span class="chip warn">Med</span> Delegate-call allowlist ещё пропускает MultiSend.</li>
-      </ul>
-      <div class="msgs">
-        <div class="msg span2"><div class="msg-head tg"><span class="t">Telegram · первое сообщение</span><div class="r"><span class="cc" data-cc></span><button class="copy">Copy</button></div></div>
-          <p class="body">Hey [name], I'm Vic from the Safe deployment team at Protofire.
-
-Saw Plume runs a self-hosted Safe ([link]). The wallet side looks current, so I'll be straight — the part I'd flag is the engine behind it. On your version there's a known weakness where it can be fooled into treating a faked approval as if a real owner had signed off. The official build fixed it; a self-hosted one like yours never got that patch.
-
-And that's the bigger picture: Safe changed its licensing, so DIY setups don't receive official updates anymore — so this won't get the next fixes either.
-
-We're a licensed Safe provider (130+ networks) and can move Plume onto the official, maintained version. One note — your backend looks like it's on shared OnchainDen infra, so happy to loop in whoever runs that. Worth a quick chat?</p></div>
-        <div class="msg span2"><div class="msg-head"><span class="t">Follow-up · если молчат</span><div class="r"><span class="cc" data-cc></span><button class="copy">Copy</button></div></div>
-          <p class="body">Hey [name], bumping this once — no rush. If it's easier I can send a couple of lines on the one backend weakness and what moving to the official Safe fixes. Happy to keep it simple.</p></div>
-        <div class="msg"><div class="msg-head"><span class="t">LinkedIn · connect note (≤300)</span><div class="r"><span class="cc" data-cc data-limit="300"></span><button class="copy">Copy</button></div></div>
-          <p class="body">Hi [name] — Vic, Protofire Safe deployment team. Noticed Plume self-hosts Safe; the wallet's current but the engine behind it has a known weakness never patched on a DIY setup. Safe's licensing change ends updates too. We're a licensed provider (130+ networks). Open to connecting?</p></div>
-        <div class="msg"><div class="msg-head"><span class="t">LinkedIn · после коннекта</span><div class="r"><span class="cc" data-cc></span><button class="copy">Copy</button></div></div>
-          <p class="body">Thanks for connecting, [name]! Quick version: Plume's wallet looks current, but the engine behind it has a known weakness where it can accept a faked approval as a real owner's sign-off — fixed in the official build, but never patched on a self-hosted one. With Safe's licensing change it won't get future fixes either. We're licensed by Safe (130+ networks) and can move you onto the maintained version. Could we grab 15 minutes? (Happy to loop in your OnchainDen backend folks too.)</p></div>
-      </div>
-    </article>
-
-    <!-- ApeChain -->
-    <article class="net panel" id="apechain">
-      <div class="net-head"><span class="tier B">TIER B</span><h3>ApeChain</h3>
-        <span class="note">Инфра OnchainDen (отдельные сабдомены)</span></div>
-      <div class="versions">
-        <span class="vpill cur"><span class="lbl">ui</span><span class="num">v1.55.1</span></span>
-        <span class="vpill mid"><span class="lbl">config</span><span class="num">v2.89.0</span></span>
-        <span class="vpill mid"><span class="lbl">tx</span><span class="num">v5.18.4</span></span>
-        <span class="vpill na"><span class="lbl">cgw</span><span class="num">v1.72.0</span></span>
-      </div>
-      <div class="reflabel">Шпаргалка · чем давить</div>
-      <ul class="gaps">
-        <li><span class="chip crit">High</span> Движок может принять поддельную подпись за одобрение (EIP-1271).</li>
-        <li><span class="chip warn">Med</span> Delegate-call allowlist пропускает MultiSend.</li>
-      </ul>
-      <div class="msgs">
-        <div class="msg span2"><div class="msg-head tg"><span class="t">Telegram · первое сообщение</span><div class="r"><span class="cc" data-cc></span><button class="copy">Copy</button></div></div>
-          <p class="body">Hey [name], I'm Vic from the Safe deployment team at Protofire.
-
-Saw ApeChain runs a self-hosted Safe ([link]). The wallet looks current, so I'll get to the point — it's the engine behind it I'd flag. On your version there's a known weakness where it can be tricked into treating a faked approval as a genuine owner's sign-off. The official build fixed that; a self-hosted one like yours never picked it up.
-
-Bigger picture: Safe changed its licensing, so DIY setups stop getting official updates — so it won't get the next fixes either.
-
-We're a licensed Safe provider (130+ networks) and can move ApeChain onto the official, maintained version. Your backend's on shared OnchainDen infra, so happy to include whoever operates that. Up for a quick chat?</p></div>
-        <div class="msg span2"><div class="msg-head"><span class="t">Follow-up · если молчат</span><div class="r"><span class="cc" data-cc></span><button class="copy">Copy</button></div></div>
-          <p class="body">Hey [name], floating this back up once — no pressure. Happy to send a couple of lines on the one backend weakness and what the official Safe fixes, whenever suits.</p></div>
-        <div class="msg"><div class="msg-head"><span class="t">LinkedIn · connect note (≤300)</span><div class="r"><span class="cc" data-cc data-limit="300"></span><button class="copy">Copy</button></div></div>
-          <p class="body">Hi [name] — Vic, Protofire Safe deployment team. Noticed ApeChain self-hosts Safe; the wallet's current but the engine behind it has a known weakness never patched on a DIY setup. Safe's licensing change ends updates too. We're a licensed provider (130+ networks). Open to connecting?</p></div>
-        <div class="msg"><div class="msg-head"><span class="t">LinkedIn · после коннекта</span><div class="r"><span class="cc" data-cc></span><button class="copy">Copy</button></div></div>
-          <p class="body">Thanks for connecting, [name]! Quick version: ApeChain's wallet looks current, but the engine behind it can be tricked into accepting a faked approval as a real owner's sign-off — fixed in the official build, never patched on a self-hosted one. And with Safe's licensing change it won't get future fixes. We're licensed by Safe (130+ networks) and can move you onto the maintained version. Could we grab 15 minutes? (Can include your OnchainDen backend team too.)</p></div>
-      </div>
-    </article>
-
-    <!-- BounceBit -->
-    <article class="net panel" id="bouncebit">
-      <div class="net-head"><span class="tier B">TIER B</span><h3>BounceBit</h3>
-        <span class="note">tx-service на newsafe.bouncebit.io/txs</span></div>
-      <div class="versions">
-        <span class="vpill cur"><span class="lbl">ui</span><span class="num">v1.60.1</span></span>
-        <span class="vpill mid"><span class="lbl">config</span><span class="num">v2.89.0</span></span>
-        <span class="vpill mid"><span class="lbl">tx</span><span class="num">v5.20.0</span></span>
-        <span class="vpill na"><span class="lbl">cgw</span><span class="num">v1.85.2</span></span>
-      </div>
-      <div class="reflabel">Шпаргалка · чем давить</div>
-      <ul class="gaps">
-        <li><span class="chip crit">High</span> Движок может принять поддельную подпись за одобрение (EIP-1271).</li>
-        <li><span class="chip good">feature</span> Нет поддержки новых контрактов Safe v1.5.0.</li>
-      </ul>
-      <div class="msgs">
-        <div class="msg span2"><div class="msg-head tg"><span class="t">Telegram · первое сообщение</span><div class="r"><span class="cc" data-cc></span><button class="copy">Copy</button></div></div>
-          <p class="body">Hey [name], I'm Vic from the Safe deployment team at Protofire.
-
-Saw BounceBit runs a self-hosted Safe ([link]). The wallet's in good shape, so I'll be straight — it's the engine behind it I'd flag. On your version there's a known weakness where it can be fooled into treating a faked approval as a real owner's sign-off. The official build closed that; a self-hosted one like yours didn't get the patch.
-
-The reason it drifts: Safe changed its licensing, so DIY setups stop getting official updates — so it won't get future fixes or newer Safe features either.
-
-We're a licensed Safe provider (130+ networks) and can move BounceBit onto the official, maintained version and keep it current. Worth a quick call between our teams?</p></div>
-        <div class="msg span2"><div class="msg-head"><span class="t">Follow-up · если молчат</span><div class="r"><span class="cc" data-cc></span><button class="copy">Copy</button></div></div>
-          <p class="body">Hey [name], bumping this once — no rush. If useful, I can send a couple of lines on the one backend weakness and what moving to the official Safe changes. Keeping it light.</p></div>
-        <div class="msg"><div class="msg-head"><span class="t">LinkedIn · connect note (≤300)</span><div class="r"><span class="cc" data-cc data-limit="300"></span><button class="copy">Copy</button></div></div>
-          <p class="body">Hi [name] — Vic, Protofire Safe deployment team. Noticed BounceBit self-hosts Safe; the wallet's current but the engine behind it has a known weakness never patched on a DIY setup. Safe's licensing change ends updates too. We're a licensed provider (130+ networks). Open to connecting?</p></div>
-        <div class="msg"><div class="msg-head"><span class="t">LinkedIn · после коннекта</span><div class="r"><span class="cc" data-cc></span><button class="copy">Copy</button></div></div>
-          <p class="body">Thanks for connecting, [name]! Quick version: BounceBit's wallet looks current, but the engine behind it can be tricked into accepting a faked approval as a real owner's sign-off — fixed officially, never patched on a self-hosted setup. With Safe's licensing change it won't get future fixes either. We're licensed by Safe (130+ networks) and can move you onto the maintained version. Could we grab 15 minutes with your team?</p></div>
-      </div>
-    </article>
-
-    <!-- Q Protocol -->
-    <article class="net panel" id="qprotocol">
-      <div class="net-head"><span class="tier B">TIER B</span><h3>Q Protocol</h3>
-        <span class="note">multisig-ui.qgov.io · chain 35441 (QGOV)</span></div>
-      <div class="versions">
-        <span class="vpill mid"><span class="lbl">ui</span><span class="num">v1.52.0</span></span>
-        <span class="vpill mid"><span class="lbl">config</span><span class="num">v2.89.0</span></span>
-        <span class="vpill mid"><span class="lbl">tx</span><span class="num">v5.18.4</span></span>
-        <span class="vpill na"><span class="lbl">cgw</span><span class="num">v1.74.6</span></span>
-      </div>
-      <div class="reflabel">Шпаргалка · чем давить</div>
-      <ul class="gaps">
-        <li><span class="chip crit">High</span> Движок может принять поддельную подпись за одобрение (EIP-1271).</li>
-        <li><span class="chip warn">Med</span> Delegate-call allowlist пропускает MultiSend; UI без свежего CSP.</li>
-      </ul>
-      <div class="msgs">
-        <div class="msg span2"><div class="msg-head tg"><span class="t">Telegram · первое сообщение</span><div class="r"><span class="cc" data-cc></span><button class="copy">Copy</button></div></div>
-          <p class="body">Hey [name], I'm Vic from the Safe deployment team at Protofire.
-
-Saw Q (QGOV) runs a self-hosted Safe ([link]). It's reasonably up to date, so I'll keep it to the one thing that matters — the engine behind the wallet has a known weakness where it can be tricked into treating a faked approval as a genuine owner's sign-off. The official build fixed that; a self-hosted one like yours didn't get the patch.
-
-Underneath it all: Safe changed its licensing, so DIY setups don't get official updates anymore — so this won't get the next fixes either.
-
-We're a licensed Safe provider (130+ networks) and can move Q onto the official, maintained version and keep it current. Worth a quick chat between our teams?</p></div>
-        <div class="msg span2"><div class="msg-head"><span class="t">Follow-up · если молчат</span><div class="r"><span class="cc" data-cc></span><button class="copy">Copy</button></div></div>
-          <p class="body">Hey [name], floating this back up once — no pressure. Happy to send a couple of lines on the one backend weakness and what the official Safe fixes, whenever works.</p></div>
-        <div class="msg"><div class="msg-head"><span class="t">LinkedIn · connect note (≤300)</span><div class="r"><span class="cc" data-cc data-limit="300"></span><button class="copy">Copy</button></div></div>
-          <p class="body">Hi [name] — Vic, Protofire Safe deployment team. Noticed Q self-hosts Safe; it's fairly current, but the engine behind the wallet has a known weakness never patched on a DIY setup. Safe's licensing change ends updates too. We're a licensed provider (130+ networks). Open to connecting?</p></div>
-        <div class="msg"><div class="msg-head"><span class="t">LinkedIn · после коннекта</span><div class="r"><span class="cc" data-cc></span><button class="copy">Copy</button></div></div>
-          <p class="body">Thanks for connecting, [name]! Quick version: Q's Safe is fairly current, but the engine behind the wallet can be tricked into accepting a faked approval as a real owner's sign-off — fixed officially, never patched on a self-hosted setup. With Safe's licensing change it won't get future fixes either. We're licensed by Safe (130+ networks) and can move you onto the maintained version. Could we grab 15 minutes?</p></div>
-      </div>
-    </article>
-  </section>
-
-  <!-- ============ TIER C ============ -->
-  <section>
-    <h2>Tier C — свежие версии → угол «неофициально = тупик»</h2>
-    <p style="color:var(--ink-soft);font-size:14px;margin:-4px 0 4px">Не хвалим и не пугаем конкретной дырой. Один нерв: их версия <b>неофициальная</b>, значит апдейты и патчи больше не приходят, и со временем это выльется в уязвимости. Мы держим официальным.</p>
+    <h2>Сообщения по сетям (по убыванию TVL)</h2>
 
     <!-- ENI -->
     <article class="net panel" id="eni">
-      <div class="net-head"><span class="tier C">TIER C</span><h3>ENI</h3>
-        <span class="note">safe.eni.top — весь стек live</span></div>
-      <div class="versions">
-        <span class="vpill mid"><span class="lbl">ui</span><span class="num">v1.69.0</span></span>
-        <span class="vpill mid"><span class="lbl">config</span><span class="num">v2.89.0</span></span>
-        <span class="vpill cur"><span class="lbl">tx</span><span class="num">v5.35.0</span></span>
-        <span class="vpill na"><span class="lbl">cgw</span><span class="num">v1.94.1</span></span>
+      <div class="net-head"><h3>ENI</h3><span class="badge cold">cold</span>
+        <span class="stats"><span>TVL <b>$215.6M</b></span><span>Protocols <b>3</b></span><span>Deployed <b>Self</b></span></span></div>
+      <div class="intel">
+        <div class="row"><span class="k">version</span><span><span class="ver">ui 1.69 · cfg 2.89 · tx 5.35</span> — свежий, версия не крючок. Недавно гордо интегрировали Safe (Medium) → не диссим, ведём ценностью.</span></div>
+        <div class="row"><span class="k">action</span><span>Cold outreach. Крупнейший TVL в списке → приоритет, value-led.</span></div>
       </div>
-      <div class="reflabel">Шпаргалка · угол</div>
-      <ul class="gaps">
-        <li><span class="chip good">angle</span> Версии свежие → давим на «неофициальная = замерзает без апдейтов».</li>
-      </ul>
-      <div class="msgs">
-        <div class="msg span2"><div class="msg-head tg"><span class="t">Telegram · первое сообщение</span><div class="r"><span class="cc" data-cc></span><button class="copy">Copy</button></div></div>
-          <p class="body">Hey [name], I'm Vic from the Safe deployment team at Protofire.
+      <div class="msg"><div class="msg-head"><span class="t">Cold · value-led</span><div class="r"><span class="cc" data-cc></span><button class="copy">Copy</button></div></div>
+        <p class="body">Hey [name], Vic from Protofire — we're building out a hosted, multichain Safe UI (adding 20+ chains, and we'll be the first to support Tron).
 
-Saw ENI runs a self-hosted Safe ([link]). I'll be upfront — nothing's on fire on your end today. The reason I'm reaching out is the licensing shift: Safe changed how it's licensed, and self-hosted setups like yours don't get official updates or security patches anymore. So however current you are right now, your version is effectively a dead end from here — and those gaps tend to pile up quietly.
+Had a look at ENI's Safe — it's genuinely well set up. The one thing worth flagging is that it's self-hosted and sits on its own, so as Safe's licensing shifts it'll stop getting official updates, and ENI users are a bit siloed from where most treasury liquidity actually lives.
 
-We partnered with Safe as a licensed provider (130+ networks) specifically to solve that: we move you onto the official version and keep it updated and patched, so you're not maintaining a fork that slowly drifts out of support.
-
-Would a quick intro between our teams make sense?</p></div>
-        <div class="msg span2"><div class="msg-head"><span class="t">Follow-up · если молчат</span><div class="r"><span class="cc" data-cc></span><button class="copy">Copy</button></div></div>
-          <p class="body">Hey [name], bumping this once — no urgency. The short version: a self-hosted Safe stops getting official updates now, so it only drifts from here. Happy to show in a couple of lines how we keep it official and current. Whenever suits.</p></div>
-        <div class="msg"><div class="msg-head"><span class="t">LinkedIn · connect note (≤300)</span><div class="r"><span class="cc" data-cc data-limit="300"></span><button class="copy">Copy</button></div></div>
-          <p class="body">Hi [name] — Vic, Protofire Safe deployment team. Noticed ENI self-hosts Safe. Safe's licensing change means DIY setups stop getting official updates, so even a current version drifts out of support. We're a licensed provider (130+ networks) keeping it official. Open to connecting?</p></div>
-        <div class="msg"><div class="msg-head"><span class="t">LinkedIn · после коннекта</span><div class="r"><span class="cc" data-cc></span><button class="copy">Copy</button></div></div>
-          <p class="body">Thanks for connecting, [name]! Quick version: ENI's Safe looks well-kept, but it's self-hosted — and with Safe's licensing change that means no more official updates or security patches, so it slowly drifts out of support. We're licensed by Safe (130+ networks) to keep it official and current for you, no maintenance on your side. Could we grab 15 minutes to see if it's worth it?</p></div>
-      </div>
+We could support ENI's Safe on our multichain UI, so teams manage their treasury across all the major chains in one place — and ENI gets real visibility sitting next to the majors instead of being the only network in its own dropdown. Who'd be the best person at ENI to chat about it?</p></div>
     </article>
 
     <!-- Fraxtal -->
     <article class="net panel" id="fraxtal">
-      <div class="net-head"><span class="tier C">TIER C</span><h3>Fraxtal</h3>
-        <span class="note">/cfg за Cloudflare WAF (не подтверждён)</span></div>
-      <div class="versions">
-        <span class="vpill cur"><span class="lbl">ui</span><span class="num">v1.76.0</span></span>
-        <span class="vpill na"><span class="lbl">config</span><span class="num">n/a</span></span>
-        <span class="vpill mid"><span class="lbl">tx</span><span class="num">v5.33.0</span></span>
-        <span class="vpill na"><span class="lbl">cgw</span><span class="num">v1.96.0</span></span>
+      <div class="net-head"><h3>Fraxtal</h3><span class="badge warm">warm · TG chat</span>
+        <span class="stats"><span>TVL <b>$24.5M</b></span><span>Stables <b>$13.8M</b></span><span>Protocols <b>33</b></span><span>Deployed <b>Self</b></span></span></div>
+      <div class="intel">
+        <div class="row"><span class="k">version</span><span><span class="ver">ui 1.76 · tx 5.33</span> — UI свежий, tx чуть отстаёт. Их Safe развёрнут не нами.</span></div>
+        <div class="row"><span class="k">history</span><span>Был в Superchain Safe; после гранта перестали отвечать Ивану, мы дропнули из Superchain. Есть TG-чат → заходим туда.</span></div>
       </div>
-      <div class="reflabel">Шпаргалка · угол</div>
-      <ul class="gaps">
-        <li><span class="chip good">angle</span> Фронт свежий → давим на «неофициальная, без апдейтов». Есть мелкий backend-патч в запасе.</li>
-      </ul>
-      <div class="msgs">
-        <div class="msg span2"><div class="msg-head tg"><span class="t">Telegram · первое сообщение</span><div class="r"><span class="cc" data-cc></span><button class="copy">Copy</button></div></div>
-          <p class="body">Hey [name], I'm Vic from the Safe deployment team at Protofire.
+      <div class="msg"><div class="msg-head"><span class="t">Warm · TG re-engage</span><div class="r"><span class="cc" data-cc></span><button class="copy">Copy</button></div></div>
+        <p class="body">Hey guys, Vic from Protofire — been a while! Reason I'm resurfacing: we're now rolling out a hosted, multichain Safe UI (20+ chains, Tron next — we'll be first).
 
-Saw Fraxtal runs a self-hosted Safe ([link]). I'll be straight — this isn't an emergency. It's about the licensing shift: Safe changed how it's licensed, so self-hosted setups don't get official updates or security patches anymore. Your front-end is current today, but a self-hosted version is now a dead end — it just drifts out of support over time, and the backend already has a security fix it hasn't picked up.
+Took a fresh look at the Frax Safe — it's self-hosted and the backend's drifted a few versions behind the current release. Nothing on fire, but it won't pick up newer Safe updates on its own from here.
 
-We partnered with Safe as a licensed provider (130+ networks) to handle exactly this: move you onto the official version and keep it patched, so you're not maintaining a fork that slowly falls behind.
-
-Worth a quick intro between our teams?</p></div>
-        <div class="msg span2"><div class="msg-head"><span class="t">Follow-up · если молчат</span><div class="r"><span class="cc" data-cc></span><button class="copy">Copy</button></div></div>
-          <p class="body">Hey [name], floating this back up once — no rush. Short version: a self-hosted Safe stops getting official updates now, and yours has already missed a backend security fix. Happy to show how we keep it official and current in a couple of lines.</p></div>
-        <div class="msg"><div class="msg-head"><span class="t">LinkedIn · connect note (≤300)</span><div class="r"><span class="cc" data-cc data-limit="300"></span><button class="copy">Copy</button></div></div>
-          <p class="body">Hi [name] — Vic, Protofire Safe deployment team. Noticed Fraxtal self-hosts Safe. Safe's licensing change ends official updates for DIY setups — yours has already missed a backend security fix. We're a licensed provider (130+ networks) that keeps it official. Open to connecting?</p></div>
-        <div class="msg"><div class="msg-head"><span class="t">LinkedIn · после коннекта</span><div class="r"><span class="cc" data-cc></span><button class="copy">Copy</button></div></div>
-          <p class="body">Thanks for connecting, [name]! Quick version: Fraxtal's front-end is current, but it's self-hosted — so with Safe's licensing change it won't get official updates going forward, and the backend has already missed a security fix. We're licensed by Safe (130+ networks) to move you onto the official version and keep it patched. Could we grab 15 minutes?</p></div>
-      </div>
+Felt like a natural fit to reconnect: we could host and support it on our multichain UI so Frax sits alongside the majors and teams manage treasury across chains in one place. Worth picking this back up?</p></div>
     </article>
 
-    <!-- Beam -->
-    <article class="net panel" id="beam">
-      <div class="net-head"><span class="tier C">TIER C</span><h3>Beam</h3>
-        <span class="note">Реальный стек app.safe.onbeam.com (Beam 4337)</span></div>
-      <div class="versions">
-        <span class="vpill cur"><span class="lbl">ui</span><span class="num">v1.76.0</span></span>
-        <span class="vpill cur"><span class="lbl">config</span><span class="num">v2.94.2</span></span>
-        <span class="vpill cur"><span class="lbl">tx</span><span class="num">v5.41.0</span></span>
-        <span class="vpill na"><span class="lbl">cgw</span><span class="num">v1.109.0</span></span>
+    <!-- Manta -->
+    <article class="net panel" id="manta">
+      <div class="net-head"><h3>Manta</h3><span class="badge warm">warm · TG chat</span>
+        <span class="stats"><span>TVL <b>$5.1M</b></span><span>Stables <b>$7.3M</b></span><span>Protocols <b>74</b></span><span>Deployed <b>Protofire</b></span></span></div>
+      <div class="intel">
+        <div class="row"><span class="k">version</span><span><span class="ver">ui 1.21 · cfg 2.64 · tx 4.27</span> — реально старый билд.</span></div>
+        <div class="row"><span class="k">history</span><span>Было соглашение развернуть safe.manta.network и передать им. Мы деплоили. Есть TG-чат. Сначала уточнить текущий статус.</span></div>
       </div>
-      <div class="reflabel">Шпаргалка · угол</div>
-      <ul class="gaps">
-        <li><span class="chip good">angle</span> Всё свежее → только «неофициальная = тупик без апдейтов + ручная поддержка». Партнёрский тон.</li>
-      </ul>
-      <div class="msgs">
-        <div class="msg span2"><div class="msg-head tg"><span class="t">Telegram · первое сообщение</span><div class="r"><span class="cc" data-cc></span><button class="copy">Copy</button></div></div>
-          <p class="body">Hey [name], I'm Vic from the Safe deployment team at Protofire.
+      <div class="msg"><div class="msg-head"><span class="t">Warm · TG re-engage</span><div class="r"><span class="cc" data-cc></span><button class="copy">Copy</button></div></div>
+        <p class="body">Hey guys, Vic from Protofire — long time! Quick one on the Manta Safe.
 
-Saw Beam runs a self-hosted Safe ([link]). No red flags on my end — so this is a forward-looking note, not an alarm. Safe changed its licensing, which means self-hosted setups stop getting official updates and security patches over time, and keeping current becomes a manual job that sits on your team.
+We originally set up safe.manta.network, and looking at it now it's on a pretty old build — so it's missing a good chunk of the newer Safe improvements and won't update itself going forward.
 
-We're a licensed Safe provider (130+ networks). The pitch is simple: hand us the tracking of upstream releases, the licensing, and the moving parts you rely on, and we run it as an official, always-updated deployment — so it never quietly drifts out of support.
-
-Open to a quick intro between our teams?</p></div>
-        <div class="msg span2"><div class="msg-head"><span class="t">Follow-up · если молчат</span><div class="r"><span class="cc" data-cc></span><button class="copy">Copy</button></div></div>
-          <p class="body">Hey [name], circling back once — no urgency. The gist: a self-hosted Safe is now a manual maintenance job that stops getting official updates. We can take that off your plate and keep it official. Happy to lay it out in a couple of lines whenever suits.</p></div>
-        <div class="msg"><div class="msg-head"><span class="t">LinkedIn · connect note (≤300)</span><div class="r"><span class="cc" data-cc data-limit="300"></span><button class="copy">Copy</button></div></div>
-          <p class="body">Hi [name] — Vic, Protofire Safe deployment team. Noticed Beam self-hosts Safe. Safe's licensing change ends official updates for DIY setups, making it manual upkeep that drifts out of support. We're a licensed provider (130+ networks) running it always-current. Open to connecting?</p></div>
-        <div class="msg"><div class="msg-head"><span class="t">LinkedIn · после коннекта</span><div class="r"><span class="cc" data-cc></span><button class="copy">Copy</button></div></div>
-          <p class="body">Thanks for connecting, [name]! Quick version: Beam's Safe is self-hosted, and with Safe's licensing change that means no more official updates over time and ongoing manual upkeep on your side to stay current. We're licensed by Safe (130+ networks) and can run it as an official, always-updated deployment so it never drifts. Could we grab 15 minutes to see if it's worth handing off?</p></div>
-      </div>
-    </article>
-
-    <!-- Telos -->
-    <article class="net panel" id="telos">
-      <div class="net-head"><span class="tier C">TIER C</span><h3>Telos</h3>
-        <span class="note">safe.telos.net — tx-service самый свежий из всех</span></div>
-      <div class="versions">
-        <span class="vpill mid"><span class="lbl">ui</span><span class="num">v1.51.5</span></span>
-        <span class="vpill cur"><span class="lbl">config</span><span class="num">v2.96.1</span></span>
-        <span class="vpill cur"><span class="lbl">tx</span><span class="num">v6.5.0</span></span>
-        <span class="vpill na"><span class="lbl">cgw</span><span class="num">v1.115.0</span></span>
-      </div>
-      <div class="reflabel">Шпаргалка · угол</div>
-      <ul class="gaps">
-        <li><span class="chip good">angle</span> Очень свежие → только «неофициальная, апдейты прекратятся». Партнёрский тон.</li>
-      </ul>
-      <div class="msgs">
-        <div class="msg span2"><div class="msg-head tg"><span class="t">Telegram · первое сообщение</span><div class="r"><span class="cc" data-cc></span><button class="copy">Copy</button></div></div>
-          <p class="body">Hey [name], I'm Vic from the Safe deployment team at Protofire.
-
-Saw Telos runs a self-hosted Safe ([link]). I'll be honest — you're in a better spot than most, so this isn't about a problem today. It's about what happens next: Safe changed its licensing, so self-hosted setups stop getting official updates and security patches. Even a current version becomes a dead end once the updates stop coming — it just quietly falls behind.
-
-We're a licensed Safe provider (130+ networks) built exactly for that: we keep your Safe on the official version, updated and patched, so you're not maintaining a fork that slowly drifts out of support.
-
-Worth a quick intro between our teams?</p></div>
-        <div class="msg span2"><div class="msg-head"><span class="t">Follow-up · если молчат</span><div class="r"><span class="cc" data-cc></span><button class="copy">Copy</button></div></div>
-          <p class="body">Hey [name], bumping this once — no rush. The short of it: even a current self-hosted Safe stops getting official updates now, so it drifts from here. Happy to show how we keep it official and current in a couple of lines.</p></div>
-        <div class="msg"><div class="msg-head"><span class="t">LinkedIn · connect note (≤300)</span><div class="r"><span class="cc" data-cc data-limit="300"></span><button class="copy">Copy</button></div></div>
-          <p class="body">Hi [name] — Vic, Protofire Safe deployment team. Noticed Telos self-hosts Safe. It's well-kept, but Safe's licensing change ends official updates for DIY setups, so even a current version drifts out of support. We're a licensed provider (130+ networks). Open to connecting?</p></div>
-        <div class="msg"><div class="msg-head"><span class="t">LinkedIn · после коннекта</span><div class="r"><span class="cc" data-cc></span><button class="copy">Copy</button></div></div>
-          <p class="body">Thanks for connecting, [name]! Quick version: Telos runs a genuinely up-to-date Safe — but it's self-hosted, and with Safe's licensing change that means no more official updates ahead, so even a current version drifts out of support over time. We're licensed by Safe (130+ networks) to keep it official and current, with no upkeep on your side. Could we grab 15 minutes?</p></div>
-      </div>
+Timing lines up nicely: we're now adding chains to a hosted, multichain Safe UI (Tron next). We could take Manta's Safe back under proper support and bring it into that UI — Manta sits next to the majors, and with 70+ protocols on it your teams get one place to manage treasury across chains. Want to sort out where it stands?</p></div>
     </article>
 
     <!-- Fantom -->
     <article class="net panel" id="fantom">
-      <div class="net-head"><span class="tier C">TIER C</span><h3>Fantom</h3>
-        <span class="note">⚠ Свой только UI — движка нет, падает на официальный клиент без chain 250</span></div>
-      <div class="versions">
-        <span class="vpill mid"><span class="lbl">ui</span><span class="num">v1.62.1</span></span>
-        <span class="vpill na"><span class="lbl">config</span><span class="num">official</span></span>
-        <span class="vpill na"><span class="lbl">tx</span><span class="num">official</span></span>
-        <span class="vpill na"><span class="lbl">cgw</span><span class="num">down</span></span>
+      <div class="net-head"><h3>Fantom</h3><span class="badge cold">cold</span>
+        <span class="stats"><span>TVL <b>$4.6M</b></span><span>Stables <b>$338.6M</b></span><span>Protocols <b>347</b></span><span>Deployed <b>Self</b></span></span></div>
+      <div class="intel">
+        <div class="row"><span class="k">version</span><span><span class="ver">ui 1.62 · no backend</span> — падает на дефолтный клиент, где нет chain 250.</span></div>
+        <div class="row"><span class="k">action</span><span>Не деплоено нами. Огромная экосистема (347 протоколов, $338M stables) → большая рыба. У Ивана могут быть инсайты.</span></div>
       </div>
-      <div class="reflabel">Шпаргалка · угол</div>
-      <ul class="gaps">
-        <li><span class="chip warn">infra</span> Движка нет → Safe полу-рабочий для Fantom. Продаём «поднимем нормальный бэкенд».</li>
-      </ul>
-      <div class="msgs">
-        <div class="msg span2"><div class="msg-head tg"><span class="t">Telegram · первое сообщение</span><div class="r"><span class="cc" data-cc></span><button class="copy">Copy</button></div></div>
-          <p class="body">Hey [name], I'm Vic from the Safe deployment team at Protofire.
+      <div class="msg"><div class="msg-head"><span class="t">Cold · backend gap</span><div class="r"><span class="cc" data-cc></span><button class="copy">Copy</button></div></div>
+        <p class="body">Hey [name], Vic from Protofire — we're building out a hosted, multichain Safe UI (20+ chains, Tron next — we'll be first).
 
-I was looking at the Fantom Safe ([link]) and noticed something worth flagging. You've got the wallet front-end, but there's no real engine behind it — so it quietly falls back to Safe's official service, which doesn't actually support Fantom. In practice that means your users get a half-working wallet: things like full transaction history and dApp support won't behave properly.
+Noticed Fantom's Safe is self-hosted and looks like it's falling back to the default Safe client instead of its own backend — so history and some dApp features probably don't load fully for users.
 
-On top of that, Safe changed its licensing, so a self-hosted Safe won't get official updates going forward anyway.
+With 300+ protocols on Fantom, that's a lot of teams landing on a half-working wallet. We could deploy and properly support a Safe on our multichain UI, so they manage treasury across 20+ major chains including Tron all in one place. Who'd be the best person at Fantom to chat about it?</p></div>
+    </article>
 
-We're a licensed Safe provider (130+ networks) and can stand up a proper, fully-working Safe backend for Fantom on the official version — so your users get the real thing, not a degraded fallback. Worth a quick chat?</p></div>
-        <div class="msg span2"><div class="msg-head"><span class="t">Follow-up · если молчат</span><div class="r"><span class="cc" data-cc></span><button class="copy">Copy</button></div></div>
-          <p class="body">Hey [name], circling back — the main thing is that your Safe has no working backend for Fantom right now, so it's only half-functional for users. That's a fixable, high-impact one. Happy to show what it takes in a couple of lines.</p></div>
-        <div class="msg"><div class="msg-head"><span class="t">LinkedIn · connect note (≤300)</span><div class="r"><span class="cc" data-cc data-limit="300"></span><button class="copy">Copy</button></div></div>
-          <p class="body">Hi [name] — Vic, Protofire Safe deployment team. Noticed the Fantom Safe has a front-end but no backend, so it falls back to Safe's official service that doesn't support Fantom — a half-working wallet. We're a licensed provider (130+ networks) and can build a proper one. Open to connecting?</p></div>
-        <div class="msg"><div class="msg-head"><span class="t">LinkedIn · после коннекта</span><div class="r"><span class="cc" data-cc></span><button class="copy">Copy</button></div></div>
-          <p class="body">Thanks for connecting, [name]! Quick version: the Fantom Safe has a wallet front-end but no real backend behind it, so it falls back to Safe's official service — which doesn't support Fantom, leaving users with a half-working wallet. We're licensed by Safe (130+ networks) and can stand up a proper, fully-working, official backend for Fantom. Could we grab 15 minutes to walk through it?</p></div>
+    <!-- Telos -->
+    <article class="net panel" id="telos">
+      <div class="net-head"><h3>Telos</h3><span class="badge warm">warm · TG chat</span>
+        <span class="stats"><span>TVL <b>$2.2M</b></span><span>Stables <b>$712.5K</b></span><span>Protocols <b>43</b></span><span>Deployed <b>Protofire</b></span></span></div>
+      <div class="intel">
+        <div class="row"><span class="k">version</span><span><span class="ver">ui 1.51 · cfg 2.96 · tx 6.5</span> — свежий (мы делали), tx самый новый из всех.</span></div>
+        <div class="row"><span class="k">history</span><span>Мы деплоили Telos Safe ~год назад, роллаут делали. Активного support-соглашения сейчас нет. Есть TG-чат. Сначала уточнить статус по поддержке.</span></div>
       </div>
+      <div class="msg"><div class="msg-head"><span class="t">Warm · TG re-engage</span><div class="r"><span class="cc" data-cc></span><button class="copy">Copy</button></div></div>
+        <p class="body">Hey guys, Vic from Protofire — been a while! Wanted to check in on the Telos Safe.
+
+We rolled it out with you about a year back and, credit where it's due, it's held up well version-wise. The one thing — there's no active support on it right now, so it's slowly drifting off official Safe updates.
+
+Good moment to reconnect: we're now adding chains to a hosted, multichain Safe UI (Tron next). We could bring Telos back under support and into that UI, so it stays current and sits alongside the majors for visibility. Worth a quick catch-up?</p></div>
+    </article>
+
+    <!-- Beam -->
+    <article class="net panel" id="beam">
+      <div class="net-head"><h3>Beam</h3><span class="badge cold">cold</span>
+        <span class="stats"><span>TVL <b>$1.0M</b></span><span>Protocols <b>2</b></span><span>Deployed <b>Self</b></span></span></div>
+      <div class="intel">
+        <div class="row"><span class="k">version</span><span><span class="ver">ui 1.76 · cfg 2.94 · tx 5.41</span> — свежий. Версия не крючок.</span></div>
+        <div class="row"><span class="k">action</span><span>Cold. Маленькая (2 протокола) → плюшки: узнаваемость + бридж.</span></div>
+      </div>
+      <div class="msg"><div class="msg-head"><span class="t">Cold · small · bridge/visibility</span><div class="r"><span class="cc" data-cc></span><button class="copy">Copy</button></div></div>
+        <p class="body">Hey [name], Vic from Protofire — we're building out a hosted, multichain Safe UI (20+ chains, Tron next — we'll be first).
+
+Had a look at Beam's Safe — it's fairly up to date, so this is more a heads-up: self-hosting means it'll stop getting official Safe updates over time, and it sits on its own, away from the major-chain liquidity.
+
+We could host and support it on our multichain UI so Beam shows up next to the majors for visibility — with the option to build a bridge right into the Safe, so users move liquidity in and out without ever leaving it. Who'd be the best person at Beam to chat about it?</p></div>
+    </article>
+
+    <!-- BounceBit -->
+    <article class="net panel" id="bouncebit">
+      <div class="net-head"><h3>BounceBit</h3><span class="badge cold">cold</span>
+        <span class="stats"><span>TVL <b>$688.7K</b></span><span>Protocols <b>13</b></span><span>Deployed <b>Self</b></span></span></div>
+      <div class="intel">
+        <div class="row"><span class="k">version</span><span><span class="ver">ui 1.60 · tx 5.20</span> — но по листу <b>Safe UI не работает</b>. «Лежит» — сильный честный заход.</span></div>
+        <div class="row"><span class="k">action</span><span>Cold. Проверь, что UI и правда недоступен, перед отправкой.</span></div>
+      </div>
+      <div class="msg"><div class="msg-head"><span class="t">Cold · UI down</span><div class="r"><span class="cc" data-cc></span><button class="copy">Copy</button></div></div>
+        <p class="body">Hey [name], Vic from Protofire — we run a hosted, multichain Safe UI (20+ chains, Tron next — we'll be first).
+
+Reason I'm reaching out: BounceBit's Safe UI looks down right now — I couldn't get it to load, so there's a good chance your users can't either at the moment.
+
+We could get it back up and host it properly on our multichain UI, so it stays maintained and BounceBit sits alongside the majors instead of running solo. Who'd be the best person at BounceBit to look at this with?</p></div>
     </article>
 
     <!-- Bitlayer -->
     <article class="net panel" id="bitlayer">
-      <div class="net-head"><span class="tier C">TIER C</span><h3>Bitlayer</h3>
-        <span class="note">Бэкенд за Cloudflare WAF — версии не видны снаружи</span></div>
-      <div class="versions">
-        <span class="vpill mid"><span class="lbl">ui</span><span class="num">v1.56.2</span></span>
-        <span class="vpill na"><span class="lbl">config</span><span class="num">n/a</span></span>
-        <span class="vpill na"><span class="lbl">tx</span><span class="num">n/a</span></span>
-        <span class="vpill na"><span class="lbl">cgw</span><span class="num">null</span></span>
+      <div class="net-head"><h3>Bitlayer</h3><span class="badge cold">cold</span>
+        <span class="stats"><span>TVL <b>$550.9K</b></span><span>Stables <b>$421.0K</b></span><span>Protocols <b>32</b></span><span>Deployed <b>Self</b></span></span></div>
+      <div class="intel">
+        <div class="row"><span class="k">version</span><span><span class="ver">ui 1.56 · backend за WAF</span> — версию бэкенда снаружи не видно.</span></div>
+        <div class="row"><span class="k">action</span><span>Cold. 32 протокола, $421K stables → нормальный размер.</span></div>
       </div>
-      <div class="reflabel">Шпаргалка · угол</div>
-      <ul class="gaps">
-        <li><span class="chip warn">unknown</span> Backend скрыт → «дайте сверим + возьмём на официальную поддержку».</li>
-      </ul>
-      <div class="msgs">
-        <div class="msg span2"><div class="msg-head tg"><span class="t">Telegram · первое сообщение</span><div class="r"><span class="cc" data-cc></span><button class="copy">Copy</button></div></div>
-          <p class="body">Hey [name], I'm Vic from the Safe deployment team at Protofire.
+      <div class="msg"><div class="msg-head"><span class="t">Cold</span><div class="r"><span class="cc" data-cc></span><button class="copy">Copy</button></div></div>
+        <p class="body">Hey [name], Vic from Protofire — we're building out a hosted, multichain Safe UI (20+ chains, Tron next — we'll be first).
 
-Saw Bitlayer runs a self-hosted Safe ([link]). I couldn't see the state of the engine behind your wallet from the outside — which, honestly, is worth a second set of eyes on its own. But the bigger point applies to every self-hosted setup: Safe changed its licensing, so it won't get official updates or security patches going forward, and it slowly drifts out of support.
+Had a look at Bitlayer's Safe — the wallet's on an older self-hosted build, and the backend's locked down enough that I couldn't check its state from outside, which usually means it isn't being actively updated.
 
-We're a licensed Safe provider (130+ networks). Happy to do a quick check of where your setup actually stands and, if it makes sense, take the updates and licensing off your plate so it stays official and current.
+We could take that off your team's plate — host and support it on our multichain UI so it stays current, and Bitlayer sits next to the majors so your 30+ protocols' users get one place to manage treasury across chains. Who'd be the best person at Bitlayer to chat about it?</p></div>
+    </article>
 
-Worth a quick chat between our teams?</p></div>
-        <div class="msg span2"><div class="msg-head"><span class="t">Follow-up · если молчат</span><div class="r"><span class="cc" data-cc></span><button class="copy">Copy</button></div></div>
-          <p class="body">Hey [name], floating this back up once — no pressure. Offer stands: a quick check of where your self-hosted Safe stands, and we can keep it official and updated from there. Whenever suits.</p></div>
-        <div class="msg"><div class="msg-head"><span class="t">LinkedIn · connect note (≤300)</span><div class="r"><span class="cc" data-cc data-limit="300"></span><button class="copy">Copy</button></div></div>
-          <p class="body">Hi [name] — Vic, Protofire Safe deployment team. Noticed Bitlayer self-hosts Safe. Safe's licensing change ends official updates for DIY setups, so it drifts out of support. We're a licensed provider (130+ networks) — happy to check yours and keep it official. Open to connecting?</p></div>
-        <div class="msg"><div class="msg-head"><span class="t">LinkedIn · после коннекта</span><div class="r"><span class="cc" data-cc></span><button class="copy">Copy</button></div></div>
-          <p class="body">Thanks for connecting, [name]! Quick version: Bitlayer's Safe is self-hosted, and with Safe's licensing change it won't get official updates or patches going forward, so it drifts out of support. I couldn't read your backend's state from outside, so happy to do a quick check — and if useful, we keep it official and current for you (130+ networks). Could we grab 15 minutes?</p></div>
+    <!-- Viction -->
+    <article class="net panel" id="viction">
+      <div class="net-head"><h3>Viction</h3><span class="badge cold">cold</span>
+        <span class="stats"><span>TVL <b>$325.7K</b></span><span>Stables <b>$173.2K</b></span><span>Deployed <b>Self</b></span></span></div>
+      <div class="intel">
+        <div class="row"><span class="k">version</span><span><span class="ver">ui 1.45 · cfg 2.87 · tx 5.11</span> — старее среднего. Safe живёт на RabbitSwap (vault.rabbitswap.xyz).</span></div>
+        <div class="row"><span class="k">action</span><span>Cold. Возможно контакт — RabbitSwap, а не сама Viction.</span></div>
       </div>
+      <div class="msg"><div class="msg-head"><span class="t">Cold</span><div class="r"><span class="cc" data-cc></span><button class="copy">Copy</button></div></div>
+        <p class="body">Hey [name], Vic from Protofire — we're building out a hosted, multichain Safe UI (20+ chains, Tron next — we'll be first).
+
+Noticed the Viction Safe (running on RabbitSwap) is self-hosted on an older build — so it's a fair bit behind on the newer Safe safeguards and won't update on its own.
+
+We could host and support it on our multichain UI so it stays current, with the option of an in-UI bridge so users move liquidity without leaving Safe — plus Viction gets visibility next to the majors. Who'd be the best person to chat with on this?</p></div>
+    </article>
+
+    <!-- Bittensor -->
+    <article class="net panel" id="bittensor">
+      <div class="net-head"><h3>Bittensor EVM</h3><span class="badge flag">cold · verify down</span>
+        <span class="stats"><span>TVL <b>$203.6K</b></span><span>Protocols <b>1</b></span><span>Deployed <b>Self</b></span></span></div>
+      <div class="intel">
+        <div class="row"><span class="k">version</span><span><span class="ver">safe.bittensor.com не резолвился</span> в ресёрче (NXDOMAIN). Перепроверь — в листе линк ещё стоит.</span></div>
+        <div class="row"><span class="k">action</span><span>Cold. Если реально down → заход «деплой заново».</span></div>
+      </div>
+      <div class="msg"><div class="msg-head"><span class="t">Cold · appears down</span><div class="r"><span class="cc" data-cc></span><button class="copy">Copy</button></div></div>
+        <p class="body">Hey [name], Vic from Protofire — we run a hosted, multichain Safe UI (20+ chains, Tron next — we'll be first).
+
+Tried to pull up Bittensor's Safe and the site didn't resolve for me — looks like the self-hosted deployment may be down right now. Wanted to flag it in case that's news.
+
+If it is down (or even if not), we could stand up and support a fresh Safe for Bittensor on our multichain UI, so it stays maintained and sits alongside the majors. Who'd be the best person at Bittensor to look at this with?</p></div>
+    </article>
+
+    <!-- Ethereum Classic -->
+    <article class="net panel" id="etc">
+      <div class="net-head"><h3>Ethereum Classic</h3><span class="badge flag">cold · verify version</span>
+        <span class="stats"><span>TVL <b>$94.4K</b></span><span>Stables <b>$73.8K</b></span><span>Protocols <b>18</b></span><span>Deployed <b>Self</b></span></span></div>
+      <div class="intel">
+        <div class="row"><span class="k">version</span><span>Лист-URL <span class="ver">multisig.etccooperative.org</span> ≠ тот, что я ресёрчил (Catacomb-форк, ui 1.18). Версию не выношу в текст — держу общо. Проверь фактическую перед отправкой.</span></div>
+        <div class="row"><span class="k">action</span><span>«to learn if worth reaching out» — сначала оцени, стоит ли.</span></div>
+      </div>
+      <div class="msg"><div class="msg-head"><span class="t">Cold · soft</span><div class="r"><span class="cc" data-cc></span><button class="copy">Copy</button></div></div>
+        <p class="body">Hey [name], Vic from Protofire — we're building out a hosted, multichain Safe UI (20+ chains, Tron next — we'll be first).
+
+Noticed the ETC multisig (etccooperative.org) is self-hosted, and it looks like it's on an older Safe setup — worth a look at whether it's still getting updates, since self-hosted ones tend to quietly fall behind.
+
+If it'd help, we could host and support it on our multichain UI so it stays current, and ETC sits alongside the majors for visibility. Who'd be the best person to chat with about it?</p></div>
+    </article>
+
+    <!-- Redstone -->
+    <article class="net panel" id="redstone">
+      <div class="net-head"><h3>Redstone</h3><span class="badge warm">semi-warm · chat (cleared)</span>
+        <span class="stats"><span>TVL <b>$27.4K</b></span><span>Protocols <b>1</b></span></span></div>
+      <div class="intel">
+        <div class="row"><span class="k">version</span><span><span class="ver">Safe UI не работает</span> (ресёрч: домен ушёл на squat). Был в Superchain Safe.</span></div>
+        <div class="row"><span class="k">history</span><span>TG-чат есть, но очищен; после гранта Optimism не захотели продолжать, мы дропнули. «may reconnect in chat».</span></div>
+      </div>
+      <div class="msg"><div class="msg-head"><span class="t">Semi-warm · reconnect</span><div class="r"><span class="cc" data-cc></span><button class="copy">Copy</button></div></div>
+        <p class="body">Hey — Vic from Protofire, we crossed paths back in the Superchain Safe days. Resurfacing because we're now running a hosted, multichain Safe UI (20+ chains, Tron next).
+
+Noticed the Redstone Safe UI isn't loading anymore — so right now there's effectively no working Safe for the network.
+
+If it's worth picking back up, we could stand one up again and support it on our multichain UI, so it stays maintained and Redstone sits alongside the majors. Want to take a look together?</p></div>
     </article>
 
     <!-- Hydra -->
     <article class="net panel" id="hydra">
-      <div class="net-head"><span class="tier C">TIER C</span><h3>Hydra Chain</h3>
-        <span class="note">Свежий UI; config/tx не выставлены наружу</span></div>
-      <div class="versions">
-        <span class="vpill cur"><span class="lbl">ui</span><span class="num">v1.84.0</span></span>
-        <span class="vpill na"><span class="lbl">config</span><span class="num">n/a</span></span>
-        <span class="vpill na"><span class="lbl">tx</span><span class="num">n/a</span></span>
-        <span class="vpill na"><span class="lbl">cgw</span><span class="num">empty</span></span>
+      <div class="net-head"><h3>Hydra Chain</h3><span class="badge cold">cold</span>
+        <span class="stats"><span>TVL <b>$21.0K</b></span><span>Protocols <b>1</b></span><span>Deployed <b>Self</b></span></span></div>
+      <div class="intel">
+        <div class="row"><span class="k">version</span><span><span class="ver">ui 1.84 · backend скрыт</span> — фронт свежий, движок снаружи не видно.</span></div>
+        <div class="row"><span class="k">action</span><span>Cold. Маленькая → узнаваемость + бридж.</span></div>
       </div>
-      <div class="reflabel">Шпаргалка · угол</div>
-      <ul class="gaps">
-        <li><span class="chip warn">unknown</span> Backend скрыт → «сверим движок + держим официальным». Без комплиментов.</li>
-      </ul>
-      <div class="msgs">
-        <div class="msg span2"><div class="msg-head tg"><span class="t">Telegram · первое сообщение</span><div class="r"><span class="cc" data-cc></span><button class="copy">Copy</button></div></div>
-          <p class="body">Hey [name], I'm Vic from the Safe deployment team at Protofire.
+      <div class="msg"><div class="msg-head"><span class="t">Cold · small</span><div class="r"><span class="cc" data-cc></span><button class="copy">Copy</button></div></div>
+        <p class="body">Hey [name], Vic from Protofire — we're building out a hosted, multichain Safe UI (20+ chains, Tron next — we'll be first).
 
-Saw Hydra runs a self-hosted Safe ([link]). Your wallet's on a recent build, but it's self-hosted — and that's the catch. Safe changed its licensing, so self-hosted setups don't get official updates or security patches anymore, so even a current version starts drifting out of support from here. I also couldn't see the engine behind the wallet from the outside, so its state is worth a quick internal check.
+Had a look at Hydra's Safe — the wallet itself is on a recent build, but the backend isn't visible from outside and it's self-hosted, so it'll drift off official updates over time and sits on its own.
 
-We're a licensed Safe provider (130+ networks) — we can check where your backend actually stands and keep the whole thing on the official, updated version, so you're not maintaining a fork that quietly falls behind.
-
-Worth a quick intro between our teams?</p></div>
-        <div class="msg span2"><div class="msg-head"><span class="t">Follow-up · если молчат</span><div class="r"><span class="cc" data-cc></span><button class="copy">Copy</button></div></div>
-          <p class="body">Hey [name], bumping this once — no rush. Short version: a self-hosted Safe stops getting official updates now, and I couldn't see your backend's state. Happy to do a quick check and keep it official from there. Whenever works.</p></div>
-        <div class="msg"><div class="msg-head"><span class="t">LinkedIn · connect note (≤300)</span><div class="r"><span class="cc" data-cc data-limit="300"></span><button class="copy">Copy</button></div></div>
-          <p class="body">Hi [name] — Vic, Protofire Safe deployment team. Noticed Hydra self-hosts Safe. Safe's licensing change ends official updates for DIY setups, so even a recent build drifts out of support. We're a licensed provider (130+ networks) — happy to check yours and keep it official. Open to connecting?</p></div>
-        <div class="msg"><div class="msg-head"><span class="t">LinkedIn · после коннекта</span><div class="r"><span class="cc" data-cc></span><button class="copy">Copy</button></div></div>
-          <p class="body">Thanks for connecting, [name]! Quick version: Hydra's wallet is on a recent build, but it's self-hosted — and with Safe's licensing change that means no more official updates ahead, so it drifts out of support. I couldn't see your backend's state from outside either, so happy to check it and keep the whole stack official and current (130+ networks). Could we grab 15 minutes?</p></div>
-      </div>
+For a smaller chain that's where we can really help: host and support it on our multichain UI so Hydra shows up next to the majors for visibility, with the option of a bridge right in the Safe so users can move liquidity in and out. Who'd be the best person at Hydra to chat about it?</p></div>
     </article>
-  </section>
 
-  <!-- SKIP LIST -->
-  <section>
-    <h2>Не контактировать — мёртвые / нерелевантные</h2>
-    <div class="panel dead">
-      <p style="margin-top:0">Эти сети <b>не</b> живые (<code>live=no</code> / <code>n/a</code>) — деплой заброшен, отдан на squat или Safe не найден. Аутрич смысла не имеет:</p>
-      <div class="chips">
-        <span class="chip low">Bittensor EVM</span><span class="chip low">Songbird</span>
-        <span class="chip low">Saakuru</span><span class="chip low">Redstone</span>
-        <span class="chip low">Corn</span><span class="chip low">HashKey</span>
-        <span class="chip low">Degen</span><span class="chip low">Kroma</span>
-        <span class="chip low">Bitrock</span><span class="chip low">Aleph Zero EVM</span>
-        <span class="chip low">re.al</span><span class="chip low">Crab</span>
-        <span class="chip low">Astar zkEVM</span>
-        <span class="chip low">Polynomial / Velas / Superposition / Taraxa / Fluence / Capx / Waterfall / Mind</span>
+    <!-- Q Protocol -->
+    <article class="net panel" id="q">
+      <div class="net-head"><h3>Q Protocol</h3><span class="badge cold">cold</span>
+        <span class="stats"><span>TVL <b>$9.4K</b></span><span>Stables <b>$0</b></span><span>Protocols <b>4</b></span><span>Deployed <b>Self</b></span></span></div>
+      <div class="intel">
+        <div class="row"><span class="k">version</span><span><span class="ver">ui 1.52 · cfg 2.89 · tx 5.18</span> — немного позади. URL в листе multisig-ui.q.org.</span></div>
+        <div class="row"><span class="k">action</span><span>Cold. Маленькая → узнаваемость + бридж.</span></div>
       </div>
-      <p style="margin-bottom:0;color:var(--ink-faint)"><b>Velas</b> и <b>Astar zkEVM</b> — живой UI, но бэкенд официальный/deprecated (как Fantom). Потенциально «поднимем бэкенд», но ниже приоритетом.</p>
-    </div>
+      <div class="msg"><div class="msg-head"><span class="t">Cold · small</span><div class="r"><span class="cc" data-cc></span><button class="copy">Copy</button></div></div>
+        <p class="body">Hey [name], Vic from Protofire — we're building out a hosted, multichain Safe UI (20+ chains, Tron next — we'll be first).
+
+Noticed Q's multisig is self-hosted and running a bit behind the current Safe release — nothing urgent, but it won't pick up the newer updates on its own.
+
+For a network Q's size, the upside is mostly visibility and convenience: host it on our multichain UI so Q sits next to the majors, with the option of an in-UI bridge so users move liquidity without leaving Safe. Who'd be the best person at Q to chat about it?</p></div>
+    </article>
+
+    <!-- Crab -->
+    <article class="net panel" id="crab">
+      <div class="net-head"><h3>Crab</h3><span class="badge flag">cold · verify</span>
+        <span class="stats"><span>TVL <b>$2.3K</b></span><span>Protocols <b>1</b></span><span>Deployed <b>Self</b></span></span></div>
+      <div class="intel">
+        <div class="row"><span class="k">version</span><span><span class="ver">dsafe.darwinia.network</span> — ресёрч: обслуживает Darwinia (46), не Crab (44). Canary-сеть Darwinia.</span></div>
+        <div class="row"><span class="k">action</span><span>Cold. Очень мелкая. Проверь, покрыт ли Crab вообще.</span></div>
+      </div>
+      <div class="msg"><div class="msg-head"><span class="t">Cold · coverage gap</span><div class="r"><span class="cc" data-cc></span><button class="copy">Copy</button></div></div>
+        <p class="body">Hey [name], Vic from Protofire — we run a hosted, multichain Safe UI (20+ chains, Tron next).
+
+Had a look at the Safe over on dsafe.darwinia.network — from the outside it looks like it serves Darwinia rather than Crab, so Crab users may not be fully covered by it. Wanted to flag in case that's a gap.
+
+If Crab wants its own properly-supported Safe, we could stand one up on our multichain UI so it's maintained and listed alongside the majors. Who'd be the best person to chat with about it?</p></div>
+    </article>
+
+    <!-- HashKey -->
+    <article class="net panel" id="hashkey">
+      <div class="net-head"><h3>HashKey Chain</h3><span class="badge flag">cold · get dev insights first</span>
+        <span class="stats"><span>TVL <b>$2.1K</b></span><span>Protocols <b>8</b></span><span>Deployed <b>Self</b></span></span></div>
+      <div class="intel">
+        <div class="row"><span class="k">version</span><span><span class="ver">Safe эрроит</span> (ресёрч: Cloudflare 530, origin down).</span></div>
+        <div class="row"><span class="k">action</span><span>По листу: сначала получить инсайты от их dev-команды. Держи сообщение наготове, но не шли вслепую.</span></div>
+      </div>
+      <div class="msg"><div class="msg-head"><span class="t">Cold · appears down</span><div class="r"><span class="cc" data-cc></span><button class="copy">Copy</button></div></div>
+        <p class="body">Hey [name], Vic from Protofire — we run a hosted, multichain Safe UI (20+ chains, Tron next — we'll be first).
+
+Tried to load HashKey's Safe and it's erroring out for me right now — looks like the self-hosted deployment is having some trouble. Wanted to check whether that's on your radar.
+
+We could help get it stable and host it on our multichain UI so it stays maintained, with HashKey sitting alongside the majors. Who on the team would be the best person to dig into this with?</p></div>
+    </article>
+
+    <!-- Waterfall -->
+    <article class="net panel" id="waterfall">
+      <div class="net-head"><h3>Waterfall</h3><span class="badge warm">warm · in touch (Uniswap)</span>
+        <span class="stats"><span>TVL <b>$0</b></span><span>Protocols <b>1</b></span><span>Deployed <b>Self</b></span></span></div>
+      <div class="intel">
+        <div class="row"><span class="k">version</span><span>Ссылки на Safe UI нет — <span class="ver">деплой не найден</span>.</span></div>
+        <div class="row"><span class="k">history</span><span>Уже общаемся по Uniswap → заходим оттуда, между делом про Safe.</span></div>
+      </div>
+      <div class="msg"><div class="msg-head"><span class="t">Warm · piggyback on Uniswap chat</span><div class="r"><span class="cc" data-cc></span><button class="copy">Copy</button></div></div>
+        <p class="body">Hey [name] — since we're already in touch on the Uniswap side, one more thing worth putting on your radar. We're now running a hosted, multichain Safe UI (20+ chains, Tron next — we'll be first).
+
+I couldn't find a live Safe deployment for Waterfall — so if there isn't one yet, that's actually a clean opportunity rather than a fix.
+
+We could deploy and support a Safe for Waterfall on our multichain UI, so it launches maintained and listed right next to the majors from day one. Worth exploring alongside the Uniswap piece?</p></div>
+    </article>
+
+    <!-- Mind Network -->
+    <article class="net panel" id="mind">
+      <div class="net-head"><h3>Mind Network</h3><span class="badge flag">cold · research further</span>
+        <span class="stats"><span>TVL <b>$0</b></span><span>Protocols <b>1</b></span><span>Deployed <b>Self</b></span></span></div>
+      <div class="intel">
+        <div class="row"><span class="k">version</span><span>Ссылки на Safe UI нет — <span class="ver">деплой не найден</span>. Сначала доресёрчить, есть ли у них Safe вообще.</span></div>
+        <div class="row"><span class="k">action</span><span>Низкий приоритет (TVL $0). Заход — «деплоим с нуля».</span></div>
+      </div>
+      <div class="msg"><div class="msg-head"><span class="t">Cold · greenfield</span><div class="r"><span class="cc" data-cc></span><button class="copy">Copy</button></div></div>
+        <p class="body">Hey [name], Vic from Protofire — we run a hosted, multichain Safe UI (20+ chains, Tron next — we'll be first).
+
+I went looking for a Safe deployment for Mind Network and couldn't find a live one — so if a multisig isn't set up yet, we could be a fast way to get one going.
+
+We'd deploy and support a Safe for Mind on our multichain UI, so it's maintained from day one and listed right next to the major chains. Is this something on your roadmap — and who'd be the best person to chat with?</p></div>
+    </article>
+
   </section>
 
   <footer>
-    Приоритет и суть — из твоих двух CSV. Плейсхолдеры <span class="ph">[name]</span> / <span class="ph">[Network]</span> / <span class="ph">[link]</span> заполняешь вручную. Rebrand-форки (ETC/Catacomb, Viction/RabbitSwap, Stratis/Xertra) могли разойтись с upstream — проверь фактическую версию перед отправкой. Блоки «версии/дыры» — твоя шпаргалка, в сообщения цифры намеренно не вынесены.
+    Инсайты (P2) — из ресёрч-CSV (версии) + этого листа (TVL/протоколы/история). <span class="badge flag" style="font-size:10px">flag</span>-сети проверь перед отправкой: версия/доступность могли измениться, а некоторые URL в листе отличаются от ресёрченных. Плейсхолдеры <span class="ph">[name]</span> / <span class="ph">[company]</span> заполняешь вручную. Момент про Tron/20+ сетей — если статус изменится, поправь строку в заходе.
   </footer>
 </div>
 
 <script>
   document.querySelectorAll('.msg').forEach(function(m){
-    var body = m.querySelector('.body');
-    var cc = m.querySelector('[data-cc]');
-    if(!body || !cc) return;
-    var n = body.innerText.length;
-    var limit = cc.getAttribute('data-limit');
-    if(limit){
-      cc.textContent = n + '/' + limit;
-      if(n > parseInt(limit,10)) cc.classList.add('over');
-    } else {
-      cc.textContent = n + ' chars';
-    }
+    var b=m.querySelector('.body'),cc=m.querySelector('[data-cc]');
+    if(b&&cc)cc.textContent=b.innerText.length+' chars';
   });
   document.querySelectorAll('.copy').forEach(function(btn){
-    btn.addEventListener('click', function(){
-      var text = btn.closest('.msg').querySelector('.body').innerText;
-      navigator.clipboard.writeText(text).then(function(){
-        var old = btn.textContent;
-        btn.textContent = 'Copied ✓';
-        setTimeout(function(){ btn.textContent = old; }, 1400);
+    btn.addEventListener('click',function(){
+      var t=btn.closest('.msg').querySelector('.body').innerText;
+      navigator.clipboard.writeText(t).then(function(){
+        var o=btn.textContent;btn.textContent='Copied ✓';
+        setTimeout(function(){btn.textContent=o;},1400);
       });
     });
   });
