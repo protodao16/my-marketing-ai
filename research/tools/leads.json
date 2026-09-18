@@ -1,0 +1,6 @@
+[
+  { "name": "MOVA Chain", "chainId": 61900, "rpcUrl": "" },
+  { "name": "Coti", "chainId": 2632500, "rpcUrl": "https://mainnet.coti.io/rpc" },
+  { "name": "Teqoin", "chainId": 420377, "rpcUrl": "https://rpc.teqoin.io" },
+  { "name": "X1 Ecochain", "chainId": null, "rpcUrl": "" }
+]
