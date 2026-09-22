@@ -205,16 +205,21 @@ async function run(job, o) {
     out.error = "no RPC to try (not in chainlist and no rpcUrl given) — likely pre-mainnet/testnet; add an rpcUrl in leads.json";
     return out;
   }
-  // Try each candidate until one answers eth_chainId.
+  // Try each candidate until one answers eth_chainId. Use a FAST-FAIL probe
+  // (short timeout, 1 retry) so a dead/hung testnet RPC is abandoned quickly
+  // instead of stalling the batch.
   let url, chainId, latestBlock, lastErr;
   for (const cand of candidates) {
+    process.stdout.write(`   trying RPC ${cand} ... `);
     try {
-      chainId = parseInt(await rpc(cand, "eth_chainId"), 16);
-      latestBlock = parseInt(await rpc(cand, "eth_blockNumber"), 16);
+      chainId = parseInt(await rpc(cand, "eth_chainId", [], { retries: 1, timeoutMs: 10000 }), 16);
+      latestBlock = parseInt(await rpc(cand, "eth_blockNumber", [], { retries: 1, timeoutMs: 10000 }), 16);
       url = cand;
+      console.log("OK");
       break;
     } catch (e) {
       lastErr = e;
+      console.log(`fail (${e.message})`);
     }
   }
   if (!url) {
@@ -256,7 +261,9 @@ async function run(job, o) {
   if (o.batch) jobs = JSON.parse(fs.readFileSync(o.batch, "utf8"));
   else jobs = [{ name: o.name, rpcUrl: o.rpc, chainId: o.chainId }];
 
+  console.log(`Checking ${jobs.length} chain(s)...`);
   for (const job of jobs) {
+    console.log(`\n>> ${job.name || "(unnamed)"}`);
     let r;
     try {
       r = await run(job, o); // per-job isolation: one bad chain never aborts the batch
