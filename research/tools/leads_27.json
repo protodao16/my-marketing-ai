@@ -3,5 +3,6 @@
   { "name": "Shido (mainnet)",        "chainId": 9008,     "rpcUrl": "https://rpc-nodes.shidoscan.com" },
   { "name": "GIWA (testnet Sepolia)", "chainId": 91342,    "rpcUrl": "https://sepolia-rpc.giwa.io" },
   { "name": "Kryvora (testnet)",      "chainId": 73829164, "rpcUrl": "https://rpc-testnet.kryvora.network" },
-  { "name": "Orbinum (testnet)",      "chainId": 2700,     "rpcUrl": "https://rpc-1.testnet.orbinum.io" }
+  { "name": "Orbinum (testnet)",      "chainId": 2700,     "rpcUrl": "https://rpc-1.testnet.orbinum.io" },
+  { "name": "ACI / ORBAIC (testnet)", "chainId": 88231,    "rpcUrl": "" }
 ]
