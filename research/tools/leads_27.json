@@ -1,8 +1,9 @@
 [
-  { "name": "Nexus (mainnet)",        "chainId": 3946,     "rpcUrl": "https://mainnet.rpc.nexus.xyz" },
-  { "name": "Shido (mainnet)",        "chainId": 9008,     "rpcUrl": "https://rpc-nodes.shidoscan.com" },
-  { "name": "GIWA (testnet Sepolia)", "chainId": 91342,    "rpcUrl": "https://sepolia-rpc.giwa.io" },
-  { "name": "Kryvora (testnet)",      "chainId": 73829164, "rpcUrl": "https://rpc-testnet.kryvora.network" },
-  { "name": "Orbinum (testnet)",      "chainId": 2700,     "rpcUrl": "https://rpc-1.testnet.orbinum.io" },
-  { "name": "ACI / ORBAIC (testnet)", "chainId": 88231,    "rpcUrl": "" }
+  { "name": "Nexus (mainnet)",         "chainId": 3946,     "rpcUrl": "https://mainnet.rpc.nexus.xyz" },
+  { "name": "Shido (mainnet)",         "chainId": 9008,     "rpcUrl": "https://rpc-nodes.shidoscan.com" },
+  { "name": "GIWA (testnet Sepolia)",  "chainId": 91342,    "rpcUrl": "https://sepolia-rpc.giwa.io" },
+  { "name": "Kryvora (testnet)",       "chainId": 73829164, "rpcUrl": "https://rpc-testnet.kryvora.network" },
+  { "name": "Orbinum (testnet)",       "chainId": 2700,     "rpcUrl": "https://rpc-1.testnet.orbinum.io" },
+  { "name": "ACI / ORBAIC (testnet)",  "chainId": 88231,    "rpcUrl": "" },
+  { "name": "Nexchain (testnet)",      "chainId": null,     "rpcUrl": "http://18.223.195.145:22277/ext/bc/yamQeNeJaKokoZJjD64eiHdt3AxJUT3ak2gL85cyBU6Zym8d2/rpc" }
 ]
