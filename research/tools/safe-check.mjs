@@ -62,18 +62,24 @@ function args() {
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
-// JSON-RPC call with retry/backoff on rate-limit (429) and transient 5xx.
-async function rpc(url, method, params = [], { retries = 3 } = {}) {
+// JSON-RPC call with a per-request timeout + retry/backoff on rate-limit (429)
+// and transient 5xx. The timeout (AbortController) is essential: a hung RPC that
+// never responds would otherwise stall the whole batch forever.
+async function rpc(url, method, params = [], { retries = 3, timeoutMs = 20000 } = {}) {
   let lastErr;
   for (let attempt = 0; attempt <= retries; attempt++) {
+    const ctrl = new AbortController();
+    const timer = setTimeout(() => ctrl.abort(), timeoutMs);
     try {
       const res = await fetch(url, {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify({ jsonrpc: "2.0", id: 1, method, params }),
+        signal: ctrl.signal,
       });
       if (res.status === 429 || (res.status >= 500 && res.status < 600)) {
         lastErr = new Error(`HTTP ${res.status} from RPC`);
+        clearTimeout(timer);
         await sleep(600 * (attempt + 1)); // 0.6s, 1.2s, 1.8s ...
         continue;
       }
@@ -82,9 +88,10 @@ async function rpc(url, method, params = [], { retries = 3 } = {}) {
       if (j.error) throw new Error(`${method}: ${j.error.message || JSON.stringify(j.error)}`);
       return j.result;
     } catch (e) {
-      lastErr = e;
-      // network-level error: brief backoff then retry
+      lastErr = e.name === "AbortError" ? new Error(`timeout after ${timeoutMs}ms`) : e;
       if (attempt < retries) await sleep(600 * (attempt + 1));
+    } finally {
+      clearTimeout(timer);
     }
   }
   throw lastErr;
