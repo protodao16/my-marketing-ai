@@ -1,6 +1,7 @@
 @echo off
-REM Double-click to run the Safe check for the 27-project list (leads_27.json).
-REM Keep this file next to safe-check.mjs and leads_27.json.
+REM Double-click to run the Safe check for leads_27.json. Keep this next to
+REM safe-check.mjs and leads_27.json. Results go to result_27.txt (also written
+REM live by the script itself, chain by chain).
 cd /d "%~dp0"
 
 where node >nul 2>nul
@@ -18,14 +19,11 @@ call npm install @safe-global/safe-deployments
 echo Downloading fresh chainlist...
 curl -s https://chainlist.org/rpcs.json -o rpcs.json
 
-echo Running the check on leads_27.json ...
-node safe-check.mjs --batch leads_27.json --chainlist rpcs.json > result_27.txt 2>&1
+echo Running the check...
+node safe-check.mjs --batch leads_27.json --chainlist rpcs.json --out result_27.txt
 
 echo.
 echo ================================================
-echo Done. Results are in the file: result_27.txt
-echo (send that file back to Claude)
+echo Done. Results are in result_27.txt (send it to Claude)
 echo ================================================
-echo.
-type result_27.txt
 pause
