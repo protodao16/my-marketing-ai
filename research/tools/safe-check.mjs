@@ -51,6 +51,7 @@ function args() {
     else if (k === "--batch") o.batch = a[++i];
     else if (k === "--out") o.out = a[++i];
     else if (k === "--chunk") o.chunk = Number(a[++i]);
+    else if (k === "--scan-deadline") o.scanDeadline = Number(a[++i]);
     else if (k === "--deadline") o.deadline = Number(a[++i]);
     else if (k === "--timeout") o.timeout = Number(a[++i]);
     else if (k === "--no-logs") o.logs = false;
@@ -130,10 +131,14 @@ async function countSafes(url, factories, latest, o, reqOpts) {
   // Adaptive chunk: keep total getLogs calls per factory bounded (~300) so a
   // very long chain cannot turn into thousands of requests.
   const chunk = o.chunk > 0 ? o.chunk : Math.max(100000, Math.ceil((latest + 1) / 300));
+  const budgetMs = (o.scanDeadline || 90) * 1000; // the scan has its OWN budget
+  const start = Date.now();
   const proxies = new Set();
-  let firstBlock = null, lastBlock = null, scanErrors = 0;
+  let firstBlock = null, lastBlock = null, scanErrors = 0, incomplete = false;
+  outer:
   for (const f of factories) {
     for (let from = 0; from <= latest; from += chunk) {
+      if (Date.now() - start > budgetMs) { incomplete = true; break outer; }
       const to = Math.min(from + chunk - 1, latest);
       try {
         const logs = await rpc(url, "eth_getLogs", [{
@@ -150,7 +155,7 @@ async function countSafes(url, factories, latest, o, reqOpts) {
       } catch (e) { scanErrors++; }
     }
   }
-  return { count: proxies.size, firstBlock, lastBlock, scanErrors, chunk };
+  return { count: proxies.size, firstBlock, lastBlock, scanErrors, chunk, incomplete };
 }
 
 let CHAINLIST = null;
@@ -208,7 +213,8 @@ async function runInner(job, o) {
     `${c.label}: ${c.deployed === true ? "YES" : c.deployed === false ? "NO" : c.deployed}`).join("\n") +
     `\nBy eth_getCode at block ${latestBlock}, ${new Date().toISOString().slice(0, 10)}.`;
   out.cell_safes_created = out.safes
-    ? `${out.safes.count} distinct Safe proxies` +
+    ? (out.safes.incomplete ? `${out.safes.count}+ Safe proxies (scan hit its time budget on a slow RPC — Safe IS deployed; re-run with --scan-deadline 300 for the full count)` :
+        `${out.safes.count} distinct Safe proxies`) +
       (out.safes.firstBlock != null ? `, blocks ${out.safes.firstBlock}-${out.safes.lastBlock}` : "") +
       (out.safes.scanErrors ? ` (${out.safes.scanErrors} scan chunks failed)` : "")
     : anyDeployed ? "Safe singleton(s) present but no proxy factory — check manually"
@@ -242,8 +248,11 @@ function render(r) {
   console.log(`Checking ${jobs.length} chain(s)... (results also written to ${o.out})`);
   for (const job of jobs) {
     console.log(`\n>> ${job.name || "(unnamed)"}`);
+    // runInner is internally bounded (per-request timeouts + a separate scan
+    // budget), so it can't hang — and this way a slow log-scan never discards
+    // the eth_getCode results the way an outer race used to.
     let r;
-    try { r = await withDeadline(runInner(job, o), o.deadline * 1000, job.name || "(unnamed)"); }
+    try { r = await runInner(job, o); }
     catch (e) { r = { name: job.name || "(unnamed)", error: `unexpected: ${e.message}` }; }
     const block = render(r);
     process.stdout.write(block);
